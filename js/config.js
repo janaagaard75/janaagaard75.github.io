@@ -43,7 +43,7 @@ $(function() {
 		// to Github pages branch (gh-pages)
 		githubUserSettings: {
 			username: 'janaagaard75',
-			repo: 'master'
+			repo: 'janaagaard75.github.io'
 		}
 
 	});
