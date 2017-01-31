@@ -1,16 +1,18 @@
-# Why-, How- and What-Comments
+# Writing Good Code Comments
 
-This is a system for qualifying how good a code comment is. I use when determining if I should include a comment in my code, and I use when reviewing other peolple's code.
+Writing good code is an art, and writing good code comments is part of this art. This is a system for classifying comments, meant to help you determine if a comment is worth including, and in general help think about your comments, and in general improve your code. I find it especially useful to look at code comments when I am reviewing code, because that is when you have the first fresh look at some code.
 
 TODO: Full sentenses. Comments are put here for the next programmer. Good comments can same a lot of time. Bad comments are plain wrong or just fillers.
+
+TODO: Quote from Clean Code about comments being filler or simply plain wrong.
 
 The guidelines in here are meant as just that - guidelines and not rules - so keep in mind that there will always be situations where you shouldn't follow the guidelines in here.
 
 ## Three Types of Comments
 
-Comments can be categorized into tree types.
+Comments can be categorized into tree types, why-comments, how-comments and what-comments.
 
-1. **Why-comments** explain why the code is what it is.
+1. **Why-comments** explain why the code is what it is. These type of quotes 
 1. **How-comments** explain how the code works.
 1. **What-comments** explain what the code does.
 
