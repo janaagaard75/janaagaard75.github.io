@@ -1,8 +1,8 @@
 # Writing Good Code Comments
 
-Writing good code is an art, and writing good code comments is part of this art. This is a system for classifying comments, meant to help you determine if a comment is worth including, and in general help think about your comments, and in general improve your code. I find it especially useful to look at code comments when I am reviewing code, because that is when you have the first fresh look at some code.
+Writing good code comments is part writing good code. This article introduces a system for classifying comments, which meant to help you determine if a comment is worth including, and in general help think about your comments, and in general improve your code. I find it especially useful to think about comments when I am reviewing code, because that is when you have the first fresh look at some code.
 
-TODO: Full sentenses. Comments are put here for the next programmer. Good comments can same a lot of time. Bad comments are plain wrong or just fillers.
+TODO: Comments are put here for the next programmer. Good comments can same a lot of time. Bad comments are plain wrong or just fillers. Write full sentenses with proper capitalization and punctuation.
 
 TODO: Quote from Clean Code about comments being filler or simply plain wrong.
 
