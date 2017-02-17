@@ -1,8 +1,8 @@
 # Writing Good Code Comments
 
-Writing good code comments is part writing good code. A good comment can save the next developer hours of time, whereas a bad one can do just the opposite. This article introduces a system for classifying comments, which meant to help help you think about your comments, and in general improve your code.
+You should generally strive to write self documenting code instead of relying on code comments to explain your code, but you can't just use this to dismiss writing any comments at all. This article introduces a system for classifying comments, meant to help you think about them, and in general improve your code.
 
-Comments are put here for the next programmer. Write full sentenses with proper capitalization and punctuation.
+Comments are put there for the next programmer. Write full sentenses with proper capitalization and punctuation.
 
 TODO: Quote from Clean Code about comments being filler or simply plain wrong. “Well-documented“ quote.
 
