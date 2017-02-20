@@ -39,6 +39,11 @@ function isLongEnough(password) {
 }
 ```
 
+```javascript
+/** The ID of the client. */
+clientId
+```
+
 I think that some developers write placeholder comments for themselves when they start out, so that hey have an idea of what their code will like like, when they done. Great! Just remember to remove the comments before making the pull request.
 
 ## How-Comments
