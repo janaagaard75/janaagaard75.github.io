@@ -1,6 +1,6 @@
 # Writing Good Code Comments
 
-You should generally strive to write self documenting code instead of relying on code comments to explain your code, but you can't just use this to dismiss writing any comments at all. This article introduces a system for classifying comments, meant to help you think about them, and in general improve your code.
+You should strive to write self documenting code instead of relying on code comments to explain it, but this doesn't mean you shouldn't be writing any comments at all. This article introduces a system for classifying most comments into three categories, meant to help you think about them, and in general improve your code.
 
 Comments are put there for the next programmer. Write full sentenses with proper capitalization and punctuation.
 
@@ -25,15 +25,17 @@ You should strive to write self-documenting code.
 TODO: Find a better example.
 
 ```javascript
-// Return the sum of a and b.
-function foo(a, b) {
-return a + b
+// Validate
+function validate(password) {
+  const isValid = password.length >= 8
+  return isValid
 }
 ```
 
 ```javascript
-function sum(a, b) {
-return a + b
+function isLongEnough(password) {
+  const longEnough = password.length >= MIN_PASSWORD_LENGTH
+  return longEnough
 }
 ```
 
