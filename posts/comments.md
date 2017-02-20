@@ -1,12 +1,10 @@
 # Writing Good Code Comments
 
-You should strive to write self documenting code instead of relying on code comments to explain it, but this doesn't mean you shouldn't be writing any comments at all. This article introduces a system for classifying most comments into three categories, meant to help you think about them, and in general improve your code.
+You should strive to write code that doesn't need comments to explain it, but this doesn't mean you shouldn't be writing any comments at all. This article introduces a system for classifying most comments into three categories, meant to help you think about them, and in general improve your code.
 
 Comments are put there for the next programmer. Write full sentenses with proper capitalization and punctuation.
 
-TODO: Quote from Clean Code about comments being filler or simply plain wrong. “Well-documented“ quote.
-
-The guidelines in here are meant as just that - guidelines - so keep in mind that there will always be situations where you shouldn't follow these.
+Keep in mind that what is listed in here is guidelines and not rules. There will always be situations where you shouldn't follow these guidelines.
 
 ## Three Types of Comments
 
@@ -18,9 +16,7 @@ Comments can be categorized into tree types, why-comments, how-comments and what
 
 ## What-Comments
 
-What comments explain hat the code does. These kind of comment can generally always be replaced by writing self documented code instead.
-
-You should strive to write self-documenting code.
+What comments explain hat the code does. These kind of comment can nearly always be replaced by writing self documented code instead. You should strive to write self-documenting code instead of using what-comments.
 
 TODO: Find a better example.
 
@@ -44,7 +40,9 @@ function isLongEnough(password) {
 clientId
 ```
 
-I think that some developers write placeholder comments for themselves when they start out, so that hey have an idea of what their code will like like, when they done. Great! Just remember to remove the comments before making the pull request.
+Exception: Structural comments, for example in your Webpack configuration file.
+
+I think that some developers write placeholder comments in the code to help them the code while writing. Great! Just remember to remove the comments before making the pull request.
 
 ## How-Comments
 
