@@ -20,6 +20,27 @@ What comments explain hat the code does. These kind of comment can nearly always
 
 TODO: Find a better example.
 
+```typescript
+if (65 <= e.keyCode && e.keyCode <= 90) {
+  // Numbers.
+  this.openDialog();
+}
+```
+
+```typescript
+enum KeyCode {
+  A = 65
+  Z = 90
+}
+
+if (48 <= e.keyCode && e.keyCode <= 57) {
+  // Numbers.
+  this.openDialog();
+}
+```
+
+
+
 ```javascript
 // Validate
 function validate(password) {
