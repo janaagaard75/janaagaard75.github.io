@@ -1,6 +1,6 @@
 # Writing Good Code Comments
 
-You should strive to write code that doesn't need comments to explain it, but this doesn't mean you shouldn't be writing any comments at all. This article introduces a system for classifying most comments into three categories, meant to help you think about them, and in general improve your code.
+You should strive to write code that doesn't need comments to explain it, but this doesn't mean you shouldn't be writing any comments at all. This article introduces a system for classifying comments into three categories, meant to help you think about them, and in general improve your code.
 
 Comments are put there for the next programmer. Write full sentenses with proper capitalization and punctuation.
 
@@ -21,21 +21,19 @@ What comments explain hat the code does. These kind of comment can nearly always
 TODO: Find a better example.
 
 ```typescript
-if (65 <= e.keyCode && e.keyCode <= 90) {
-  // Numbers.
-  this.openDialog();
+// Escape.
+if (event.keyCode === 43) {
+  closeDialog();
 }
 ```
 
 ```typescript
 enum KeyCode {
-  A = 65
-  Z = 90
+  Escape: 43
 }
 
-if (48 <= e.keyCode && e.keyCode <= 57) {
-  // Numbers.
-  this.openDialog();
+if (event.keyCode === KeyCode.Escape) {
+  closeDialog();
 }
 ```
 
