@@ -70,10 +70,45 @@ class Circle {
     this.setRadius(radius)
   }
   
-  private radius: number
+  private _radius: number
+  private accessedObservables: Array<string>
+  private computedValues = {}
+  private usedInComputedValues = {}
+
+public get radius(): number {
+    this.accessedObservables.push('radius')
+    return this._radius
+  }
   
-  public getRadius(): number {
-    return this.radius
+  public set radius(radius: number) {
+    this._radius = radius
+    
+    if (this.usedInComputedValues[accessedObservable] !== undefined) {
+      this.usedInComputedValues[accessedObservable].forEach(computedValue =>
+        this.computedValues[computedValue] === undefined
+      )
+    }
+  }
+  
+  public get area(): number {
+    if (this.computedValues['area'] === undefined) {
+      if (this.accessObservables['area'] === undefined) {
+        this.accessedObservables = []
+        this.computedValues['area'] = 2 * Math.PI * this.radius * this.radius
+
+        this.accessedObservables.forEach(accessedObservable => {
+          if (this.usedInComputedValues[accessedObservable] === undefined) {
+            this.usedInComputedValues[accessedObservable] = []
+          }
+          this.usedInComputedValues[accessedObservable].push('area')
+        })
+      }
+      else {
+        this.computedValues['area'] = 2 * Math.PI * this.radius * this.radius
+      }
+    }
+    
+    return this.computedValues['area']
   }
 }
 ```
