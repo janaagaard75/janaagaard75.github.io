@@ -64,11 +64,11 @@ class Circle {
 
 ## Without MobX, But a More MobX'y Solution
 
+```typescript
 let accessedObservables: Array<string>
 let computedValues = {}
 let usedInComputedValues = {}
 
-```typescript
 class Circle {
   constructor(radius: number) {
     this.setRadius(radius)
