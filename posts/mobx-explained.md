@@ -72,10 +72,10 @@ class Circle {
   
   private _radius: number
   private accessedObservables: Array<string>
-  private computedValues = {}
+  private computedValues = {}
   private usedInComputedValues = {}
 
-public get radius(): number {
+  public get radius(): number {
     this.accessedObservables.push('radius')
     return this._radius
   }
@@ -92,20 +92,17 @@ public get radius(): number {
   
   public get area(): number {
     if (this.computedValues['area'] === undefined) {
-      if (this.accessObservables['area'] === undefined) {
-        this.accessedObservables = []
-        this.computedValues['area'] = 2 * Math.PI * this.radius * this.radius
+      this.accessedObservables = []
 
-        this.accessedObservables.forEach(accessedObservable => {
-          if (this.usedInComputedValues[accessedObservable] === undefined) {
-            this.usedInComputedValues[accessedObservable] = []
-          }
-          this.usedInComputedValues[accessedObservable].push('area')
-        })
+      this.computedValues['area'] = 2 * Math.PI * this.radius * this.radius
+
+      if (this.usedInComputedValues[accessedObservable] === undefined) {
+        this.usedInComputedValues[accessedObservable] = []
       }
-      else {
-        this.computedValues['area'] = 2 * Math.PI * this.radius * this.radius
-      }
+
+      this.accessedObservables.forEach(accessedObservable => {
+        this.usedInComputedValues[accessedObservable].push('area')
+      })
     }
     
     return this.computedValues['area']
