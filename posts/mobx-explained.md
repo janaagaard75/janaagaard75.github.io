@@ -64,6 +64,10 @@ class Circle {
 
 ## Without MobX, But a More MobX'y Solution
 
+let accessedObservables: Array<string>
+let computedValues = {}
+let usedInComputedValues = {}
+
 ```typescript
 class Circle {
   constructor(radius: number) {
@@ -71,41 +75,38 @@ class Circle {
   }
   
   private _radius: number
-  private accessedObservables: Array<string>
-  private computedValues = {}
-  private usedInComputedValues = {}
 
   public get radius(): number {
-    this.accessedObservables.push('radius')
+    accessedObservables.push('radius')
     return this._radius
   }
   
   public set radius(radius: number) {
     this._radius = radius
     
-    if (this.usedInComputedValues[accessedObservable] !== undefined) {
-      this.usedInComputedValues[accessedObservable].forEach(computedValue =>
-        this.computedValues[computedValue] === undefined
+    if (usedInComputedValues[accessedObservable] !== undefined) {
+      usedInComputedValues[accessedObservable].forEach(computedValue =>
+        computedValues[computedValue] === undefined
       )
     }
   }
   
   public get area(): number {
     if (this.computedValues['area'] === undefined) {
-      this.accessedObservables = []
+      accessedObservables = []
 
-      this.computedValues['area'] = 2 * Math.PI * this.radius * this.radius
+      computedValues['area'] = 2 * Math.PI * this.radius * this.radius
 
-      if (this.usedInComputedValues[accessedObservable] === undefined) {
-        this.usedInComputedValues[accessedObservable] = []
+      if (usedInComputedValues[accessedObservable] === undefined) {
+        usedInComputedValues[accessedObservable] = []
       }
 
-      this.accessedObservables.forEach(accessedObservable => {
-        this.usedInComputedValues[accessedObservable].push('area')
+      accessedObservables.forEach(accessedObservable => {
+        usedInComputedValues[accessedObservable].push('area')
       })
     }
     
-    return this.computedValues['area']
+    return computedValues['area']
   }
 }
 ```
