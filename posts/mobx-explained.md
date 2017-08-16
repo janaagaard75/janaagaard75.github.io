@@ -1,38 +1,29 @@
-# MobX Explained with an Example
+# MobX Explained
 
-We have a simpel class, `Circle`, that has two properties `radius` and `area`. `area` is a read only property, of curse directly dependent on the value of radius. We want a solution that only calculates the area once it's needed, and that caches that calculated value until a new radius is set.
+## Native Circle Class
 
-## Simple Solution, Without MobX
+We have a simpel class, `Circle`, that has two properties `radius` and `area`. `area` is a read only property, of curse directly dependent on the value of radius. (We assume that you will won't assign a negative number to `radius`.)
 
 ```typescript
 class Circle {
   constructor(radius: number) {
-    this.setRadius(radius)
-  }
-
-  private radius: number
-  private area: number | undefined
-  
-  public getRadius(): number {
-    return this.radius
-  }
-  
-  public setRadius(radius: number) {
     this.radius = radius
-    this.area = undefined
   }
-  
-  public getArea(): number {
-    if (this.area == undefined) {
-      this.area = 2 * Math.PI * this.radius * this.radius
-    }
 
-    return this.area
+  public radius: number
+  
+  public get area(): number {
+    return 2 * Math.PI * this.radius * this.radius
   }
 }
 ```
 
-## With Getters and Setters
+## Simple Solution, Without MobX
+
+Calculating the area is pretty simply and thus fast, but let's assume that the calculations were complicated, so we want to add these two features to our class:
+
+* We want `area` to be _lazy_, that is we only want to calculate the it, if we actually need it.
+* We want to _cache_ the value, so that we don't have to recalculate it, should we access it more than once.
 
 ```typescript
 class Circle {
