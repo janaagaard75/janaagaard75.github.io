@@ -1,4 +1,4 @@
-# Side Project
+# Side Project: Film Filter
 
 Started because of an idea. It turned out, that the idea wasn't good. The data is retrieved by scraping, and since the result wasn't as I had hoped, I haven't bothered to update the scraper.
 
