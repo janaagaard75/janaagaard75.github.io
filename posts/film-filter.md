@@ -4,13 +4,19 @@ Started because of an idea. It turned out, that the idea wasn't good. The data i
 
 ## Technologies
 
+### Scraper
+
 * Scrapy
 * Python
 * Scrapinghub
 
+### Data Parser
+
 * Node.js as a server-side technology
 * TypeScript on Node.js
 * Kubernetes
+
+### Web Site
 
 * React
 * React and TypeScript
@@ -20,3 +26,4 @@ Started because of an idea. It turned out, that the idea wasn't good. The data i
   * Web workers with Webpack
 * Firebase hosting
 * Boostrap version 4
+* Compressed Local Storage
