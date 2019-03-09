@@ -1,3 +1,4 @@
+exclude: []
 markdown: kramdown
 name: Jan Aagaard's Blog
 permalink: /blog/:year/:month/:day/:title
