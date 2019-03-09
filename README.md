@@ -1,3 +1,1 @@
-# Blog
-
-Draft for articles with the intention of starting a blog.
+# Jan Aagaard's Blog
