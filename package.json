@@ -1,0 +1,13 @@
+{
+  "name": "jan-aagaards-blog",
+  "version": "1.0.0",
+  "description": "Jan Aagaard's Blog",
+  "main": "index.html",
+  "repository": "https://github.com/janaagaard75/janaagaard75.github.io.git",
+  "author": "Jan Aagaard <jan@aagaard.net>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "bootstrap": "4.3.1"
+  }
+}
