@@ -7,7 +7,7 @@
   "author": "Jan Aagaard <jan@aagaard.net>",
   "license": "MIT",
   "private": false,
-  "devDependencies": {
+  "dependencies": {
     "bootstrap": "4.3.1"
   }
 }
