@@ -11,6 +11,7 @@ twitter_username: janaagaard
 github_username: janaaagaard75
 
 # Build settings
+highlighter: rouge
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 plugins:

@@ -5,3 +5,11 @@ date: 2019-03-09
 ---
 
 First post. Still following [Jonathan McGlone's Guide](http://jmcglone.com/guides/github-pages/).
+
+```typescript
+class Person {
+  constructor(
+    public name: string
+  ) { }
+}
+```
