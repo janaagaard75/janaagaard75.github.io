@@ -9,5 +9,8 @@
   "private": false,
   "dependencies": {
     "bootstrap": "4.3.1"
+  },
+  "scripts": {
+    "start": "bundle exec jekyll serve"
   }
 }
