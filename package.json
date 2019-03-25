@@ -11,6 +11,7 @@
     "bootstrap": "4.3.1"
   },
   "scripts": {
-    "start": "bundle exec jekyll serve"
+    "clean": "rm -rf _site",
+    "start": "yarn run clean && bundle exec jekyll serve"
   }
 }
