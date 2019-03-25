@@ -1,16 +1,15 @@
 require "jekyll-spark"
 
 module Jekyll
-  class FigureComponent < ComponentTag
+  class FigureComponent < ComponentBlock
     def template(context)
-      caption = @props["caption"]
       src = @props["src"]
       alt = @props["alt"]
 
       render = %Q[
         <figure class="figure">
           <img src="#{src}" class="figure-img img-fluid" alt="#{alt}">
-          <figcaption class="figure-caption">#{caption}</figcaption>
+          <figcaption class="figure-caption">#{content}</figcaption>
         </figure>
       ]
     end

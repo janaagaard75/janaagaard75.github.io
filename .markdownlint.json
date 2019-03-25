@@ -1,4 +1,5 @@
 {
+  "no-inline-html": false,
   "no-trailing-punctuation": {
     "punctuation": ".,;:!"
   },

@@ -14,13 +14,14 @@ categories:
   ]
 ---
 
-Azure Functions are Microsoft's take on serverless computing and they correspond to Amazon's AWS Lambda and Google's Cloud Functions. Microsoft support a range of languages, but in version 2 TypeScript is only ["supported through transpiling to JavaScript"](https://medium.com/r/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fazure-functions%2Ffunctions-versions%23languages), and they don't provide any information about how to set up this up. I'm a big fan of TypeScript, so I have documented one way to this, and this article series will take you along on the journey.
+Azure Functions are Microsoft's take on serverless computing and they correspond to Amazon's AWS Lambda and Google's Cloud Functions. Microsoft support a range of languages, but in version 2 TypeScript is only ["supported through transpiling to JavaScript"](https://docs.microsoft.com/en-us/azure/azure-functions/functions-versions#languages), and they don't provide any information about how to set up this up. I'm a big fan of TypeScript, so I have documented one way to this, and this article series will take you along on the journey.
 
 {% Figure
   src: "/images/typescript-support.png"
   alt: "TypeScript support through transpiling"
-  caption: "This is pretty much the only thing mentioned about TypeScript for version 2 of Azure Functions."
 %}
+This is pretty much the only thing mentioned about TypeScript for version 2 of Azure Functions. <a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-versions#languages">Source</a>
+{% endFigure %}
 
 Part 1 goes through installing the prerequisites and creating an HTTP endpoint function in JavaScript.
 
