@@ -2,6 +2,7 @@ $font-family-base: Georgia, "Bitstream Charter", "Charis SIL", Utopia, "URW Book
 $font-size-base: 1.25rem;
 $line-height-base: 1.6;
 
+
 $grid-breakpoints: (
   xs: 0,
   //sm: 576px,
@@ -16,6 +17,11 @@ $container-max-widths: (
   //lg: 960px,
   //xl: 1140px
 ) !default;
+
+
+$code-font-size: 80%;
+$code-color: black;
+$code-background: rgba(27, 31, 35, 0.05);
 
 
 @import "../node_modules/bootstrap/scss/variables";
