@@ -19,5 +19,6 @@
 - Consider using Google Fonts.
 - Fix Atom/RSS feed.
 - Fix dates and links.
+- Custom domain. blog.janaagaard.com?
 - Publish
 - Align the numbered list and the bullets. <https://jsbin.com/tuxiwuh/edit?html,output>
