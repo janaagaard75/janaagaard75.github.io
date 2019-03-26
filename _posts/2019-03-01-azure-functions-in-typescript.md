@@ -12,14 +12,17 @@ Azure Functions are Microsoft's take on serverless computing and they correspond
 This is pretty much the only thing mentioned about TypeScript for version 2 of Azure Functions. <a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-versions#languages">Source</a>
 {% endFigure %}
 
-Test
-
 1. Part 1 goes through installing the prerequisites and creating an HTTP endpoint function in JavaScript.
+
 2. If you already know about Azure Functions, skip ahead to part 2, where the function is converted to TypeScript.
+
 3. In the 3rd part a local test is added and CircleCI is used to run the test automatically in a continuous integration pipeline. The code is then refactored, cleaning it up a bit.
+
 4. Part 4 extends the continuous integration pipeline into a continuous delivery pipeline, finally deploying the endpoint to Azure and making it available online.
-5. Now that endpoint is available online we can add an end-to-end test to the pipeline. This is done in the 5th part.
-6. Now that we have a
+
+5. The public endpoint is used to create an end-to-end test. This is done in part 5.
+
+6. Now that we have and end-to-end test we can refactor the code without risking breaking it.
 
 The code relates to this article series is available as public domain (MIT licensed) at <https://github.com/janaagaard75/azure-fuctions-typescript>.
 

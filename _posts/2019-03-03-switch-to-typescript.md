@@ -3,8 +3,10 @@ layout: post
 title: "Part 2: Switch to TypeScript"
 ---
 
-This is part two of the series about writing an Azure Function in TypeScript. In part 1 we created a basic HTTP triggerede function written in JavaScript. In this part we switch to TypeScript.
-To keep things organized we will put the source TypeScript files in a folder named src and we will be compiling into a distribution folder named dist.
+This is part two of the series about writing an Azure Function in TypeScript. In part 1 we created a basic HTTP triggered function written in JavaScript. In this part we switch to TypeScript.
+
+To keep things organized we will put the source TypeScript files in a folder named `src` and we will be compiling into a distribution folder named `dist`.
+
 The first step is simply moving the files and updating our start script to switch to that directory before start in the host.
 
 ```json
@@ -42,7 +44,7 @@ We also need to update the function syntax a bit.
 export async function run(context, req) {
 ```
 
-And finally a new build command is added to package.json. The build command calls the TypeScript compiler, tsc, and copies the .json files from `src` to `dist`.
+And finally a new build command is added to package.json. The build command calls the TypeScript compiler, `tsc`, and copies the `.json` files from `src` to `dist`.
 
 ```json
 # In package.json:
