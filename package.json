@@ -13,6 +13,7 @@
   "scripts": {
     "clean": "rm -rf _site",
     "install": "bundle install",
-    "start": "yarn run clean && bundle exec jekyll serve --future --unpublished"
+    "start": "yarn run clean && bundle exec jekyll serve --future --unpublished",
+    "update": "bundle update"
   }
 }
