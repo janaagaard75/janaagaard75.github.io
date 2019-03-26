@@ -5,7 +5,7 @@ title: "Part 1: JavaScript version"
 
 We start out with a basic HTTP endpoint written as an Azure Function in JavaScript. If you already know about Azure Functions, then skip ahead to the next part, where the code is transformed into TypeScript.
 
-Azure Functions require a long term support (LTS) version of Node.js. The versions with an even major version number are LTS versions, and version 10 is currently the latest LTS version. The following commands installs the latest version of Node 10 on macOS using Homebrew. Since v10 isn't the latest (there is a version 11 now), you have to link it manually after installing it. Remember to re-link if you upgrade Node.js. You can use nvm if you need multiple versions of Node.js on your system.
+Azure Functions require a long term support (LTS) version of Node.js. The versions with an even major version number are LTS versions, and version 10 is currently the latest LTS version. The following commands installs the latest version of Node 10 on macOS using Homebrew. Since v10 isn't the latest, you have to link it manually after installing it. Remember to re-link if you upgrade Node.js. You can use nvm if you need multiple versions of Node.js on your system.
 
 ```bash
 $ brew install node@10
