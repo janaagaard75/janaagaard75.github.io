@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Part 1: JavaScript version"
+title: "Part 1: JavaScript Version"
 published: false
 ---
 
@@ -37,20 +37,20 @@ $ yarn run func new --name greet --language JavaScript
 
 This results in the following folder structure.
 
-```json
-greet/
-  function.json
-  index.js
-  sample.dat
-node_modules/
-  ...
-host.json
-local.settings.json
-package.json
-yarn.lock
+```text
+├── greet
+│   ├── function.json
+│   ├── index.js
+│   └──sample.dat
+├── node_modules
+│   └── ...
+├── host.json
+├── local.settings.json
+├── package.json
+└── yarn.lock
 ```
 
-Fire up the local Azure Functions host command func host start. Since the Azure Functions Core Tools are installed locally we would have to prefix this call with yarn. We simplify a bit by adding the start command as a run script in package.json (TODO: Link to commit), so that we simply type yarn start. This will make the endpoint available on http://localhost:7071/api/greet.
+Fire up the local Azure Functions host command func host start. Since the Azure Functions Core Tools are installed locally we would have to prefix this call with yarn. We simplify a bit by adding the start command as a run script in package.json (TODO: Link to commit), so that we simply type yarn start. This will make the endpoint available on <http://localhost:7071/api/greet>.
 
 ```bash
 $ yarn start
@@ -58,6 +58,6 @@ $ yarn start
 
 Add a name as a query parameter, and you will see it echoed back.
 
-Our serverless HTTP triggered Azure Function in action. \o/The function is made available anonymously, and a few more files are added to set up everything in Visual Studio Code, resulting in the final code available on GitHub: https://github.com/janaagaard75/azure-functions-typescript/tree/1-javascript-version. The commit tree explains what was added. (TODO: Link.)
+Our serverless HTTP triggered Azure Function in action. \o/The function is made available anonymously, and a few more files are added to set up everything in Visual Studio Code, resulting in the final code available on GitHub: <https://github.com/janaagaard75/azure-functions-typescript/tree/1-javascript-version>. The commit tree explains what was added. (TODO: Link.)
 
 Part 2: Converting to TypeScript. TODO: Link

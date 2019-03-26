@@ -14,7 +14,7 @@ tags:
 published: false
 ---
 
-Azure Functions are Microsoft's take on serverless computing&mdash;they correspond to Amazon's AWS Lambda and Google's Cloud Functions. Microsoft support a range of languages, but in version 2 TypeScript is only ["supported through transpiling to JavaScript"](https://docs.microsoft.com/en-us/azure/azure-functions/functions-versions#languages), and they don't provide any information about how to set up this up. I'm a big fan of TypeScript, so I have documented one way to this, and this article series will take you along on the journey.
+Azure Functions are Microsoft's take on serverless computing---they correspond to Amazon's AWS Lambda and Google's Cloud Functions. Microsoft support a range of languages, but in version 2 TypeScript is only ["supported through transpiling to JavaScript"](https://docs.microsoft.com/en-us/azure/azure-functions/functions-versions#languages), and they don't provide any information about how to set up this up. I'm a big fan of TypeScript, so I have documented one way to this, and this article series will take you along on the journey.
 
 {% include figure.html
   src="/images/typescript-support.png"
@@ -22,20 +22,20 @@ Azure Functions are Microsoft's take on serverless computing&mdash;they correspo
   caption="This is pretty much the only thing mentioned about TypeScript for version 2 of Azure Functions. <a href='https://docs.microsoft.com/en-us/azure/azure-functions/functions-versions#languages'>Source</a>"
 %}
 
-This article series has the following seven parts:
+Creating the Azure Function in TypeScript has been split into these seven parts. If you already know about Azure Functions in JavaScript you might want to skip ahead to part 2. The tests are very simple, so part 3, 4 and 5 are mostly about configuring CircleCI and creating the ARM template. The refactoring part was the most exciting one to write.
 
-1. Install the prerequisites and create an HTTP endpoint function in JavaScript.
+- [Part 1: JavaScript version](/blog/2019/05/02/part-1-javascript-version). Install the prerequisites and create a serverless function in JavaScript triggered by HTTP.
 
-2. Convert the JavaScript function to TypeScript.
+- [Part 2: Switch to TypeScript](/blog/2019/05/03/part-2-switch-to-typescript). Convert the JavaScript function to TypeScript.
 
-3. Add a local test and create a continuous integration pipeline that runs the test.
+- [Part 3: Add a Test](/blog/2019/05/04/part-3-local-test). Add a local test and create a continuous integration pipeline that runs the test.
 
-4. Extend the continuous integration pipeline into a continuous delivery pipeline, finally deploying the code to Azure.
+- [Part 4: Continuous Delivery](/blog/2019/05/05/part-4-continuous-delivery). Extend the continuous integration pipeline into a continuous delivery pipeline, finally deploying the code to Azure.
 
-5. Use the public endpoint on Azure to create an end-to-end test.
+- [Part 5: Add an End-to-end Test](/blog/2019/05/06/part-5-end-to-end-test). Use the public endpoint on Azure to create an end-to-end test.
 
-6. Refactor the code, now that we have test coverage.
+- [Part 6: Refactor](/blog/2019/05/07/part-6-refactor). Now that we have test coverage we can refactor the code with ease of mind.
 
-7. Demonstrate how to use a Node package.
+- [Part 7: Use a Node.js Package](/blog/2019/05/08/part-7-node-package). Demonstrate how to use a Node.js package.
 
-The code related to this article series is available at [github.com/janaagaard75/azure-functions-typescript](https://github.com/janaagaard75/azure-functions-typescript).
+All of the code related to this article series is available at [github.com/janaagaard75/azure-functions-typescript](https://github.com/janaagaard75/azure-functions-typescript). The [commit history](https://github.com/janaagaard75/azure-functions-typescript/commits/master) follows the articles.
