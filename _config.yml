@@ -1,13 +1,15 @@
 # Site settings
-name: Jan Aagaard's Blog
+title: Jan Aagaard's Blog
 email: jan@aagaard.net
 description: >-
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Jan Aagaard's blog about programming.
 baseurl: ""
 url: "https://janaagaard75.github.com"
+twitter:
+  username: janaagaard
 twitter_username: janaagaard
+author:
+  twitter: janaagaard
 github_username: janaaagaard75
 
 # Build settings
@@ -17,6 +19,7 @@ markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 plugins:
   - jekyll-feed # /feed.xml
+  - jekyll-seo-tag
   - jekyll-sitemap # /sitemap.xml
 
 # Exclude from processing.
