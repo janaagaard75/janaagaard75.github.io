@@ -40,15 +40,15 @@ TypeScript is configured with a `tsconfig.json` file. Since the code is running 
 We also need to update the function syntax a bit.
 
 ```typescript
-# First line in
+// First line in index.ts
 export async function run(context, req) {
 ```
 
-And finally a new build command is added to package.json. The build command calls the TypeScript compiler, `tsc`, and copies the `.json` files from `src` to `dist`.
+And finally a new `build` command is added to `package.json`. The build command calls the TypeScript compiler, `tsc`, and copies the JSON files from `src` to `dist`.
 
 ```json
-# In package.json:
-"build":
+// In package.json:
+"build": "tsc TODO"
 ```
 
 TODO: The code can be debugged in Visual Studio Code.
