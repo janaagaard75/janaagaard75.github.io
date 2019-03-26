@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Part 1: JavaScript version"
+published: false
 ---
 
 We start out with a basic HTTP endpoint written as an Azure Function in JavaScript. If you already know about Azure Functions, then skip ahead to the next part, where the code is transformed into TypeScript.

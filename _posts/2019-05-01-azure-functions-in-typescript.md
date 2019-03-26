@@ -11,6 +11,7 @@ tags:
     serverless,
     TypeScript,
   ]
+published: false
 ---
 
 Azure Functions are Microsoft's take on serverless computing&mdash;they correspond to Amazon's AWS Lambda and Google's Cloud Functions. Microsoft support a range of languages, but in version 2 TypeScript is only ["supported through transpiling to JavaScript"](https://docs.microsoft.com/en-us/azure/azure-functions/functions-versions#languages), and they don't provide any information about how to set up this up. I'm a big fan of TypeScript, so I have documented one way to this, and this article series will take you along on the journey.

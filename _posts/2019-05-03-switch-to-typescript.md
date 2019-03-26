@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Part 2: Switch to TypeScript"
+published: false
 ---
 
 This is part two of the series about writing an Azure Function in TypeScript. In part 1 we created a basic HTTP triggered function written in JavaScript. In this part we switch to TypeScript.
