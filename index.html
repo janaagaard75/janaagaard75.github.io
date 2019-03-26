@@ -3,9 +3,12 @@ layout: default
 title: Jan Aagaard's Blog
 ---
 
-<div class="blurb">
-  <h1>Jan Aagaard's Blog</h1>
-  <p>
-    This is a test of setting up Jekyll on GitHub Pages following <a href="http://jmcglone.com/guides/github-pages/">Hank Quinlan's Guide</a>.
-  </p>
-</div>
+<h1>Jan Aagaard's Blog</h1>
+<ul class="posts">
+  {% for post in site.posts %}
+  <li>
+    <span>{{ post.date | date_to_string }}</span> »
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
