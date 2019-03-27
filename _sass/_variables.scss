@@ -1,7 +1,7 @@
-$font-family-base: Georgia, "Bitstream Charter", "Charis SIL", Utopia, "URW Bookman L", serif;
-$font-size-base: 1.25rem;
-$line-height-base: 1.6;
-
+$font-family-base: "Merriweather", "Georgia", "Bitstream Charter", "Charis SIL",
+  "Utopia", "URW Bookman L", serif;
+$font-size-base: 1.2rem;
+$line-height-base: 1.75;
 
 $grid-breakpoints: (
   xs: 0,
@@ -18,10 +18,8 @@ $container-max-widths: (
   //xl: 1140px
 ) !default;
 
-
 $code-font-size: 80%;
 $code-color: black;
 $code-background: rgba(27, 31, 35, 0.05);
-
 
 @import "../node_modules/bootstrap/scss/variables";
