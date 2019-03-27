@@ -2,7 +2,7 @@
 
 As I get older a have had experience with different code bases, my observance is that the most important factor for a piece of code is that is it easy to read.
 
-I rate readablity higher than bug-free, because readablity is the most important factor in making code maintainable, and thus I generally find it it pretty easy to fix bugs in code that is easy to read.
+I rate readability higher than bug-free, because readability is the most important factor in making code maintainable, and thus I generally find it it pretty easy to fix bugs in code that is easy to read.
 
 ## What is Readable Code?
 
@@ -14,9 +14,9 @@ I rate readablity higher than bug-free, because readablity is the most important
 
 [1]:https://martinfowler.com/bliki/TwoHardThings.html
 
-A key to writing readable code is to use unambigous names, so that when you read the code, you don't have to know the full context to understand it. A quick example is to always qualify IDs, so you never have a variable just named `id` - it's always `userId`, `noteId` etc.
+A key to writing readable code is to use unambiguous names, so that when you read the code, you don't have to know the full context to understand it. A quick example is to always qualify IDs, so you never have a variable just named `id` - it's always `userId`, `noteId` etc.
 
-Bob Nystrom's excellent [Long names are long](http://journal.stuffwithstuff.com/2016/06/16/long-names-are-long/) article have some great point on what to look for when chosing a name and some good examples. The only thing that I don't agree with is the angle the article takes, because in my experience variable names tend to be too short rather than too long. The principle in Bob's article still apply though, and it could just as well have been named *Short names are short*.
+Bob Nystrom's excellent [Long names are long](http://journal.stuffwithstuff.com/2016/06/16/long-names-are-long/) article have some great point on what to look for when choosing a name and some good examples. The only thing that I don't agree with is the angle the article takes, because in my experience variable names tend to be too short rather than too long. The principle in Bob's article still apply though, and it could just as well have been named *Short names are short*.
 
 ### Name Check List
 
@@ -64,7 +64,7 @@ Why Comments > How Comments > What Comments.
 
 ## Return Variables
 
-Define a variable before returning. TODO: Verify if Chrome allows to access the variable in the console. It is possible to see it in the local variables window, but that is not a powerfull as having access to the value in the console.
+Define a variable before returning. TODO: Verify if Chrome allows to access the variable in the console. It is possible to see it in the local variables window, but that is not a powerful as having access to the value in the console.
 
     sum(a, b) {
       const sum = a + b
