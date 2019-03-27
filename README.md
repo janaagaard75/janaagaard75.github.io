@@ -1,5 +1,11 @@
 # Jan Aagaard's Blog
 
+## Resources
+
+- [Hank Quinlan's Jekyll Guide](http://jmcglone.com/guides/github-pages/)
+- [Jekyll plugins on Github](https://help.github.com/en/articles/configuring-jekyll-plugins)
+- [Custom domain on GitHub Pages](https://github.blog/2014-01-07-faster-more-awesome-github-pages/)
+
 ## TODO
 
 - Write part 1.
@@ -15,8 +21,6 @@
 - Link to CV.
 - Write the code for part 7.
 - Write part 7.
-- Add favicon.
-- Consider using Google Fonts.
 - Fix Atom/RSS feed.
 - Fix dates and links.
 - Custom domain. blog.janaagaard.com?

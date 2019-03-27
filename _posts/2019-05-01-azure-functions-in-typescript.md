@@ -38,4 +38,4 @@ Creating the Azure Function in TypeScript has been split into these seven parts.
 
 - [Part 7: Use a Node.js Package](/blog/2019/05/08/part-7-node-package). Demonstrate how to use a Node.js package.
 
-All of the code related to this article series is available at [github.com/janaagaard75/azure-functions-typescript](https://github.com/janaagaard75/azure-functions-typescript). The [commit history](https://github.com/janaagaard75/azure-functions-typescript/commits/master) follows the articles.
+The source code related to this article series is [available on GitHub](https://github.com/janaagaard75/azure-functions-typescript).

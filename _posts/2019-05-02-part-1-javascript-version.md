@@ -4,22 +4,26 @@ title: "Part 1: JavaScript Version"
 published: false
 ---
 
-We start out with a basic HTTP endpoint written as an Azure Function in JavaScript. If you already know about Azure Functions, then skip ahead to the next part, where the code is transformed into TypeScript.
+We start out creating a basic HTTP endpoint written as an Azure Function in JavaScript. If you already know about Azure Functions, then skip ahead to [the next part](/blog/2019/05/03/part-2-switch-to-typescript) where the code is transformed into TypeScript.
 
-Azure Functions require a long term support (LTS) version of Node.js. The versions with an even major version number are LTS versions, and version 10 is currently the latest LTS version. The following commands installs the latest version of Node 10 on macOS using Homebrew. Since v10 isn't the latest, you have to link it manually after installing it. Remember to re-link if you upgrade Node.js. You can use nvm if you need multiple versions of Node.js on your system.
+## Install Prerequisites
+
+Azure Functions require a long term support (LTS) version of **Node.js**. The versions with an even major version number are LTS versions, and version 10 is currently the latest. The following commands installs the latest version of Node 10 on macOS using Homebrew and makes it the default Node.js. Remember to re-link if you upgrade Node.js.
 
 ```bash
 $ brew install node@10
 $ brew link node@10 --force --overwrite
 ```
 
-Install Yarn. Yarn is a better npm. I am particularly fund of the really fast installs on a project where the dependencies are up to date, because this allows you include yarn install as part of the build, making sure that you are always using the correct versions.
+Install **Yarn**. Yarn is a better npm. I am particularly fund of the really fast installs on a project where the dependencies are up to date, because this allows you include yarn install as part of the build, making sure that you are always using the correct versions. We do this in part TODO.
 
 ```bash
 $ brew install yarn
 ```
 
-Create a folder and install the command line tools for Azure Functions - that's the func command line tool. The Azure Functions Core Tools are also available on Homebrew, but we will be needing the package our continuous delivery pipeline, so including in package.json means the tools will automatically be installed when installing the other Node.js packages. If you're a team of developers, including the tools as developer dependencies can also make it easy to keep everybody on the same version.
+Install the command line tools for Azure Functions, **Azure Functions Core Tools**. This will add the `func` command to your shell. We install the tools use a local Node.js package instead of a global tool because we will be using the `func` command later on in our continuous integration pipeline. If you want to have the command available everywhere in your shell, I would recommend installing it with Homebrew, since that makes it easy to maintain the package together with Node.js and Yarn (`brew install azure-functions-core-tools`). If you're a team of developers, including the tools as developer dependencies makes it easy to keep everybody on the same version. There are no technical issues with having the command installed both locally and globally.
+
+TODO: Is the `func` command required to be available globally by VSCode?
 
 ```bash
 $ mkdir azure-functions-typescript
@@ -35,13 +39,17 @@ $ yarn run func new --name greet --language JavaScript
 # Press 8 to create an HTTP triggered function.
 ```
 
-This results in the following folder structure.
+This results in the following folder structure. A few notes
+
+- Each function must reside in it's own folder, one level below `host.json`.
+- Each function must have a `function.json` file.
+- `local.settings.json` are only used when hosting the functions locally. They are not copied to Azure when publishing.
 
 ```text
 ├── greet
 │   ├── function.json
 │   ├── index.js
-│   └──sample.dat
+│   └── sample.dat
 ├── node_modules
 │   └── ...
 ├── host.json
@@ -50,14 +58,34 @@ This results in the following folder structure.
 └── yarn.lock
 ```
 
-Fire up the local Azure Functions host command func host start. Since the Azure Functions Core Tools are installed locally we would have to prefix this call with yarn. We simplify a bit by adding the start command as a run script in package.json (TODO: Link to commit), so that we simply type yarn start. This will make the endpoint available on <http://localhost:7071/api/greet>.
+## Hosting Locally
+
+The local Azure Functions host is started with the command `yarn func host start`. The `yarn` prefix is necessary since the `func` command is installed locally. This is bit long to type, so we [add a `start` script command to `package.json`](https://github.com/janaagaard75/azure-functions-typescript/commit/10ad0215992cd18513d421dd8bf4b1629b68af5f). We can now start the local host with this command:
 
 ```bash
 $ yarn start
 ```
 
-Add a name as a query parameter, and you will see it echoed back.
+Open a browser window, go to <http://localhost:4000/api/greet>, add a name as a query parameter, and you will see it echoed back.
 
-Our serverless HTTP triggered Azure Function in action. \o/The function is made available anonymously, and a few more files are added to set up everything in Visual Studio Code, resulting in the final code available on GitHub: <https://github.com/janaagaard75/azure-functions-typescript/tree/1-javascript-version>. The commit tree explains what was added. (TODO: Link.)
+{% include figure.html
+  src="/images/running-on-localhost.png"
+  alt="Browser window with output from the greet endpoint"
+  caption="Our serverless HTTP triggered Azure Function in action. \o/"
+%}
 
-Part 2: Converting to TypeScript. TODO: Link
+## Final Tweaks
+
+- The endpoint is made available anonymously. This is just to make this setup simpler.
+
+A handful of tweaks are made to enhance the development experience in [Visual Studio Code](https://code.visualstudio.com/).
+
+- Launching and debugging the code within VSCode.
+- Settings for the Azure Functions extension for VSCode. TODO: Test if this extension requires that the tools are installed globally.
+- Format files when saving them.
+- Default to indenting files with two spaces.
+- Add settings for the Spell Right extension.
+
+The [final code base for part 1 on GitHub](https://github.com/janaagaard75/azure-functions-typescript/tree/1-javascript-version). If you a curious about the changes made in these last tweaks, take a look at the [commit history](https://github.com/janaagaard75/azure-functions-typescript/commits/1-javascript-version).
+
+[Part 2: Switch to TypeScript](/blog/2019/05/03/part-2-switch-to-typescript)
