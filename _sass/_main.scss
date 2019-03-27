@@ -38,5 +38,7 @@ header {
 }
 
 footer {
+  @extend .pt-2;
+  @extend .pb-4;
   background-color: $gray-700;
 }
