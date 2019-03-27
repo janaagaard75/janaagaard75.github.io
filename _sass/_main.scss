@@ -18,12 +18,18 @@
 h1,
 h2,
 h3 {
-  @extend .mt-4;
-  @extend .mb-2;
+  @extend .mt-5;
+  @extend .mb-0;
 }
 
-p {
-  @extend .my-4;
+p,
+ol,
+ul,
+dl,
+pre,
+figure {
+  @extend .mt-3;
+  @extend .mb-0;
 }
 
 footer,
