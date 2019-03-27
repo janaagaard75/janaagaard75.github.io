@@ -25,3 +25,12 @@ h3 {
 p {
   @extend .my-4;
 }
+
+footer,
+header {
+  font-family: $font-family-sans-serif;
+}
+
+footer {
+  background-color: $gray-700;
+}

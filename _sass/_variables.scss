@@ -1,7 +1,13 @@
 $font-family-base: "Merriweather", "Georgia", "Bitstream Charter", "Charis SIL",
   "Utopia", "URW Bookman L", serif;
+$font-weight-base: 300;
+$font-weight-bolder: 700;
 $font-size-base: 1.1rem;
 $line-height-base: 1.8;
+
+$font-family-sans-serif: "Open Sans", -apple-system, "BlinkMacSystemFont",
+  "Segoe UI", Roboto, "Helvetica Neue", "Arial", "Noto Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 $grid-breakpoints: (
   xs: 0,
@@ -20,6 +26,8 @@ $container-max-widths: (
 
 $code-font-size: 80%;
 $code-color: black;
-$code-background: rgba(27, 31, 35, 0.05);
 
 @import "../node_modules/bootstrap/scss/variables";
+
+$code-background: $gray-200;
+
