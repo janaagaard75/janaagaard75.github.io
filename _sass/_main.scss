@@ -42,3 +42,13 @@ footer {
   @extend .pb-4;
   background-color: $gray-700;
 }
+
+.col-md-content {
+  @include make-col-ready();
+  @extend .pb-5;
+
+  @include media-breakpoint-up(md) {
+    flex: 0 0 $content-max-width;
+    max-width: $content-max-width;
+  }
+}

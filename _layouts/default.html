@@ -17,35 +17,45 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">
-          <img
-            src="/images/jan-aagaard.png"
-            alt="Jan Aagaard"
-            class="mr-2"
-            style="border-radius: 50%; width: 34px;"
-          />
-          Jan Aagaard's Blog
-        </a>
+        <div class="container">
+          <a class="navbar-brand" href="/">
+            <img
+              src="/images/jan-aagaard.png"
+              alt="Jan Aagaard"
+              class="mr-2"
+              style="border-radius: 50%; width: 34px;"
+            />
+            Jan Aagaard's Blog
+          </a>
+        </div>
       </nav>
     </header>
-    <div class="container">
-      {{ content }}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-md-content">
+          {{ content }}
+        </div>
+        <div class="col"></div>
+      </div>
     </div>
     <footer class="text-light">
-      <ul>
-        <li>
-          <a class="text-light" href="mailto:jan@aagaard.net"
-            >jan@aagaard.net</a
-          >
-        </li>
-        <li>
-          <a class="text-light" href="https://github.com/janaagaard75"
-            >github.com/janaagaard75</a
-          >
-        </li>
-        <li><a class="text-light" href="/sitemap.xml">XML sitemap</a></li>
-        <li><a class="text-light" href="/feed.xml">ATOM feed</a></li>
-      </ul>
+      <div class="container">
+        <ul>
+          <li>
+            <a class="text-light" href="mailto:jan@aagaard.net"
+              >jan@aagaard.net</a
+            >
+          </li>
+          <li>
+            <a class="text-light" href="https://github.com/janaagaard75"
+              >github.com/janaagaard75</a
+            >
+          </li>
+          <li><a class="text-light" href="/sitemap.xml">XML sitemap</a></li>
+          <li><a class="text-light" href="/feed.xml">ATOM feed</a></li>
+        </ul>
+      </div>
     </footer>
   </body>
 </html>

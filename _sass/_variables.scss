@@ -9,20 +9,18 @@ $font-family-sans-serif: "Open Sans", -apple-system, "BlinkMacSystemFont",
   "Segoe UI", Roboto, "Helvetica Neue", "Arial", "Noto Sans", sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
+// Only a single breakpoint. Anything below an iPad in portrait mode is full width.
 $grid-breakpoints: (
   xs: 0,
-  //sm: 576px,
-  md: 768px,
-  //lg: 992px,
-  //xl: 1200px
-) !default;
+  md: 768px
+);
 
 $container-max-widths: (
-  //sm: 540px,
-  md: 720px,
-  //lg: 960px,
-  //xl: 1140px
-) !default;
+  md: 1000px
+);
+
+// Setting the content to 700px leaves 68px for the two columns left and right of the main content column. With a gutter space of 30px this leaves 4px for the column. Just enough. =)
+$content-max-width: 700px;
 
 $code-font-size: 80%;
 $code-color: black;
@@ -30,4 +28,3 @@ $code-color: black;
 @import "../node_modules/bootstrap/scss/variables";
 
 $code-background: $gray-200;
-
