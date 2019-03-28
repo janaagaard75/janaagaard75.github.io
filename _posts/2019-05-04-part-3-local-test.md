@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Part 3: Add a Local Test"
+title: "Part 3: Local Test"
 published: false
 ---
 
