@@ -21,7 +21,9 @@ Install **Yarn**. Yarn is a better npm. I am particularly fund of the really fas
 $ brew install yarn
 ```
 
-Install the command line tools for Azure Functions, **Azure Functions Core Tools**. This will add the `func` command to your shell. We install the tools use a local Node.js package instead of a global tool because we will be using the `func` command later on in our continuous integration pipeline. If you want to have the command available everywhere in your shell, I would recommend installing it with Homebrew, since that makes it easy to maintain the package together with Node.js and Yarn (`brew install azure-functions-core-tools`). If you're a team of developers, including the tools as developer dependencies makes it easy to keep everybody on the same version. There are no technical issues with having the command installed both locally and globally.
+Install the command line tools for Azure Functions, **Azure Functions Core Tools**. This will add the `func` command to your shell. We install the tools use a local Node.js package instead of a global tool because we will be using the `func` command later on in our continuous integration pipeline. If you want to have the command available everywhere in your shell, I would recommend installing it with Homebrew, since that makes it easy to maintain the package together with Node.js and Yarn (`brew install azure-functions-core-tools`). If you're a team of developers, including the tools as developer dependencies makes it easy to keep everybody on the same version. It's fine having the command installed both locally and globally, should you prefer that.
+
+I always install exact versions of the Node.js packages that I use (`--exact`) because I like being able to see the versions of the installed packages in `package.json`. With the command line tool [`npm-check-updates`](https://www.npmjs.com/package/npm-check-updates) installed you can upgrade all the packages with the command `ncu -u && yarn upgrade`. I recommend keeping upgrades in their own commits to make it easy to revert an upgrade, should it break something.
 
 TODO: Is the `func` command required to be available globally by VSCode?
 
@@ -85,6 +87,8 @@ A handful of tweaks are made to enhance the development experience in [Visual St
 - Format files when saving them.
 - Default to indenting files with two spaces.
 - Add settings for the Spell Right extension.
+
+TODO: The code can be debugged in Visual Studio Code.
 
 The [final code base for part 1 on GitHub](https://github.com/janaagaard75/azure-functions-typescript/tree/1-javascript-version). If you a curious about the changes made in these last tweaks, take a look at the [commit history](https://github.com/janaagaard75/azure-functions-typescript/commits/1-javascript-version).
 
