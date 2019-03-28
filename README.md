@@ -5,6 +5,7 @@
 - [Hank Quinlan's Jekyll Guide](http://jmcglone.com/guides/github-pages/)
 - [Jekyll plugins on Github](https://help.github.com/en/articles/configuring-jekyll-plugins)
 - [Custom domain on GitHub Pages](https://help.github.com/en/articles/using-a-custom-domain-with-github-pages)
+- [Install Azure CLI with apt](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-apt?view=azure-cli-latest)
 
 ## JanAagaard.com
 
