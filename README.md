@@ -20,7 +20,6 @@
 
 ## TODO
 
-- Bullet points with summary in the repo’s readme.
 - Screenshot of breakpoint being hit.
 - Write part 3.
 - Write part 4.
