@@ -14,14 +14,12 @@
 - Close down the CPNHGN account.
 - Redirect cpnhgn.dk to janaagaard.com.
 - janaagaard.com/blog.
-- Move /feed.xml to /blog/feed.xml.
 - Move main page to Google Pages.
 - Include link to CV.
 
 ## TODO
 
-- Write part 1.
-- Write part 2.
+- Move /feed.xml to /blog/feed.xml.
 - Write part 3.
 - Write part 4.
 - Write part 5.

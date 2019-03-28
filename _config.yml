@@ -19,6 +19,7 @@ markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 plugins:
   - jekyll-feed # /feed.xml
+  - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap # /sitemap.xml
 
