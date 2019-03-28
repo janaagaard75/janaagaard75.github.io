@@ -19,7 +19,6 @@
 
 ## TODO
 
-- Move /feed.xml to /blog/feed.xml.
 - Write part 3.
 - Write part 4.
 - Write part 5.
@@ -33,6 +32,7 @@
 - Write part 7.
 - Fix Atom/RSS feed.
 - Fix dates and links.
-- Custom domain. blog.janaagaard.com?
+- Move /feed.xml to /blog/feed.xml.
+- Tags.
 - Publish
 - Align the numbered list and the bullets. <https://jsbin.com/tuxiwuh/edit?html,output>
