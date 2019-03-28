@@ -28,16 +28,16 @@ Creating the Azure Function in TypeScript has been split into seven parts. If yo
 
 The source code related to this article series is [available on GitHub](https://github.com/janaagaard75/azure-functions-typescript).
 
-- [Part 1: JavaScript version](/blog/2019/05/02/part-1-javascript-version). Install the prerequisites and create a serverless function in JavaScript triggered by HTTP.
+- [Part 1: JavaScript version](/blog/2019/05/01/part-1-javascript-version). Install the prerequisites and create a serverless function in JavaScript triggered by HTTP.
 
-- [Part 2: Switch to TypeScript](/blog/2019/05/03/part-2-switch-to-typescript). Convert the JavaScript function to TypeScript.
+- [Part 2: Switch to TypeScript](/blog/2019/05/01/part-2-switch-to-typescript). Convert the JavaScript function to TypeScript.
 
-- [Part 3: Add a Test](/blog/2019/05/04/part-3-local-test). Add a local test and create a continuous integration pipeline that runs the test.
+- [Part 3: Add a Test](/blog/2019/05/01/part-3-local-test). Add a local test and create a continuous integration pipeline that runs the test.
 
-- [Part 4: Continuous Delivery](/blog/2019/05/05/part-4-continuous-delivery). Extend the continuous integration pipeline into a continuous delivery pipeline, finally deploying the code to Azure.
+- [Part 4: Continuous Delivery](/blog/2019/05/01/part-4-continuous-delivery). Extend the continuous integration pipeline into a continuous delivery pipeline, finally deploying the code to Azure.
 
-- [Part 5: Add an End-to-end Test](/blog/2019/05/06/part-5-end-to-end-test). Use the public endpoint on Azure to create an end-to-end test.
+- [Part 5: Add an End-to-end Test](/blog/2019/05/01/part-5-end-to-end-test). Use the public endpoint on Azure to create an end-to-end test.
 
-- [Part 6: Refactor](/blog/2019/05/07/part-6-refactor). Now that we have test coverage we can refactor the code with ease of mind.
+- [Part 6: Refactor](/blog/2019/05/01/part-6-refactor). Now that we have test coverage we can refactor the code with ease of mind.
 
-- [Part 7: Use a Node.js Package](/blog/2019/05/08/part-7-node-package). Demonstrate how to use a Node.js package.
+- [Part 7: Use a Node.js Package](/blog/2019/05/01/part-7-node-package). Demonstrate how to use a Node.js package.

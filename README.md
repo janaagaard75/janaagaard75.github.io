@@ -20,7 +20,6 @@
 
 ## TODO
 
-- Same date for all posts.
 - Link to GitHub right away in the first post.
 - Bullet points with summary in the repo’s readme.
 - Screenshot of breakpoint being hit.

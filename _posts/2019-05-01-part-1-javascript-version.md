@@ -4,7 +4,7 @@ title: "Part 1: JavaScript Version"
 published: false
 ---
 
-We start out creating a basic HTTP endpoint written as an Azure Function in JavaScript. If you already know about Azure Functions, then skip ahead to [the next part](/blog/2019/05/03/part-2-switch-to-typescript) where the code is transformed into TypeScript.
+We start out creating a basic HTTP endpoint written as an Azure Function in JavaScript. If you already know about Azure Functions, then skip ahead to [the next part](/blog/2019/05/01/part-2-switch-to-typescript) where the code is transformed into TypeScript.
 
 ## Install Prerequisites
 
@@ -94,4 +94,4 @@ TODO: The code can be debugged in Visual Studio Code.
 
 The [final code base for part 1 on GitHub](https://github.com/janaagaard75/azure-functions-typescript/tree/1-javascript-version). If you a curious about the changes made in these last tweaks, take a look at the [commit history](https://github.com/janaagaard75/azure-functions-typescript/commits/1-javascript-version).
 
-[Part 2: Switch to TypeScript](/blog/2019/05/03/part-2-switch-to-typescript)
+[Part 2: Switch to TypeScript](/blog/2019/05/01/part-2-switch-to-typescript)
