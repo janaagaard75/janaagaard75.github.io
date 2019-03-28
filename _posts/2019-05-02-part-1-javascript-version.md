@@ -78,6 +78,8 @@ Open a browser window, go to <http://localhost:4000/api/greet>, add a name as a 
 
 ## Final Tweaks
 
+TODO: Link to the code base first.
+
 - The endpoint is made available anonymously. This is just to make this setup simpler.
 
 A handful of tweaks are made to enhance the development experience in [Visual Studio Code](https://code.visualstudio.com/).
