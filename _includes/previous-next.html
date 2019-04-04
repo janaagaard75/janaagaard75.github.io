@@ -1,0 +1,13 @@
+<hr>
+<div class="d-flex justify-content-between">
+  <div>
+    {% if include.previousHref and include.previousText %}
+      <a href="{{ include.previousHref }}">{{ include.previousText }}</a>
+    {% endif %}
+  </div>
+  <div>
+    {% if include.nextHref and include.nextText %}
+      <a href="{{ include.nextHref }}">{{ include.nextText }}</a>
+    {% endif %}
+  </div>
+</div>
