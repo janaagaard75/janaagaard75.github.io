@@ -100,5 +100,3 @@ It's possible to debug and hit breakpoints in Visual Studio Code. Set a breakpoi
   nextHref="/blog/2019/05/01/part-2-switch-to-typescript"
   nextText="Part 2: Switch to TypeScript"
 %}
-
-[Part 2: Switch to TypeScript](/blog/2019/05/01/part-2-switch-to-typescript)
