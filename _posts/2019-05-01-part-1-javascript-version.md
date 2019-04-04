@@ -21,7 +21,7 @@ Install **Yarn**. Yarn is a better npm. I am particularly fund of the really fas
 $ brew install yarn
 ```
 
-Install the command line tools for Azure Functions, **Azure Functions Core Tools**. This is the `func` shell command. The tools are installed as a local Node.js package instead of a global tool because we will be using the `func` command later on in our continuous integration pipeline. Installing it locally also has the benefit that if you're a team of developers, it easy to keep everybody on the same version. The last section in this post has a note about installing the `func` command globally on your system.
+Install the command line tools for Azure Functions, **Azure Functions Core Tools**. This is the `func` shell command. The tools are installed as a local Node.js package instead of a global tool because we will be using the `func` command later on in our continuous integration pipeline. Installing it locally also has the benefit that if you're a team of developers, it easy to keep everybody on the same version.
 
 I always install exact versions of the Node.js packages that I use (`--exact`) because I like being able to see the versions of the installed packages in `package.json`. With the command line tool [`npm-check-updates`](https://www.npmjs.com/package/npm-check-updates) installed you can upgrade all the packages with the command `ncu -u && yarn upgrade`. I recommend keeping upgrades in their own commits to make it easy to revert an upgrade, should it break something.
 
@@ -71,7 +71,7 @@ Open a browser window, go to <http://localhost:4000/api/greet>, add a name as a 
 {% include figure.html
   src="/images/running-on-localhost.png"
   alt="Browser window with output from the greet endpoint"
-  caption="Our serverless HTTP triggered Azure Function in action. \o/"
+  caption="The serverless HTTP triggered Azure Function in action. \o/"
 %}
 
 ## Full Code Base
@@ -85,5 +85,17 @@ The [full code base after part 1](https://github.com/janaagaard75/azure-function
 If you want more details, then take a look at the [commit history](https://github.com/janaagaard75/azure-functions-typescript/commits/1-javascript-version).
 
 The [Azure Functions extension for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) requires that the Azure Functions Core Tools are available as a global command. I recommend installing the tools with Homebrew, since that makes it easy to maintain the package together with Node.js and Yarn (`brew install azure-functions-core-tools`). It's fine having the tools installed both locally and globally.
+
+## Debugging
+
+It's possible to debug and hit breakpoints in Visual Studio Code. Set a breakpoint and start the local host with VSCode's debugger panel. This will run `yarn start` and attach a debugger to Node.js. Remember to trigger the function by calling the <http://localhost:4000/api/greet> URL.
+
+{% include figure.html
+  src="/images/hitting-a-breakpoint.png"
+  alt="Hit a breakpoint in Visual Studio Code"
+  caption="Hitting a breakpoint while debugging in Visual Studio Code."
+%}
+
+{% include spacer.html %}
 
 [Part 2: Switch to TypeScript](/blog/2019/05/01/part-2-switch-to-typescript)
