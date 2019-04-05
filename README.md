@@ -24,7 +24,6 @@
 
 ## TODO
 
-- Screenshot of breakpoint being hit.
 - Write part 3.
 - Write part 4.
 - Write part 5.
