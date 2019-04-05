@@ -29,6 +29,7 @@
 - Smaller text on small screens.
 - Header.
 - Footer.
+  - Icons for GitHub, LinkedIn and Twitter.
 - Link to CV.
 - Write the code for part 7.
 - Write part 7.
@@ -36,5 +37,7 @@
 - Fix dates and links.
 - Move /feed.xml to /blog/feed.xml.
 - Tags.
-- Publish
+- Minimum page height.
+- Front page. Article summaries?
+- Publish.
 - Align the numbered list and the bullets. <https://jsbin.com/tuxiwuh/edit?html,output>
