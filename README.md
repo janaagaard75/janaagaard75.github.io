@@ -33,12 +33,11 @@
 - Smaller text on small screens.
 - Header.
 - Footer.
-  - Icons for GitHub, LinkedIn and Twitter.
 - Link to CV.
 - Write the code for part 7.
 - Write part 7.
 - Fix Atom/RSS feed.
-- Fix dates and links.
+- Set dates to the correct one. Remember to update the links.
 - Move /feed.xml to /blog/feed.xml.
 - Tags.
 - Minimum page height.

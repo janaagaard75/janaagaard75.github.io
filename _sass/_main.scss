@@ -54,3 +54,9 @@ footer {
     max-width: $content-max-width;
   }
 }
+
+.icon {
+  @extend .mr-2;
+  filter: invert(100%);
+  height: 20px;
+}
