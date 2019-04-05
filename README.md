@@ -37,5 +37,6 @@
 - Fix dates and links.
 - Move /feed.xml to /blog/feed.xml.
 - Tags.
-- Publish
+- Publish.
 - Align the numbered list and the bullets. <https://jsbin.com/tuxiwuh/edit?html,output>
+- Minimum page height.
