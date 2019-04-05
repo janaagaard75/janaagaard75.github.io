@@ -72,5 +72,5 @@ TODO: Note about not using Webpack. <https://docs.microsoft.com/en-us/azure/azur
   previousHref="/blog/2019/05/01/part-1-javascript-version"
   previousText="Part 1: JavaScript version"
   nextHref="/blog/2019/05/01/part-3-local-test"
-  nextText="Part 3: Local Test bla blab bla"
+  nextText="Part 3: Local Test"
 %}
