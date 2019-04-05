@@ -29,6 +29,7 @@
 - Smaller text on small screens.
 - Header.
 - Footer.
+  - Icons for GitHub, LinkedIn and Twitter.
 - Link to CV.
 - Write the code for part 7.
 - Write part 7.
