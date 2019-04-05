@@ -10,11 +10,15 @@
 ## JanAagaard.com
 
 - Rename CPNHGN to JanAagaard.com on Virk.dk.
-- Set up jan@janaagaard.com as a Google email address.
-- Move the CPNHGN emails to JanAagaard.com.
-- Close down the CPNHGN account.
-- Redirect cpnhgn.dk to janaagaard.com.
-- janaagaard.com/blog.
+  - Set up jan@janaagaard.com as a Google email address.
+  - Move the CPNHGN emails to JanAagaard.com.
+  - Close down the CPNHGN account.
+- Web page structure:
+  - janaagaard.com: Single page about the one man company. Pretty much a copy of what's on cpnhgn.dk, but in both Danish and English.
+  - janaagaard.com/blog: The front page for the blog, with article summaries.
+  - janaagaard.com/blog/YYYY-MM-DD-title: A
+  - janaagaard.com/cv: My CV.
+- Redirect cpnhgn.dk, cpnhgn.com, and janaagaard.dk to janaagaard.com.
 - Move main page to Google Pages.
 - Include link to CV.
 
@@ -38,6 +42,5 @@
 - Move /feed.xml to /blog/feed.xml.
 - Tags.
 - Minimum page height.
-- Front page. Article summaries?
 - Publish.
 - Align the numbered list and the bullets. <https://jsbin.com/tuxiwuh/edit?html,output>

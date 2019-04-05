@@ -69,8 +69,8 @@ Babel, type check, external modules.
 TODO: Note about not using Webpack. <https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node#dependency-management> and <https://github.com/liady/webpack-node-externals>
 
 {% include previous-next.html
-  previousHref="/blog/2019/05/01/part-1-javascript-version"
+  previousHref="/blog/2019-05-01-part-1-javascript-version"
   previousText="Part 1: JavaScript version"
-  nextHref="/blog/2019/05/01/part-3-local-test"
+  nextHref="/blog/2019-05-01-part-3-local-test"
   nextText="Part 3: Local Test"
 %}

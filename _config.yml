@@ -16,7 +16,7 @@ github_username: janaagaard75
 kramdown:
   syntax_highlighting: rouge
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
+permalink: /blog/:year-:month-:day-:title
 plugins:
   - jekyll-feed # /feed.xml
   - jekyll-redirect-from
