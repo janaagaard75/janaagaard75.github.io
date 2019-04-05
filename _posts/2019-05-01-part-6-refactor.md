@@ -6,6 +6,11 @@ published: false
 
 This is the 6th part of the series about writing an serverless Azure Function in TypeScript. Since we now have and end-to-end test up and running we will refactor the code, cleaning it up a bit.
 
+"Make it work, make it right, make it fast."
+-- Kent Beck
+
+We have the first part, a working endpoint. Now we make it right.
+
 ## Strict mode
 
 The first thing we do is turn on TypeScript's strict mode, enabling a range of compile-time checks. You should always strive to enable this when using TypeScript, especially when starting from scratch.
@@ -21,3 +26,19 @@ The package only contains type definitions, so it is only used when compiling th
 - Prettier. VSCode with `autoformatonsave=true`. There are a range of pre-commit hooks if you don't use VSCode. <https://prettier.io/docs/en/precommit.html>
 
 Return the HTTP response instead of defining it on the context object, because this is a more functional coding style.
+
+
+Strict mode FTW! This turns on a bunch of compile check features, one of them being that types can't implicitly be any. So we add the @azure/functions Node module. Microsoft hasn't published the types as a @types module. This is not HttpResponse so the best we can do is to set the type of the function to `Promise<any>`.
+
+Deterministic behavior. `rimraf` is simply a cross platform version of `rm -rf`. Why `--frozen-lockfile`?
+
+Prettier. "Nobody likes what Prettier does to their own code, but everybody loves what Pretties does to everybody else's code.".
+
+Lint. Turning off the rules that Prettier takes care of. Running TSLint's recommended setup, but I still feel like tweaking a bit.
+
+index.ts is renamed to greet.ts. This is done to avoid having lots of index.ts files in the code base.
+
+{% include previous-next.html
+  previousHref="/blog/2019-05-01-part-5-end-to-end-test"
+  previousText="Part 5: End-to-end Test"
+%}
