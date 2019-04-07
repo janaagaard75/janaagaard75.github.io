@@ -27,7 +27,6 @@ The package only contains type definitions, so it is only used when compiling th
 
 Return the HTTP response instead of defining it on the context object, because this is a more functional coding style.
 
-
 Strict mode FTW! This turns on a bunch of compile check features, one of them being that types can't implicitly be any. So we add the @azure/functions Node module. Microsoft hasn't published the types as a @types module. This is not HttpResponse so the best we can do is to set the type of the function to `Promise<any>`.
 
 Deterministic behavior. `rimraf` is simply a cross platform version of `rm -rf`. Why `--frozen-lockfile`?

@@ -61,7 +61,6 @@ The command for copying the json files `cp src/*.json dist && cp src/greet/*.jso
 "build": "tsc && copyfiles --up 1 \"src/**/*.json\" dist",
 ```
 
-
 ## Webpack
 
 Babel, type check, external modules.
