@@ -42,5 +42,6 @@
 - Minimum page height.
 - Link to the page with the Node.js version.
 - Test using Source Serif Pro and Source Serif Sans fonts.
+- Robots.txt with the location of the sitemap. <https://support.google.com/webmasters/answer/183668?hl=en>
 - Publish.
 - Align the numbered list and the bullets. <https://jsbin.com/tuxiwuh/edit?html,output>
