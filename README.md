@@ -28,19 +28,18 @@
 - Write part 4.
 - Write part 5.
 - Write part 6.
-- Add a table of contents.
-- Smaller text on small screens.
-- Header.
-- Footer.
-- Link to CV.
 - Write the code for part 7.
 - Write part 7.
-- Fix Atom/RSS feed.
 - Set dates to the correct one. Remember to update the links.
-- Tags.
-- Minimum page height.
 - Link to the page with the Node.js version.
 - Test using Source Serif Pro and Source Serif Sans fonts.
 - Robots.txt with the location of the sitemap. <https://support.google.com/webmasters/answer/183668?hl=en>
+- Smaller text on small screens.
+- Footer.
 - Publish.
+
+- Add edit dates.
+- Tags.
+- Add a table of contents.
+- Link to CV.
 - Align the numbered list and the bullets. <https://jsbin.com/tuxiwuh/edit?html,output>
