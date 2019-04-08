@@ -1,8 +1,18 @@
+---
+layout: post
+title: "Categorizing Code Comments"
+published: false
+---
+
+TODO
+
+Webpack?
+
 # Writing Good Code Comments
 
 You should strive to write code that doesn't need comments to explain it, but this doesn't mean you shouldn't be writing any comments at all. This article introduces a system for classifying comments into three categories, meant to help you think about them, and in general improve your code.
 
-Comments are put there for the next programmer. Write full sentenses with proper capitalization and punctuation.
+Comments are put there for the next programmer. Write full sentences with proper capitalization and punctuation.
 
 Keep in mind that what is listed in here is guidelines and not rules. There will always be situations where you shouldn't follow these guidelines.
 
@@ -22,6 +32,7 @@ TODO: Find a better example.
 
 ```typescript
 // Escape.
+
 if (event.keyCode === 43) {
   closeDialog();
 }
@@ -76,7 +87,7 @@ const emailAddressValidator = /[^@]+@.+\.[^\.]+/;
 
 Why comments explain why the code is written in a specific way. This kind of comments are generally quite essential to understanding the code, and they should be encouraged.
 
-If you just figured something out, and think that the next programmer looking at the piece of code will have the same troubles, then be curteous and put a helpful comments, possibly with a link to an article or a answer on Stack Overflow that explains things are like so.
+If you just figured something out, and think that the next programmer looking at the piece of code will have the same troubles, then be courteous and put a helpful comments, possibly with a link to an article or a answer on Stack Overflow that explains things are like so.
 
 * CSS browser hacks. `/* Required by IE 9. */` or `/* Element gets a */`
 * Couldn't figure it out, but this works.
