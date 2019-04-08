@@ -37,7 +37,6 @@
 - Write part 7.
 - Fix Atom/RSS feed.
 - Set dates to the correct one. Remember to update the links.
-- Move /feed.xml to /blog/feed.xml.
 - Tags.
 - Minimum page height.
 - Link to the page with the Node.js version.
