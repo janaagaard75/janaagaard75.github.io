@@ -8,7 +8,7 @@ We start out creating a basic HTTP endpoint written as an Azure Function in Java
 
 ## Install Prerequisites
 
-Azure Functions require a long term support (LTS) version of **Node.js**. The versions with an even major version number are LTS versions, and version 10 is currently the latest. The following commands installs the latest version of Node 10 on macOS using Homebrew and makes it the default Node.js. Remember to re-link if you upgrade Node.js.
+[Azure Functions require a long term support (LTS) version of **Node.js**](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node#node-version). Since [the latest version isn't an LTS version](https://nodejs.org/en/about/releases/), we explicit install the previous one, version 10. When installing older versions with [Homebrew](https://brew.sh/) we have to forcibly tell it to set that version to the default one. Remember to re-link if you upgrade Node.js.
 
 ```bash
 $ brew install node@10
