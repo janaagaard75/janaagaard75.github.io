@@ -48,8 +48,6 @@ if (event.keyCode === KeyCode.Escape) {
 }
 ```
 
-
-
 ```javascript
 // Validate
 function validate(password) {
