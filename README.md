@@ -42,3 +42,4 @@
 - Add a table of contents.
 - Link to CV.
 - Align the numbered list and the bullets. <https://jsbin.com/tuxiwuh/edit?html,output>
+- Try to write the end-to-end test using Cypress. <https://www.cypress.io/blog/2017/11/07/add-gui-to-your-e2e-api-tests/#>
