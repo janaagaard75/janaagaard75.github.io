@@ -8,13 +8,13 @@ This is the third parts of a series about creating Azure Functions in TypeScript
 
 ## Writing the Test
 
-Jest is an all-in-one test framework that includes the command line tool, the `expect` method and methods for writing fluent assertions.
+Since we're coding in TypeScript we also have to install `ts-jest` and `@types/jest`. (Side note: Installing Jest blows up the number of Node packages from 108 to 448.)
 
 ```bash
 $ yarn add --exact --dev jest ts-jest @types/jest
 ```
 
-TODO: Why rename to `greet` now and not when doing the refactoring?
+This test creates fake `request` and `context` objects and calls the `run` function to verify that the response is indeed `Hello Jan Aagaard` as expected.
 
 ```typescript
 // greet/index.test.ts
@@ -41,9 +41,14 @@ describe("greet function", () => {
 });
 ```
 
-Adding a test. Jest is a all-in-one framework that includes a test-runner, natural-language-checker. Mocha + Chai. Great Jest extension VSCode. It looks like Jest is becoming the de facto standard. TypeScript support.
+## Running the Test in Visual Studio Code
 
-TODO: Note on how much bigger node_modules becomes because of Jest.
+Installing the excellent [Jest extension for Visual Studio Code](https://marketplace.visualstudio.com/itemdetails?itemName=Orta.vscode-jest) will run the tests automatically in the background. The default setting is to only show a 'Debug' link above the tests that are failing, but I like being able to step into my code at any time. Adding the following line to `.vscode/settings.json` makes the 'Debug' link show permanently.
+
+```javascript
+// In .vscode/settings.json
+"jest.debugCodeLens.showWhenTestStateIn": ["fail", "pass", "skip", "unknown"],
+```
 
 ## Running the Test Automatically
 
@@ -51,7 +56,11 @@ CircleCI `config.yml` file. How to determine the exact version of Node.js on Azu
 
 CircleCI requires JUNIT XML files, but Jest only supports JSON out of the box.
 
-All the code minor code changes.
+{% include figure.html
+  src="/images/circleci-environment-variables.png"
+  alt="Environment variables defined in CircleCI"
+  caption="Define AZURE_USERNAME and AZURE_PASSWORD as environment variables in CircleCI."
+%}
 
 {% include previous-next.html
   previousHref="/blog/2019-05-01-part-2-switch-to-typescript"
