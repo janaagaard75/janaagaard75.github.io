@@ -41,26 +41,75 @@ describe("greet function", () => {
 });
 ```
 
-## Running the Test in Visual Studio Code
+## Running the Tests in Visual Studio Code
 
-Installing the excellent [Jest extension for Visual Studio Code](https://marketplace.visualstudio.com/itemdetails?itemName=Orta.vscode-jest) will run the tests automatically in the background. The default setting is to only show a 'Debug' link above the tests that are failing, but I like being able to step into my code at any time. Adding the following line to `.vscode/settings.json` makes the 'Debug' link show permanently.
+The code base includes a script command to run the tests, so that they can be executed by typing `yarn test`. Instead of relying on an external command to run the tests, I recommend installing the excellent [Jest extension for Visual Studio Code](https://marketplace.visualstudio.com/itemdetails?itemName=Orta.vscode-jest). I will run the tests continuously in the background, and show the results in VSCode's status bar.
+
+The default setting is to show a 'Debug' link above the tests that are failing, but I like being able to step into my code at any time. Adding the following line to `.vscode/settings.json` makes the 'Debug' link show permanently.
 
 ```javascript
 // In .vscode/settings.json
 "jest.debugCodeLens.showWhenTestStateIn": ["fail", "pass", "skip", "unknown"],
 ```
 
-## Running the Test Automatically
+## Running the Tests When Pushing Commits
 
-CircleCI `config.yml` file. How to determine the exact version of Node.js on Azure.
+Instead of relying on that the developers remember to run the tests locally, we will set up a continuous integration pipeline that executes the tests and blocks committing the code, should any of them fail. [CircleCI](https://circleci.com/) is one of the options for automating builds when having code hosted on GitHub, and it seems like it's currently gaining a lot of traction. A part from creating an account on the web site, you have to create a `config.yml` file that configures CircleCI. The one below has the following steps:
 
-CircleCI requires JUNIT XML files, but Jest only supports JSON out of the box.
+1. Check out the code from GitHub.
+2. Install the Node.js packages.
+3. Build the code.
+4. Lint the code.
+5. Run the tests.
 
-{% include figure.html
-  src="/images/circleci-environment-variables.png"
-  alt="Environment variables defined in CircleCI"
-  caption="Define AZURE_USERNAME and AZURE_PASSWORD as environment variables in CircleCI."
-%}
+Since TypeScript is a script languages it isn't necessary to build the code before running the tests, but we do this anyways to catch any build errors that the TypeScript compiler might report.
+
+```yaml
+# .circleci/config.yml
+version: 2.1
+jobs:
+  build:
+    docker:
+      # Match the version in azure-resource.json. See https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node#node-version.
+      - image: circleci/node:10.14.1-stretch
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install Node modules
+          command: yarn install --frozen-lockfile
+
+      - run:
+          name: Build
+          command: yarn run build
+
+      - run:
+          name: Lint
+          command: yarn run lint
+
+      - run:
+          name: Run tests
+          command: yarn run test
+```
+
+The final `config.yml` (TODO: Add link) has a few more steps, adding a cache of the `node_modules` folder to speed up the build time and presenting the test results in CircleCI.
+
+1. Check out the code from GitHub.
+2. **Restore cached `node_modules`.**
+3. Install the Node.js packages.
+4. **Cache `node_modules`.**
+5. Build the code.
+6. Lint the code.
+7. Run the tests.
+8. **Store test results in CircleCI.**
+
+CircleCI requires that test results are stored as JUnit XML files, and Jest uses json by default, so the command for saving the test results ended up being quite long.
+
+```javascript
+// In package.json
+"test-save-results": "cross-env JEST_JUNIT_OUTPUT=test-results/test-results.xml jest --ci --runInBand --reporters=default --reporters=jest-junit"
+```
 
 {% include previous-next.html
   previousHref="/blog/2019-05-01-part-2-switch-to-typescript"
