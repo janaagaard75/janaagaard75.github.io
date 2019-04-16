@@ -8,6 +8,12 @@ Fourth part in the series. In this part the continuous integration pipeline is u
 
 Until now the code has only been running locally. Instead of creating the resources manually on Azure portal website we will create the resources programmatically using an [Azure Resource Manager template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/).
 
+Each branch will have an associated environment on Azure. Example:
+
+- Brach name: `6-refactor`.
+- Azure resource group name: `azure-functions-typescript-6-refactor`.
+- Greet endpoint address: `https://aft-gnkpcovj6ksug-functions.azurewebsites.net/api/greet/`
+
 ```bash
 #!/bin/bash
 
@@ -42,12 +48,19 @@ az group deployment create \
 
 ## Asset Resource Management Template
 
+The name of the resource group is derived from the branch name.
+
+`uniqueString(resourceGroup().id)` is a unique 13 character string.
+
+TODO: Screenshot from Azure showing the resource group.
+
 ```javascript
 // deployment/azure-resources.json
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "variables": {
+    // Variables defined in here are used below.
     "appInsightsName": "[concat('aft-', uniqueString(resourceGroup().id), '-appinsights')]",
     "functionAppName": "[concat('aft-', uniqueString(resourceGroup().id), '-functions')]",
     "servicePlanName": "[concat('aft-', uniqueString(resourceGroup().id), '-serviceplan')]",
@@ -55,6 +68,7 @@ az group deployment create \
     "storageAccountName": "[concat('aft', uniqueString(resourceGroup().id), 'sa')]"
   },
   "resources": [
+    // Array with the four resources.
     {
       "type": "Microsoft.Web/serverfarms",
       "kind": "functionapp",
