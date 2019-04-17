@@ -24,7 +24,6 @@
 
 ## TODO
 
-- Write part 3.
 - Write part 4.
 - Write part 5.
 - Write part 6.
@@ -33,10 +32,12 @@
 - Set dates to the correct one. Remember to update the links.
 - Test using Source Serif Pro and Source Serif Sans fonts.
 - Robots.txt with the location of the sitemap. <https://support.google.com/webmasters/answer/183668?hl=en>
-- Smaller text on small screens.
 - Footer.
+- Blog front page.
+- Article summaries for the front page?
 - Publish.
 
+- Smaller text on small screens.
 - Add edit dates.
 - Tags.
 - Add a table of contents.

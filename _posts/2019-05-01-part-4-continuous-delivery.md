@@ -50,8 +50,6 @@ The name of the resource group is derived from the branch name.
 
 `uniqueString(resourceGroup().id)` is a unique 13 character string.
 
-TODO: Screenshot from Azure showing the resource group.
-
 ```javascript
 // Structore of deployment/azure-resources.json
 {
