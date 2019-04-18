@@ -50,6 +50,14 @@ The name of the resource group is derived from the branch name.
 
 `uniqueString(resourceGroup().id)` is a unique 13 character string.
 
+The arm template describes how set up the service plan, the storage account, Application Insights and the function apps.
+
+- Same unique string in all of the resources names. No name collisions.
+- Functions resource depend on th other three.
+- Functions resource has properties that link it to the other resources. TODO: Explain precisely for all three.
+- TODO: Lonk to the official help pages.
+- TODO: Note about generating the template.
+
 ```javascript
 // Structore of deployment/azure-resources.json
 {
