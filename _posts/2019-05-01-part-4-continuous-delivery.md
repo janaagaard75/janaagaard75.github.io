@@ -56,109 +56,47 @@ The name of the resource group is derived from the branch name.
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "variables": {
-    // Variables defined in here are used below.
+    // The names of the resoures are computed and store in variables.
     "appInsightsName": "[concat('aft-', uniqueString(resourceGroup().id), '-appinsights')]",
-    "functionAppName": "[concat('aft-', uniqueString(resourceGroup().id), '-functions')]",
-    "servicePlanName": "[concat('aft-', uniqueString(resourceGroup().id), '-serviceplan')]",
-    "storageAccountId": "[concat(resourceGroup().id, '/providers/', 'Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
-    "storageAccountName": "[concat('aft', uniqueString(resourceGroup().id), 'sa')]"
+    // ...
   },
   "resources": [
     // Array with the four resources.
     {
+      // TODO: What is the service plan?
       "type": "Microsoft.Web/serverfarms",
-      "kind": "functionapp",
-      "name": "[variables('servicePlanName')]",
-      "apiVersion": "2016-09-01",
-      "location": "[resourceGroup().location]",
-      "properties": {
-        "name": "[variables('servicePlanName')]"
-      },
-      "sku": {
-        "name": "Y1",
-        "tier": "Dynamic",
-        "size": "Y1",
-        "family": "Y",
-        "capacity": 0
-      }
+      // ...
     },
     {
+      // The storage account is where the files are kept.
       "type": "Microsoft.Storage/storageAccounts",
-      "kind": "Storage",
-      "name": "[variables('storageAccountName')]",
-      "apiVersion": "2018-02-01",
-      "location": "[resourceGroup().location]",
-      "sku": {
-        "name": "Standard_LRS",
-        "tier": "Standard"
-      }
+      // ...
     },
     {
+      // Application Insights tracks the functions.
       "type": "Microsoft.Insights/components",
-      "kind": "other",
-      "name": "[variables('appInsightsName')]",
-      "apiVersion": "2015-05-01",
-      "location": "[resourceGroup().location]",
-      "properties": {
-        "Application_Type": "other",
-        "ApplicationId": "[variables('appInsightsName')]"
-      }
+      // ...
     },
     {
+      // The website hosting the functions.
       "type": "Microsoft.Web/sites",
-      "kind": "functionapp",
-      "name": "[variables('functionAppName')]",
-      "apiVersion": "2016-08-01",
+      // This resource depends on the three others.
       "dependsOn": [
         "[resourceId('Microsoft.Web/serverfarms', variables('servicePlanName'))]",
         "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
         "[resourceId('Microsoft.Insights/components', variables('appInsightsName'))]"
       ],
-      "location": "[resourceGroup().location]",
+      // ...
       "properties": {
-        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('servicePlanName'))]",
         "siteConfig": {
           "appSettings": [
             {
               "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
               "value": "[reference(concat('Microsoft.Insights/components/', variables('appInsightsName'))).InstrumentationKey]"
             },
-            {
-              "name": "AzureWebJobsStorage",
-              "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountId'),'2015-05-01-preview').key1)]"
-            },
-            {
-              "name": "FUNCTION_APP_EDIT_MODE",
-              "value": "readonly"
-            },
-            {
-              "name": "FUNCTIONS_EXTENSION_VERSION",
-              "value": "~2"
-            },
-            {
-              "name": "FUNCTIONS_WORKER_RUNTIME",
-              "value": "node"
-            },
-            {
-              "name": "MSDEPLOY_RENAME_LOCKED_FILES",
-              "value": "1"
-            },
-            {
-              "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
-              "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountId'),'2015-05-01-preview').key1)]"
-            },
-            {
-              "name": "WEBSITE_CONTENTSHARE",
-              "value": "[concat(toLower(variables('functionAppName')), '-content')]"
-            },
-            {
-              "name": "WEBSITE_NODE_DEFAULT_VERSION",
-              "value": "10.14.1"
-            }
+            // ...
           ],
-          "ftpsState": "Disabled",
-          "phpVersion": "",
-          "use32BitWorkerProcess": true
+          // ...
         }
       }
     }
