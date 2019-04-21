@@ -1,21 +1,29 @@
 ---
 layout: post
 title: "Part 4: Continuous Delivery"
-published: false
+published: true
 ---
 
 Fourth part in the series. In this part the continuous integration pipeline is upgraded to a continuous delivery pipeline, where code pushed to GitHub is automatically deployed to a branch environment on Azure.
 
+Until now the code has only been running locally. Instead of creating the resources manually on the Azure portal website we will be using *infrastructure as code* fully automating the process, so that all changes to the source code pushed to GitHub are instantly deployed to Azure.
+
 ## Prerequisites
 
-- An account on Azure. You can create one for free.
-- Some knowledge of Azure.
+- An account on Azure. You can create one for free on [portal.azure.com](https://portal.azure.com/).
+- TODO: Some knowledge of Azure?
 
 ## Branch Environments
 
-Until now the code has only been running locally. Instead of creating the resources manually on the Azure portal website we will be using *infrastructure as code* fully automating the process, so that all changes to the source code pushed to GitHub are instantly deployed to Azure.
+Each branch will have an associated environment on Azure. New environments are automatically spawned when new branches are created, and the code is automatically published whenever it is pushed to GitHub.
 
-Each branch will have an associated environment on Azure. With such a setup there is are no development, test or staging environments. There is a single production environment and a lot of branch environments. The branch environments function as development, test or whatever is required before a branch can be merged into production.
+The production environment is simply the one associated with the master branch. It is not special in any regards. Well, except one thing: The name of the endpoint includes the word `production` instead of a hash.
+
+TODO: Make the master branch special, so that endpoint doesn't have a strange URL.
+
+TODO: What is required if branch names are used for endpoint names? Verify that the branch name can be used as a URL. Verify that it doesn't already exist. Can't avoid invalid branch names, bur can fail the tests when they do
+
+With such a setup there is are no development, test or staging environments. There is a single production environment and a lot of branch environments. The branch environments function as development, test or whatever is required before a branch can be merged into production.
 
 Example:
 
