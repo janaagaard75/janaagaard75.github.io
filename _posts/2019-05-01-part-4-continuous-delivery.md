@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Part 4: Continuous Delivery"
-published: true
+published: false
 ---
 
 Fourth part in the series. In this part the continuous integration pipeline is upgraded to a continuous delivery pipeline, where code pushed to GitHub is automatically deployed to a branch environment on Azure.
@@ -90,7 +90,7 @@ The arm template describes how set up the service plan, the storage account, App
 - Same unique string in all of the resources names. No name collisions.
 - Functions resource depend on th other three.
 - Functions resource has properties that link it to the other resources. TODO: Explain precisely for all three.
-- TODO: Lonk to the official help pages.
+- TODO: Link to the official help pages.
 - TODO: Note about generating the template.
 
 ```javascript
