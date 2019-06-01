@@ -10,6 +10,8 @@ Webpack makes it easy to use the packages.
 
 TODO: Write part 7.
 
+TODO: Remember to link to the code on GitHub.
+
 TODO: When is Prettier introduced?
 
 TODO: Note about not using Webpack. <https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node#dependency-management> and <https://github.com/liady/webpack-node-externals>
