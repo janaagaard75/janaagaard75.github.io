@@ -6,6 +6,8 @@ published: false
 
 In this second part of the series about writing an Azure Function in TypeScript, the JavaScript function is converted to TypeScript. This is mainly setting up the TypeScript compiler. We won't make any changes until [part 6: Refactoring](/blog/2019), after the tests have been created.
 
+TODO: Link to code or to the history of the branch.
+
 ## Compiling the TypeScript
 
 To keep things organized we put the source files in a folder named `src` and we will be building into a distribution folder named `dist`.
