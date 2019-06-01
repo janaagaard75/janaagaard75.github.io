@@ -74,7 +74,7 @@ Open a browser window, go to <http://localhost:4000/api/greet>, add a name as a 
   caption="The serverless HTTP triggered Azure Function in action. \o/"
 %}
 
-## Full Code Base
+## Show Me The Code
 
 The [full code base after part 1](https://github.com/janaagaard75/azure-functions-typescript/tree/1-javascript-version) has a few more files added to it. They consist of the following:
 
