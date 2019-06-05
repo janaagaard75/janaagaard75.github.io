@@ -9,6 +9,7 @@ tags:
     CircleCI,
     continuous integration,
     continuous deployment,
+    infrastructure as code,
     serverless,
     TypeScript,
   ]

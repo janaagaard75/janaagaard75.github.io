@@ -4,19 +4,19 @@ title: "Part 4: Continuous Deployment"
 published: false
 ---
 
-Fourth part in the series. In this part the continuous integration pipeline is extended into a _continuous deployment_ pipeline, where code pushed to GitHub is it automatically deployed to a branch environment on Azure. Azure's Asset Resource Management templates are tricky at first, but once you have used a setup with automated deployment, I guarantee that you will not want to go back to manual deployments. Automated deployments
+Fourth part in the series about Azure Functions in TypeScript. In this part the continuous integration pipeline is extended into a *continuous deployment* pipeline, where code pushed to GitHub is it automatically deployed to Azure. Until now the code has only been running locally. I do get that this is somewhat ironic since we are halfway into a series about cloud computing. We will remedy this now. While we could log in to the Azure Portal, create the necessary resources, and upload the code manually, we will deploy the hard way, by scripting everything so that get *infrastructure as code* where everything is checked into our source tree.
 
-Until now the code has only been running locally and it's finally time to get it running the cloud. We could log in on the Azure Portal create the necessary resources and upload the code manually, and I recommend that you try that out to get a feeling for how the portal works, but in this tutorial we will raise the bar by using *infrastructure as code* to fully automating the process.
+Azure's Asset Resource Management templates are tricky at first, but once you have used a setup with automated deployment, I guarantee that you will not want to go back to manual deployments. Automated deployment changes the way you think about software development. If you want to know more about this, the great Martin Fowler has a [series about continuous integration](https://martinfowler.com/articles/continuousIntegration.html) where he explains all the benefits.
 
-You need to have an account on Azure. You can create one for free on [portal.azure.com](https://portal.azure.com/).
+You need to have an account on Azure. You can create one for free on [portal.azure.com](https://portal.azure.com/). If you're new to Azure I recommend that you try some of the manual tutorial out there to get a feel for how the portal works.
 
 ## Branch Environments
 
-Each branch has an associated unique environment on Azure. New environments are automatically spawned when new branches are created, and the code is automatically published whenever it is pushed to GitHub. With such a setup there is are no development, test or staging environments, and the production environment is simply the one associated with the master branch. In real world applications, the production environment would probably have more resources than the branch environments.
+Each branch in our source code has an associated unique environment on Azure. New environments are automatically spawned when new branches are created. With such a setup there is are no specific development, test or staging environments, and the production environment is simply the one associated with the master branch.
+
+In real world applications, the production environment would probably have more resources than the branch environments, and I guess that you could easily need a single official test environments for the final testing before go live of new feature. But in this tutorial we have the luxury of keeping all environments identical, thus simplifying the infrastructure code.
 
 TODO: Make the master branch special, so that endpoint doesn't have a strange URL.
-
-TODO: What is required if branch names are used for endpoint names? Verify that the branch name can be used as a URL. Verify that it doesn't already exist. Can't avoid invalid branch names, but we can fail the tests when they do.
 
 TODO: The production environment is not special in any regards. Well, except one thing: The name of the endpoint includes the word `production` instead of a hash.
 
@@ -37,18 +37,23 @@ The ARM template is by far the biggest file.
 
 ## Naming Azure Resources
 
-TODO: As you can tell from the length of the [naming convention for Azure resources](https://docs.microsoft.com/en-us/azure/architecture/best-practices/naming-conventions), naming Azure resources is surprising difficult.
+As you can tell from the length of the official [Naming conventions for Azure resources](https://docs.microsoft.com/en-us/azure/architecture/best-practices/naming-conventions), naming resources in Azure is surprising difficult.
+
+Here are some of the caveats:
 
 - Resource names have to be globally unique.
 - There are different restrictions depending on the type of the resource.
-- Some resources - namely storage accounts - have very restrictive naming rule. TODO: what rules?
+- Some resources have very restrictive naming rules. (Storage accounts names can only be 24 characters long  and cannot contain any punctuation.)
 
 `rgu2ohy42laos` is a globally unique string generated by `uniqueString(resourceGroup().id)` in the ARM template `azure-resources.json`. Azure requires that the names of the resources are globally unique, including storage accounts, that only allow up to 24 characters. With so few characters at our disposal---and no dots or hyphens---is not practical to prefix the name with a domain name or similar to avoid name collisions with other Azure users. [`uniqueString`](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-functions-string#uniquestring) solves that, but with the downside that resource names look random instead of containing the name of the branch. The [naming convention for Azure resources](https://docs.microsoft.com/en-us/azure/architecture/best-practices/naming-conventions) only suggests using the unique string when naming storage accounts, but in this solution the string is used to name all the resources to keep the naming consistent across all resource types.
 
 Creating the resources on Azure is done by the shell script [`create-azure-resources.sh`](https://github.com/janaagaard75/azure-functions-typescript/blob/4-continuous-deployment/deployment/create-azure-resources.sh) that uses the [Azure Command-Line Interface](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) (the `az` command). The resource group is created first, and then the resources described in `azure-template.json` are added to the group. The Azure CLI is idempotent, so calling the script multiple times is perfectly fine. The script runs faster if the resources already exist. If some resources have been modified, the Azure CLI will handle removing / changing / adding what is needed.
 
 TODO: Can the structure be made briefer?
+
 TODO: Highlights: Unique string
+
+TODO: If you want to use branch names as environment names, you have to verify that the branch name can be used as a URL and verify that is doesn't already exist. You can't avoid invalid branch names (right?), but you can fail a test if before deployment happens.
 
 ```bash
 # Part of create-azure-resources.sh
