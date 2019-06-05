@@ -7,7 +7,8 @@ tags:
     Azure Functions,
     Azure,
     CircleCI,
-    continuous delivery,
+    continuous integration,
+    continuous deployment,
     serverless,
     TypeScript,
   ]
@@ -34,7 +35,7 @@ Creating the Azure Function in TypeScript has been split into seven parts. If yo
 
 - [Part 3: Add a Test](/blog/2019-05-01-part-3-local-test). Add a local test and create a continuous integration pipeline that runs the test.
 
-- [Part 4: Continuous Delivery](/blog/2019-05-01-part-4-continuous-delivery). Extend the continuous integration pipeline into a continuous delivery pipeline, finally deploying the code to Azure.
+- [Part 4: Continuous Deployment](/blog/2019-05-01-part-4-continuous-deployment). Extend the continuous integration pipeline into a continuous deployment pipeline, finally deploying the code to Azure.
 
 - [Part 5: Add an End-to-end Test](/blog/2019-05-01-part-5-end-to-end-test). Use the public endpoint on Azure to create an end-to-end test.
 

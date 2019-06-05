@@ -1,14 +1,12 @@
 ---
 layout: post
-title: "Part 4: Continuous Delivery"
+title: "Part 4: Continuous Deployment"
 published: false
 ---
 
-Fourth part in the series. In this part the continuous integration pipeline is upgraded to a continuous delivery pipeline, meaning that when code pushed to GitHub is it automatically deployed to a branch environment on Azure.
+Fourth part in the series. In this part the continuous integration pipeline is extended into a _continuous deployment_ pipeline, where code pushed to GitHub is it automatically deployed to a branch environment on Azure. Azure's Asset Resource Management templates are tricky at first, but once you have used a setup with automated deployment, I guarantee that you will not want to go back to manual deployments. Automated deployments
 
 Until now the code has only been running locally and it's finally time to get it running the cloud. We could log in on the Azure Portal create the necessary resources and upload the code manually, and I recommend that you try that out to get a feeling for how the portal works, but in this tutorial we will raise the bar by using *infrastructure as code* to fully automating the process.
-
-Azure's Asset Resource Management templates are tricky to get right, but once you have used a setup with automated deployment, I guarantee that you won't want to go back to manual deployments.
 
 You need to have an account on Azure. You can create one for free on [portal.azure.com](https://portal.azure.com/).
 
