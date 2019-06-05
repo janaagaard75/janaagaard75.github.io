@@ -40,6 +40,6 @@ index.ts is renamed to greet.ts. This is done to avoid having lots of index.ts f
 {% include previous-next.html
   previousHref="/blog/2019-05-01-part-5-end-to-end-test"
   previousText="Part 5: End-to-end Test"
-  nextHref="/blog/2019-05-01-part-7-Webpack"
+  nextHref="/blog/2019-05-01-part-7-node-package"
   nextText="Part 7: Webpack"
 %}
