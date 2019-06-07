@@ -6,7 +6,7 @@ published: false
 
 Fifth part, adding an end-to-end test.
 
-We just enabled automatic creation of branch enviroments in the previous step, so now let’s use these environments to write a test that verifies the code published to Azure.
+We just enabled automatic creation of branch enviroments in the previous step, so now let’s write a test that verifies that the code on Azure works.
 
 {% include previous-next.html
   previousHref="/blog/2019-05-01-part-4-continuous-deployment"
