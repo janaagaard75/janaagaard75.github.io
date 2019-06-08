@@ -6,15 +6,15 @@ published: false
 
 Fourth part in the series about Azure Functions in TypeScript. In this part the continuous integration pipeline is extended into a *continuous deployment* pipeline, where code pushed to GitHub is it automatically deployed to Azure. Until now the code has only been running locally. I do get that this is somewhat ironic since we are halfway into a series about cloud computing. We will remedy this now. While we could log in to the Azure Portal, create the necessary resources, and upload the code manually, we will deploy the hard way, by scripting everything so that get *infrastructure as code* where everything is checked into our source tree.
 
-Azure's Asset Resource Management templates are tricky at first, but once you have used a setup with automated deployment, I guarantee that you will not want to go back to manual deployments. Automated deployment changes the way you think about software development. If you want to know more about this, the great Martin Fowler has a [series about continuous integration](https://martinfowler.com/articles/continuousIntegration.html) where he explains all the benefits.
+[Azure's Asset Resource Management templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/) are tricky at first, but once you have used a setup with automated deployment, I guarantee that you will not want to go back to manual deployments. Automated deployment changes the way you think about software development. If you want to know more about this, the great Martin Fowler has a [series about continuous integration](https://martinfowler.com/articles/continuousIntegration.html) where he explains all the benefits.
 
 You need to have an account on Azure. You can create one for free on [portal.azure.com](https://portal.azure.com/). If you're new to Azure I recommend that you try some of the manual tutorial out there to get a feel for how the portal works.
 
 ## Branch Environments
 
-Each branch in our source code has an associated unique environment on Azure. New environments are automatically spawned when new branches are created. With such a setup there is are no specific development, test or staging environments, and the production environment is simply the one associated with the master branch.
+Each branch in our source code has an associated unique environment on Azure. New environments are automatically spawned when new branches are created. With such a setup there is are no specific development, test or staging environments. Instead, each branch environment takes each of these role corresponding to the state of the task.
 
-In real world applications, the production environment would probably have more resources than the branch environments, and that leads to also having a test enviroment that mimics the production setup. But in this tutorial we have the luxury of keeping all environments identical, thus simplifying the infrastructure code and fully respecting [dev/prod parity](https://12factor.net/dev-prod-parity).
+The production environment is simply the one associated with the master branch. Well, almost. In real world applications, the production environment probably has more resources than the branch environments, and that leads to also having a test environment that mimics the production setup. But in this tutorial we have the luxury of keeping all environments identical, thus simplifying the infrastructure code and fully respecting [dev/prod parity](https://12factor.net/dev-prod-parity).
 
 TODO: Make the master branch special, so that endpoint doesn't have a strange URL.
 
@@ -26,14 +26,16 @@ Example:
 - Azure resource group name: `azure-functions-typescript-4-continuous-deployment`.
 - Endpoint address for the Greet function: `https://aft-rgu2ohy42laos-functions.azurewebsites.net/api/greet/`.
 
-The deployment process is done with four files:
+## Automatic Deployment
+
+The deployment process is described in these four files.
+
+TODO: Direct link to the files in this repo.
 
 - A bash script that creates the resource group and the resources on Azure.
-- An [Azure Resource Manager (ARM) template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/) that describes the resources.
+- An  hat describes the resources.
 - A bash script that copies the compiled code to Azure.
 - A few extra steps in the CircleCI configuration file.
-
-The ARM template is by far the biggest file.
 
 ## Naming Azure Resources
 
@@ -51,9 +53,9 @@ Creating the resources on Azure is done by the shell script [`create-azure-resou
 
 TODO: Can the structure be made briefer?
 
-TODO: Highlights: Unique string
+TODO: Highlight the Unique string.
 
-TODO: If you want to use branch names as environment names, you have to verify that the branch name can be used as a URL and verify that is doesn't already exist. You can't avoid invalid branch names (right?), but you can fail a test if before deployment happens.
+TODO: Add note about using the branch names as the environment names. If you want to use branch names as environment names, you have to verify that the branch name can be used as a URL and verify that is doesn't already exist. You can't avoid invalid branch names (right?), but you can fail a test if before deployment happens.
 
 ```bash
 # Part of create-azure-resources.sh
@@ -150,6 +152,7 @@ The arm template describes how set up the service plan, the storage account, App
 TODO: Show the full list of steps done, highlighting the new ones.
 
 TODO: Note about installing Azure CLI on CircleCI.
+
 TODO: Link to the code in the ORB, showing that it's quite complicated to install the CLI.
 
 {% include figure.html
@@ -163,6 +166,10 @@ TODO: Link to the code in the ORB, showing that it's quite complicated to instal
   alt="Azure resources as shown on the Azure Portal"
   caption="Azure resources as shown on the Azure Portal."
 %}
+
+## Cleaning Up
+
+A complete solution should of course also clean up after itself and delete the branch environments when a branch is delete. CircleCI does unfortunately not support executing a job when a branch is deleted, so a more complicated solution would have to built. Other CI systems like GitLab's integrated CI/CD supports triggering jobs when branches are deleted, so hopefully CircleCI will add such a feature too.
 
 {% include previous-next.html
   previousHref="/blog/2019-05-01-part-3-local-test"
