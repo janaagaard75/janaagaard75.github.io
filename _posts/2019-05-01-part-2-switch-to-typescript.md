@@ -86,6 +86,6 @@ Right now the build command is very simple, but as the project grows it might be
 {% include previous-next.html
   previousHref="/blog/2019-05-01-part-1-javascript-version"
   previousText="Part 1: JavaScript version"
-  nextHref="/blog/2019-05-01-part-3-local-test"
+  nextHref="/blog/2019-06-12-part-3-local-test"
   nextText="Part 3: Local Test"
 %}

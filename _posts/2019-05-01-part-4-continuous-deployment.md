@@ -172,7 +172,7 @@ TODO: Link to the code in the ORB, showing that it's quite complicated to instal
 A complete solution should of course also clean up after itself and delete the branch environments when a branch is delete. CircleCI does unfortunately not support executing a job when a branch is deleted, so a more complicated solution would have to built. Other CI systems like GitLab's integrated CI/CD supports triggering jobs when branches are deleted, so hopefully CircleCI will add such a feature too.
 
 {% include previous-next.html
-  previousHref="/blog/2019-05-01-part-3-local-test"
+  previousHref="/blog/2019-06-12-part-3-local-test"
   previousText="Part 3: Local test"
   nextHref="/blog/2019-05-01-part-5-end-to-end-test"
   nextText="Part 5: End-to-end Test"
