@@ -32,7 +32,7 @@ Creating the Azure Function in TypeScript has been split into seven parts. If yo
 
 - [Part 1: JavaScript version](/blog/2019-05-01-part-1-javascript-version). Install the prerequisites and create a serverless function in JavaScript triggered by HTTP.
 
-- [Part 2: Switch to TypeScript](/blog/2019-05-01-part-2-switch-to-typescript). Convert the JavaScript function to TypeScript.
+- [Part 2: Switch to TypeScript](/blog/2019-06-12-part-2-switch-to-typescript). Convert the JavaScript function to TypeScript.
 
 - [Part 3: Add a Test](/blog/2019-06-12-part-3-local-test). Add a local test and create a continuous integration pipeline that runs the test.
 
