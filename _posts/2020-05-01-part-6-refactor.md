@@ -38,8 +38,8 @@ Lint. Turning off the rules that Prettier takes care of. Running TSLint's recomm
 index.ts is renamed to greet.ts. This is done to avoid having lots of index.ts files in the code base.
 
 {% include previous-next.html
-  previousHref="/blog/2019-05-01-part-5-end-to-end-test"
+  previousHref="/blog/2020-05-01-part-5-end-to-end-test"
   previousText="Part 5: End-to-end Test"
-  nextHref="/blog/2019-05-01-part-7-node-package"
+  nextHref="/blog/2020-05-01-part-7-node-package"
   nextText="Part 7: Webpack"
 %}

@@ -118,6 +118,6 @@ CircleCI requires that test results are stored as JUnit XML files, and Jest uses
 {% include previous-next.html
   previousHref="/blog/2019-06-12-part-2-switch-to-typescript"
   previousText="Part 2: Switch to TypeScript"
-  nextHref="/blog/2019-05-01-part-4-continuous-deployment"
+  nextHref="/blog/2020-05-01-part-4-continuous-deployment"
   nextText="Part 4: Continuous Deployment"
 %}
