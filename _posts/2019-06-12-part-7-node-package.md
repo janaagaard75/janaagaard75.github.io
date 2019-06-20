@@ -19,6 +19,6 @@ TODO: Note about not using Webpack. <https://docs.microsoft.com/en-us/azure/azur
 Babel & type check.
 
 {% include previous-next.html
-  previousHref="/blog/2020-05-01-part-6-refactor"
+  previousHref="/blog/2019-06-12-part-6-refactor"
   previousText="Part 6: Refactor"
 %}

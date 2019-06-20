@@ -174,6 +174,6 @@ A complete solution should of course also clean up after itself and delete the b
 {% include previous-next.html
   previousHref="/blog/2019-06-12-part-3-local-test"
   previousText="Part 3: Local test"
-  nextHref="/blog/2020-05-01-part-5-end-to-end-test"
+  nextHref="/blog/2019-06-12-part-5-end-to-end-test"
   nextText="Part 5: End-to-end Test"
 %}

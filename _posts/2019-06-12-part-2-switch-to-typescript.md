@@ -53,7 +53,7 @@ The TypeScript compiler is configured with a `tsconfig.json` file.
 }
 ```
 
-Note that you strive to always turn on TypeScript strict mode that enables a handful of very nice compile time checks. We will do this when refactoring the code in [part 6](2020-05-01-part-6-refactor).
+Note that you strive to always turn on TypeScript strict mode that enables a handful of very nice compile time checks. We will do this when refactoring the code in [part 6](2019-06-12-part-6-refactor).
 
 Building the solution consists of two things:
 
@@ -81,7 +81,7 @@ The command for copying the json files `cp src/*.json dist && cp src/greet/*.jso
 "build": "tsc && copyfiles --up 1 \"src/**/*.json\" dist",
 ```
 
-Right now the build command is very simple, but as the project grows it might become beneficial to introduce a build tool like Webpack. We explore using Webpack in [part 7](2020-05-01-part-7-node-package).
+Right now the build command is very simple, but as the project grows it might become beneficial to introduce a build tool like Webpack. We explore using Webpack in [part 7](2019-06-12-part-7-node-package).
 
 {% include previous-next.html
   previousHref="/blog/2019-06-12-part-1-javascript-version"

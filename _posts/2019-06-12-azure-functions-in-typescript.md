@@ -36,10 +36,10 @@ Creating the Azure Function in TypeScript has been split into seven parts. If yo
 
 - [Part 3: Add a Test](/blog/2019-06-12-part-3-local-test). Add a local test and create a continuous integration pipeline that runs the test.
 
-- [Part 4: Continuous Deployment](/blog/2020-05-01-part-4-continuous-deployment). Extend the continuous integration pipeline into a continuous deployment pipeline, finally deploying the code to Azure.
+- [Part 4: Continuous Deployment](/blog/2019-06-12-part-4-continuous-deployment). Extend the continuous integration pipeline into a continuous deployment pipeline, finally deploying the code to Azure.
 
-- [Part 5: Add an End-to-end Test](/blog/2020-05-01-part-5-end-to-end-test). Use the public endpoint on Azure to create an end-to-end test.
+- [Part 5: Add an End-to-end Test](/blog/2019-06-12-part-5-end-to-end-test). Use the public endpoint on Azure to create an end-to-end test.
 
-- [Part 6: Refactor](/blog/2020-05-01-part-6-refactor). Now that we have test coverage we can refactor the code with ease of mind.
+- [Part 6: Refactor](/blog/2019-06-12-part-6-refactor). Now that we have test coverage we can refactor the code with ease of mind.
 
-- [Part 7: Use a Node.js Package](/blog/2020-05-01-part-7-node-package). Demonstrate how to use a Node.js package and building the code with Webpack.
+- [Part 7: Use a Node.js Package](/blog/2019-06-12-part-7-node-package). Demonstrate how to use a Node.js package and building the code with Webpack.
