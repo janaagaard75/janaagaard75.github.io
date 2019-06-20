@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Part 7: Use a Node Package"
-published: false
+published: true
 ---
 
 In this seventh and last part the code is updated to use a Node package and built using Webpack.

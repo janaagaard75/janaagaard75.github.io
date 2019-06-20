@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Part 6: Refactor"
-published: false
+published: true
 ---
 
 This is the 6th part of the series about writing an serverless Azure Function in TypeScript. Since we now have and end-to-end test up and running we will refactor the code, cleaning it up a bit.

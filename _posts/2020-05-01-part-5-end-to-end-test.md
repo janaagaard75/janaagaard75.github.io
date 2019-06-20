@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Part 5: End-to-end Test"
-published: false
+published: true
 ---
 
 Fifth part, adding an end-to-end test.
