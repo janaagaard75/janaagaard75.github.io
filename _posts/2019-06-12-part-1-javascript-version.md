@@ -4,7 +4,7 @@ title: "Part 1: JavaScript Version"
 published: true
 ---
 
-We start out creating a basic HTTP endpoint written as an Azure Function in JavaScript. If you already know about Azure Functions, then skip ahead to [the next part](/blog/2019-05-01-part-2-switch-to-typescript) where the code is transformed into TypeScript.
+We start out creating a basic HTTP endpoint written as an Azure Function in JavaScript. If you already know about Azure Functions, then skip ahead to [part 2](/blog/2019-06-12-part-2-switch-to-typescript) where the code is transformed into TypeScript.
 
 ## Install Prerequisites
 
@@ -76,13 +76,11 @@ Open a browser window, go to <http://localhost:4000/api/greet>, add a name as a 
 
 ## Show Me The Code
 
-The [full code base after part 1](https://github.com/janaagaard75/azure-functions-typescript/tree/1-javascript-version) has a few more files added to it. They consist of the following:
+The [full code base after part 1](https://github.com/janaagaard75/azure-functions-typescript/tree/part1) has a few more files added to it. They consist of the three things below. If you want more details, then take a look at the [commit history](https://github.com/janaagaard75/azure-functions-typescript/commits/part1).
 
 - Standard files, like a readme, a license and a gitignore file.
 - The endpoint is made available anonymously. This is just to make the setup a bit simpler.
 - Files for improving the development experience in [Visual Studio Code](https://code.visualstudio.com/).
-
-If you want more details, then take a look at the [commit history](https://github.com/janaagaard75/azure-functions-typescript/commits/1-javascript-version).
 
 The [Azure Functions extension for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) requires that the Azure Functions Core Tools are available as a global command. I recommend installing the tools with Homebrew, since that makes it easy to maintain the package together with Node.js and Yarn (`brew install azure-functions-core-tools`). It's fine having the tools installed both locally and globally.
 
@@ -97,6 +95,6 @@ It's possible to debug and hit breakpoints in Visual Studio Code. Set a breakpoi
 %}
 
 {% include previous-next.html
-  nextHref="/blog/2019-05-01-part-2-switch-to-typescript"
+  nextHref="/blog/2019-06-12-part-2-switch-to-typescript"
   nextText="Part 2: Switch to TypeScript"
 %}

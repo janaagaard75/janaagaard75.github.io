@@ -6,7 +6,7 @@ published: true
 
 This is the third part of a series about creating Azure Functions in TypeScript. In this part we add a test using the [Jest](https://jestjs.io/) test framework and then use the [CircleCI](https://circleci.com/) continuous integration framework to run the test automatically each time code is pushed to GitHub.
 
-TODO: Link to the code.
+The [code after this third part](https://github.com/janaagaard75/azure-functions-typescript/tree/part3).
 
 ## Writing the Test
 
@@ -116,8 +116,8 @@ CircleCI requires that test results are stored as JUnit XML files, and Jest uses
 ```
 
 {% include previous-next.html
-  previousHref="/blog/2019-05-01-part-2-switch-to-typescript"
+  previousHref="/blog/2019-06-12-part-2-switch-to-typescript"
   previousText="Part 2: Switch to TypeScript"
-  nextHref="/blog/2019-05-01-part-4-continuous-deployment"
+  nextHref="/blog/2019-06-12-part-4-continuous-deployment"
   nextText="Part 4: Continuous Deployment"
 %}

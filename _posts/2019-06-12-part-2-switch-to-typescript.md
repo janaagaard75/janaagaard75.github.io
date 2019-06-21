@@ -6,7 +6,7 @@ published: true
 
 In this second part of the series about writing an Azure Function in TypeScript, the JavaScript function is converted to TypeScript. This is mainly setting up the TypeScript compiler. We won't make any changes until [part 6: Refactoring](/blog/2019), after the tests have been created.
 
-TODO: Link to code or to the history of the branch.
+If you prefer reading code, this is the [code base after part 2](https://github.com/janaagaard75/azure-functions-typescript/tree/part2).
 
 ## Compiling the TypeScript
 
@@ -53,7 +53,7 @@ The TypeScript compiler is configured with a `tsconfig.json` file.
 }
 ```
 
-Note that you strive to always turn on TypeScript strict mode that enables a handful of very nice compile time checks. We will do this when refactoring the code in [part 6](2019-05-01-part-6-refactor).
+Note that you strive to always turn on TypeScript strict mode that enables a handful of very nice compile time checks. We will do this when refactoring the code in [part 6](2019-06-12-part-6-refactor).
 
 Building the solution consists of two things:
 
@@ -81,11 +81,11 @@ The command for copying the json files `cp src/*.json dist && cp src/greet/*.jso
 "build": "tsc && copyfiles --up 1 \"src/**/*.json\" dist",
 ```
 
-Right now the build command is very simple, but as the project grows it might become beneficial to introduce a build tool like Webpack. We explore using Webpack in [part 7](2019-05-01-part-7-node-package).
+Right now the build command is very simple, but as the project grows it might become beneficial to introduce a build tool like Webpack. We explore using Webpack in [part 7](2019-06-12-part-7-node-package).
 
 {% include previous-next.html
-  previousHref="/blog/2019-05-01-part-1-javascript-version"
+  previousHref="/blog/2019-06-12-part-1-javascript-version"
   previousText="Part 1: JavaScript version"
-  nextHref="/blog/2019-05-01-part-3-local-test"
+  nextHref="/blog/2019-06-12-part-3-local-test"
   nextText="Part 3: Local Test"
 %}
