@@ -1,10 +1,6 @@
 {
-  "[ruby]": {
-    "editor.formatOnSave": true
-  },
-  "editor.formatOnSaveTimeout": 1500,
+  "editor.formatOnSave": true,
   "editor.tabSize": 2,
-  "ruby.format": "rubocop",
   "spellright.ignoreFiles": [
     "**/.gitignore",
     "**/.spellignore",
