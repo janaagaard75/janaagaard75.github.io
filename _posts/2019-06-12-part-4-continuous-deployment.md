@@ -4,9 +4,9 @@ title: "Part 4: Continuous Deployment"
 published: true
 ---
 
-Fourth part in the series about Azure Functions in TypeScript. In this part the continuous integration pipeline is extended into a *continuous deployment* pipeline, where code pushed to GitHub is it automatically deployed to Azure. Until now the code has only been running locally, and this is somewhat ironic since we are halfway into a series about cloud computing. We will remedy this now.
+Fourth part in the series about Azure Functions in TypeScript. In this part the continuous integration pipeline is extended into a _continuous deployment_ pipeline, where code pushed to GitHub is it automatically deployed to Azure. Until now the code has only been running locally, and this is somewhat ironic since we are halfway into a series about cloud computing. We will remedy this now.
 
-While we could log in to the Azure Portal, create the necessary resources, and upload the code manually, we will deploy the hard way, by scripting everything so that get *infrastructure as code* where everything is checked into our source tree.
+While we could log in to the Azure Portal, create the necessary resources, and upload the code manually, we will deploy the hard way, by scripting everything so that get _infrastructure as code_ where everything is checked into our source tree.
 
 [Azure's Asset Resource Management templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/) are tricky at first, but once you have used a development setup with automated deployment, I guarantee that you will not want to go back to manual deployments. If you want to know more about all the benefits, the great Martin Fowler has a [series about continuous integration](https://martinfowler.com/articles/continuousIntegration.html) where he explains all the benefits.
 
@@ -24,139 +24,54 @@ Example:
 - Azure resource group name: `azure-functions-typescript-master`.
 - Endpoint address for the Greet function: `https://aft-master-functions.azurewebsites.net/api/greet/`.
 
+{% include figure.html
+  src="/images/azure-resources.png"
+  alt="Azure resources as shown on the Azure Portal"
+  caption="Azure resources as shown on the Azure Portal."
+%}
+
+TODO: Take a new screenshot with updated name of the resource group and the function apps resource.
+
+## Continuous Deployment Pipeline
+
+1. The step `Create or update Azure resources` in [`config.yml`](https://github.com/janaagaard75/azure-functions-typescript/blob/part4/.circleci/config.yml) calls `create-azure-resources.sh` with the branch name as a parameter.
+2. [`create-azure-resources.sh`](https://github.com/janaagaard75/azure-functions-typescript/blob/part4/.circleci/create-azure-resources.sh) uses the [Azure Command-Line Interface](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) (the `az` command) to create a resource group and then the resources inside the group. The resources are described in [`azure-resources.json`](https://github.com/janaagaard75/azure-functions-typescript/blob/part4/.circleci/azure-resources.json).
+3. The step `Publish code to Azure` in [`config.yml`](https://github.com/janaagaard75/azure-functions-typescript/blob/part4/.circleci/config.yml) calls `publish-to-azure.sh` with the branch name as a parameter.
+4. [`publish-to-azure.sh`](https://github.com/janaagaard75/azure-functions-typescript/blob/part4/.circleci/publish-to-azure.sh) uses the Azure CLI to copy the compiled JavaScript to Azure.
+
 ## Naming Azure Resources
 
 As you can tell just from the length of the official [Naming conventions for Azure resources](https://docs.microsoft.com/en-us/azure/architecture/best-practices/naming-conventions), naming resources in Azure is surprising difficult.
 
 Here are the main restrictions:
 
-- Resource names have to be globally unique. Yes, that's across all users of Azure!
+- Resource names have to be globally unique. Yes, that's across all users of Azure, not just your own/your company's!
 - There are different restrictions depending on the type of the resource.
 - Some resources have very restrictive naming rules. Storage accounts names are probably the worst. They can only be 24 characters long and cannot contain any punctuation.
-- For some resources the name of the Azure region in included but hidden from the UI, so you actually have fewer characters available and how few depends on the length of the name of the region.
 
-The expression `uniqueString(resourceGroup().id)` will generate a globally unique string based on the resource name, but the string will be something like `jmjv7xd3kilis`. This is fine for branch environments, but probably not acceptable for the production environment.
+The branch name is used when naming the functions apps resource, since that name becomes part of the URL, and uses the expression `uniqueString(resourceGroup().id)` to get a unique string for the other resources.
 
-The branch name is used when naming the resource group because the group is the primary way to identify resources on Azure, and also when naming the functions because that name becomes part of the URL where the serverless function is accessible.
+Function app name: `[concat('aft-', skip(resourceGroup().name, length('azure-functions-typescript-')), '-functions')]` becomes `aft-master-fuinctions`.
 
-is a globally unique string generated by `uniqueString(resourceGroup().id)` in the ARM template `azure-resources.json`. Azure requires that the names of the resources are globally unique, including storage accounts, that only allow up to 24 characters. With so few characters at our disposal---and no dots or hyphens---is not practical to prefix the name with a domain name or similar to avoid name collisions with other Azure users. [`uniqueString`](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-functions-string#uniquestring) solves that, but with the downside that resource names look random instead of containing the name of the branch. The [naming convention for Azure resources](https://docs.microsoft.com/en-us/azure/architecture/best-practices/naming-conventions) only suggests using the unique string when naming storage accounts, but in this solution the string is used to name all the resources to keep the naming consistent across all resource types.
+Application insights name: `[concat('aft-', uniqueString(resourceGroup().id), '-appinsights')]` becomes `aft-jmjv7xd3kilis-appinsights`.
 
-Creating the resources on Azure is done by the shell script [`create-azure-resources.sh`](https://github.com/janaagaard75/azure-functions-typescript/blob/4-continuous-deployment/deployment/create-azure-resources.sh) that uses the [Azure Command-Line Interface](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) (the `az` command). The resource group is created first, and then the resources described in `azure-template.json` are added to the group. The Azure CLI is idempotent, so calling the script multiple times is perfectly fine. The script runs faster if the resources already exist. If some resources have been modified, the Azure CLI will handle removing / changing / adding what is needed.
+Using the branch name as part of the function app name puts some restrictions on the branch names:
 
-TODO: Can the structure be made briefer?
+- Only lower cased US letter and hyphens.
+- Maximum length of 47 characters.\*
+- Don't start or end with a hyphen and no consecutive hyphens.
 
-TODO: Highlight the Unique string.
+\*) Max_function_app_length - (length(`atf-`) + length(`-function`)) = 60 - (4 + 9) = 47.
 
-TODO: Add note about using the branch names as the environment names. If you want to use branch names as environment names, you have to verify that the branch name can be used as a URL and verify that is doesn't already exist. You can't avoid invalid branch names (right?), but you can fail a test if before deployment happens.
+A test should verify that a branch name adhere to these rules and that it doesn't clash with the name of another branch before the resources are published. This has not been done.
 
-## Automatic Deployment
+## Installing Azure CLI in CircleCI / Giving CircleCI Access to Azure
 
-The deployment process is described in these four files.
+It's quite complicated to install the Azure CLI on CircleCI, but fortunately the [azure-cli ORB](https://circleci.com/orbs/registry/orb/circleci/azure-cli) is now available, handling all of the complexity.
 
-- A script that creates the resource group and the resources in it on Azure, [create-azure-resources.sh](https://github.com/janaagaard75/azure-functions-typescript/blob/part4/.circleci/create-azure-resources.sh).
-- A template that describes the resources, [azure-resources.json](https://github.com/janaagaard75/azure-functions-typescript/blob/part4/.circleci/azure-resources.json).
-- A script that copies the compiled code to Azure, [publish-to-azure.sh](https://github.com/janaagaard75/azure-functions-typescript/blob/part4/.circleci/publish-to-azure.sh).
-- A few extra steps in the CircleCI configuration file, [config.yml](https://github.com/janaagaard75/azure-functions-typescript/blob/part4/.circleci/config.yml).
+TODO: Create a user in Azure.
 
-## Creating the Resources on Azure
-
-```bash
-# Part of create-azure-resources.sh
-
-# Create a resource group.
-resource_group_name="azure-functions-typescript-$1"
-echo "Creating resource group $resource_group_name."
-az group create \
-  --location "northeurope" \
-  --name $resource_group_name
-
-# Create the resources.
-script_folder="$( cd "$(dirname ${BASH_SOURCE[0]})"; pwd -P )"
-template_file=$script_folder/azure-resources.json
-now=`date +"%Y%m%d-%H%M%S"`
-deployment_name="CircleCI-$now"
-echo "Creating resources in resource group $resource_group_name with deployment $deployment_name."
-az group deployment create \
-  --mode Complete \
-  --name $deployment_name \
-  --resource-group $resource_group_name \
-  --template-file $template_file \
-  --verbose
-```
-
-## Asset Resource Management Template
-
-The name of the resource group is derived from the branch name.
-
-`uniqueString(resourceGroup().id)` is a unique 13 character string.
-
-The arm template describes how set up the service plan, the storage account, Application Insights and the function apps.
-
-- Same unique string in all of the resources names. No name collisions.
-- Functions resource depend on th other three.
-- Functions resource has properties that link it to the other resources. TODO: Explain precisely for all three.
-- TODO: Link to the official help pages.
-- TODO: Note about generating the template.
-
-```javascript
-// Structore of deployment/azure-resources.json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "variables": {
-    // The names of the resoures are computed and store in variables.
-    "appInsightsName": "[concat('aft-', uniqueString(resourceGroup().id), '-appinsights')]",
-    // ...
-  },
-  "resources": [
-    // Array with the four resources.
-    {
-      // TODO: What is the service plan?
-      "type": "Microsoft.Web/serverfarms",
-      // ...
-    },
-    {
-      // The storage account is where the files are kept.
-      "type": "Microsoft.Storage/storageAccounts",
-      // ...
-    },
-    {
-      // Application Insights tracks the functions.
-      "type": "Microsoft.Insights/components",
-      // ...
-    },
-    {
-      // The website hosting the functions.
-      "type": "Microsoft.Web/sites",
-      // This resource depends on the three others.
-      "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms', variables('servicePlanName'))]",
-        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
-        "[resourceId('Microsoft.Insights/components', variables('appInsightsName'))]"
-      ],
-      // ...
-      "properties": {
-        "siteConfig": {
-          "appSettings": [
-            {
-              "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-              "value": "[reference(concat('Microsoft.Insights/components/', variables('appInsightsName'))).InstrumentationKey]"
-            },
-            // ...
-          ],
-          // ...
-        }
-      }
-    }
-  ]
-}
-```
-
-TODO: Show the full list of steps done, highlighting the new ones.
-
-TODO: Note about installing Azure CLI on CircleCI.
-
-TODO: Link to the code in the ORB, showing that it's quite complicated to install the CLI.
+TODO: Add the credentials in CircleCI. The ORB requires that the variable names are `AZURE_PASSWORD` and `AZURE_USERNAME`.
 
 {% include figure.html
   src="/images/circleci-environment-variables.png"
@@ -164,15 +79,11 @@ TODO: Link to the code in the ORB, showing that it's quite complicated to instal
   caption="Define AZURE_USERNAME and AZURE_PASSWORD as environment variables in CircleCI."
 %}
 
-{% include figure.html
-  src="/images/azure-resources.png"
-  alt="Azure resources as shown on the Azure Portal"
-  caption="Azure resources as shown on the Azure Portal."
-%}
+TODO: Upgrade to v1.1 of the ORB.
 
-## Cleaning Up
+## Cleaning Up is Still Missing
 
-A complete solution should of course also clean up after itself and delete the branch environments when a branch is delete. CircleCI does unfortunately not support executing a job when a branch is deleted, so a more complicated solution would have to built. Other CI systems like GitLab's integrated CI/CD supports triggering jobs when branches are deleted, so hopefully CircleCI will add such a feature too.
+A complete solution should of course also clean up after itself and delete the branch environments when a branch is delete. CircleCI does unfortunately not support executing a job when a branch is deleted, so a more complicated solution would have to built. Other CI systems like GitLab's integrated CI/CD supports triggering jobs when branches are deleted, so hopefully CircleCI will add this feature too.
 
 {% include previous-next.html
   previousHref="/blog/2019-06-12-part-3-local-test"
