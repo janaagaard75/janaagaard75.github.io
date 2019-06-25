@@ -49,11 +49,19 @@ Here are the main restrictions:
 - There are different restrictions depending on the type of the resource.
 - Some resources have very restrictive naming rules. Storage accounts names are probably the worst. They can only be 24 characters long and cannot contain any punctuation.
 
-The branch name is used when naming the functions apps resource, since that name becomes part of the URL, and uses the expression `uniqueString(resourceGroup().id)` to get a unique string for the other resources.
+### Hash in Resource Name
 
-Function app name: `[concat('aft-', skip(resourceGroup().name, length('azure-functions-typescript-')), '-functions')]` becomes `aft-master-fuinctions`.
+We can use `uniqueString()` to generates a unique string, making sure that we don't have a name clash with someone else, and at 13 characters it's short enough to fit into the storage account name.
 
-Application insights name: `[concat('aft-', uniqueString(resourceGroup().id), '-appinsights')]` becomes `aft-jmjv7xd3kilis-appinsights`.
+`"[concat('aft', uniqueString(resourceGroup().id), 'sa')]"`
+<br>becomes `aftjmjv7xd3kilis-appsa`.
+
+### Branch name in Resource Name
+
+The function apps resource uses the branch name as part of the resource:
+
+`[concat('aft-', skip(resourceGroup().name, length('azure-functions-typescript-')), '-functions')]`
+<br>becomes `aft-master-functions`.
 
 Using the branch name as part of the function app name puts some restrictions on the branch names:
 
@@ -61,8 +69,9 @@ Using the branch name as part of the function app name puts some restrictions on
 - Maximum length of 47 characters.\*
 - Don't start or end with a hyphen and no consecutive hyphens.
 
-\*) Max_function_app_length - (length(`atf-`) + length(`-function`))<br>
-= 60 - (4 + 9)<br>= 47.
+\*) Max_function_app_length - (length(`atf-`) + length(`-function`))
+<br>= 60 - (4 + 9)
+<br>= 47.
 
 A test should verify that a branch name adhere to these rules and that it doesn't clash with the name of another branch before the resources are published. This has not been done.
 
