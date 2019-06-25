@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add filtering cookie</title>
+  </head>
+  <body>
+    <script>
+      const cookieName = "removeFromGoogleAnalytics";
+
+      const setFilteringCookie = async () => {
+        await browser.cookies.set({
+          expirationDate: time() + 3 * 365 * 24 * 60 * 60,
+          name: cookieName,
+          value: "true"
+        });
+      };
+
+      const getFilteringCookie = async () => {
+        const cookie = await browser.cookies.get({
+          name: cookieName
+        });
+
+        console.info(cookie);
+      };
+
+      setFilteringCookie();
+      getFilteringCookie();
+    </script>
+  </body>
+</html>
