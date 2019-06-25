@@ -61,7 +61,8 @@ Using the branch name as part of the function app name puts some restrictions on
 - Maximum length of 47 characters.\*
 - Don't start or end with a hyphen and no consecutive hyphens.
 
-\*) Max_function_app_length - (length(`atf-`) + length(`-function`)) = 60 - (4 + 9) = 47.
+\*) Max_function_app_length - (length(`atf-`) + length(`-function`))<br>
+= 60 - (4 + 9)<br>= 47.
 
 A test should verify that a branch name adhere to these rules and that it doesn't clash with the name of another branch before the resources are published. This has not been done.
 
@@ -81,7 +82,7 @@ TODO: Add the credentials in CircleCI. The ORB requires that the variable names 
 
 TODO: Upgrade to v1.1 of the ORB.
 
-## Cleaning Up is Still Missing
+## Cleaning Up is Missing
 
 A complete solution should of course also clean up after itself and delete the branch environments when a branch is delete. CircleCI does unfortunately not support executing a job when a branch is deleted, so a more complicated solution would have to built. Other CI systems like GitLab's integrated CI/CD supports triggering jobs when branches are deleted, so hopefully CircleCI will add this feature too.
 
