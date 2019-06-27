@@ -77,11 +77,7 @@ A test should verify that a branch name adhere to these rules and that it doesn'
 
 ## Installing Azure CLI in CircleCI / Giving CircleCI Access to Azure
 
-It's quite complicated to install the Azure CLI on CircleCI, but fortunately the [azure-cli ORB](https://circleci.com/orbs/registry/orb/circleci/azure-cli) is now available, handling all of the complexity.
-
-TODO: Create a user in Azure.
-
-TODO: Add the credentials in CircleCI. The ORB requires that the variable names are `AZURE_PASSWORD` and `AZURE_USERNAME`.
+It's quite complicated to install the Azure CLI on CircleCI, but fortunately the [Azure CLI orb](https://circleci.com/orbs/registry/orb/circleci/azure-cli) is now available, handling all of the complexity. The orb uses the two parameters `AZURE_PASSWORD` and `AZURE_USERNAME` when signing in to Azure, so add them as environment variables in CircleCI.
 
 {% include figure.html
   src="/images/circleci-environment-variables.png"
