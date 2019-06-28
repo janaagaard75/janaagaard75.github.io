@@ -85,6 +85,10 @@
     <script>
       window.onload = function() {
         const isFiltered = !!Cookies.get("filterFromGoogleAnalytics")
+
+        var userTypeDimensionValue = isFiltered ? "admin" : "anonymous"
+        ga("set", "dimension1", dimensionValue)
+
         if (isFiltered) {
           document.title = document.title + " - filtered"
         } else {
