@@ -9,6 +9,7 @@ sitemap: false
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
   </head>
   <body>
+    <p>This browser is now ignored by Google Analytics.</p>
     <script>
       const cookieName = "filterFromGoogleAnalytics"
 
@@ -18,12 +19,11 @@ sitemap: false
 
       function getFilteringCookie() {
         return Cookies.get(cookieName)
-        console.info(cookie)
       }
 
       setFilteringCookie()
       const isFiltered = getFilteringCookie()
-      console.info(`Is filtered: ${isFiltered}`)
+      console.info(`Is filtered: ${isFiltered}.`)
     </script>
   </body>
 </html>
