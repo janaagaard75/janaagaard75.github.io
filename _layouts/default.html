@@ -86,7 +86,7 @@
       function getUserCategory() {
         const userCategory = Cookies.get("UserCategory")
         if (userCategory == null) {
-          userCategory = "Anonymous"
+          return "Anonymous"
         }
         return userCategory
       }

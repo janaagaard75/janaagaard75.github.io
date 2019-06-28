@@ -23,7 +23,7 @@ sitemap: false
       function getUserCategory() {
         const userCategory = Cookies.get("UserCategory")
         if (userCategory == null) {
-          userCategory = "Anonymous"
+          return "Anonymous"
         }
         return userCategory
       }
@@ -33,7 +33,6 @@ sitemap: false
           Cookies.remove("UserCategory")
           return
         }
-
         Cookies.set("UserCategory", userCategory, { expires: 10 * 365 })
       }
 
