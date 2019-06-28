@@ -13,11 +13,11 @@ sitemap: false
       const cookieName = "filterFromGoogleAnalytics"
 
       function setFilteringCookie() {
-        Cookie.set(cookieName, true, { expires: 365 })
+        Cookies.set(cookieName, true, { expires: 365 })
       }
 
       function getFilteringCookie() {
-        return Cookie.get(cookieName)
+        return Cookies.get(cookieName)
         console.info(cookie)
       }
 
