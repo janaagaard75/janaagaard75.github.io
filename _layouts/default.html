@@ -97,10 +97,7 @@
         }
 
         const userCategory = getUserCategory()
-
-        if (userCategory !== "Anonymous") {
-          document.title = `document.title (${userCategory})`
-        }
+        console.info(`User category: ${userCategory}.`)
 
         window.dataLayer = window.dataLayer || []
         function gtag() {
