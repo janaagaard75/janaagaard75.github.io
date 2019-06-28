@@ -35,7 +35,7 @@ sitemap: false
         }
         Cookies.set("UserCategory", userCategory, { expires: 10 * 365 })
 
-        updateDisplayedCategory()
+        window.location.reload(false)
       }
 
       function updateDisplayedCategory() {
