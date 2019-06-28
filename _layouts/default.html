@@ -83,22 +83,34 @@
       </div>
     </footer>
     <script>
-      window.onload = function() {
-        const isFiltered = !!Cookies.get("filterFromGoogleAnalytics")
-
-        var userTypeDimensionValue = isFiltered ? "admin" : "anonymous"
-        ga("set", "dimension1", dimensionValue)
-
-        if (isFiltered) {
-          document.title = document.title + " - filtered"
-        } else {
-          window.dataLayer = window.dataLayer || []
-          function gtag() {
-            dataLayer.push(arguments)
-          }
-          gtag("js", new Date())
-          gtag("config", "UA-142975940-1")
+      function getUserCategory() {
+        const userCategory = Cookies.get("UserCategory")
+        if (userCategory == null) {
+          userCategory = "Anonymous"
         }
+        return userCategory
+      }
+
+      window.onload = function() {
+        if (window.location.host === "localhost") {
+          return
+        }
+
+        const userCategory = getUserCategory()
+
+        if (userCategory !== "Anonymous") {
+          document.title = `document.title (${userCategory})`
+        }
+
+        window.dataLayer = window.dataLayer || []
+        function gtag() {
+          dataLayer.push(arguments)
+        }
+
+        gtag("js", new Date())
+        gtag("config", "UA-142975940-1", {
+          custom_map: { dimension1: userCategory }
+        })
       }
     </script>
   </body>
