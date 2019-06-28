@@ -1,30 +1,29 @@
+---
+sitemap: false
+---
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Add filtering cookie</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
   </head>
   <body>
     <script>
-      const cookieName = "removeFromGoogleAnalytics";
+      const cookieName = "filterFromGoogleAnalytics"
 
-      const setFilteringCookie = async () => {
-        await browser.cookies.set({
-          expirationDate: time() + 3 * 365 * 24 * 60 * 60,
-          name: cookieName,
-          value: "true"
-        });
-      };
+      function setFilteringCookie() {
+        Cookie.set(cookieName, true, { expires: 365 })
+      }
 
-      const getFilteringCookie = async () => {
-        const cookie = await browser.cookies.get({
-          name: cookieName
-        });
+      function getFilteringCookie() {
+        return Cookie.get(cookieName)
+        console.info(cookie)
+      }
 
-        console.info(cookie);
-      };
-
-      setFilteringCookie();
-      getFilteringCookie();
+      setFilteringCookie()
+      const isFiltered = getFilteringCookie()
+      console.info(`Is filtered: ${isFiltered}`)
     </script>
   </body>
 </html>
