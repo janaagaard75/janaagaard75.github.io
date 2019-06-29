@@ -25,12 +25,10 @@ Example:
 - Endpoint address for the Greet function: `https://aft-master-functions.azurewebsites.net/api/greet/`.
 
 {% include figure.html
-  src="/images/azure-resources.png"
+  src="/images/function-app-resources.png"
   alt="Azure resources as shown on the Azure Portal"
   caption="Azure resources as shown on the Azure Portal."
 %}
-
-TODO: Take a new screenshot with updated name of the resource group and the function apps resource.
 
 ## Continuous Deployment Pipeline
 
@@ -65,27 +63,25 @@ The function apps resource uses the branch name as part of the resource:
 
 Using the branch name as part of the function app name puts some restrictions on the branch names:
 
-- Only lower cased US letter and hyphens.
+- Only lower cased US letters and hyphens.
 - Maximum length of 47 characters.\*
-- Don't start or end with a hyphen and no consecutive hyphens.
+- Don't start or end with a hyphen, and don't use consecutive hyphens.
 
 \*) Max_function_app_length - (length(`atf-`) + length(`-function`))
 <br>= 60 - (4 + 9)
 <br>= 47.
 
-A test should verify that a branch name adhere to these rules and that it doesn't clash with the name of another branch before the resources are published. This has not been done.
+A test should verify 1) that a branch name adhere to these rules, and 2) that it doesn't clash with the name of another branch before the resources are published. This has not been done.
 
-## Installing Azure CLI in CircleCI / Giving CircleCI Access to Azure
+## Installing Azure CLI in CircleCI and Giving CircleCI Access to Azure
 
-It's quite complicated to install the Azure CLI on CircleCI, but fortunately the [Azure CLI orb](https://circleci.com/orbs/registry/orb/circleci/azure-cli) is now available, handling all of the complexity. The orb uses the two parameters `AZURE_PASSWORD` and `AZURE_USERNAME` when signing in to Azure, so add them as environment variables in CircleCI.
+It's quite complicated to install the Azure CLI on CircleCI, but fortunately the [Azure CLI orb](https://circleci.com/orbs/registry/orb/circleci/azure-cli) handles that. The orb uses the two parameters `AZURE_PASSWORD` and `AZURE_USERNAME` when signing in to Azure, so add them as environment variables in CircleCI.
 
 {% include figure.html
   src="/images/circleci-environment-variables.png"
   alt="Environment variables defined in CircleCI"
   caption="Define AZURE_USERNAME and AZURE_PASSWORD as environment variables in CircleCI."
 %}
-
-TODO: Upgrade to v1.1 of the ORB.
 
 ## Cleaning Up is Missing
 

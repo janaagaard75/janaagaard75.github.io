@@ -24,7 +24,6 @@
 
 ## TODO
 
-- Write part 4.
 - Write part 5.
 - Write part 6.
 - Write the code for part 7.
@@ -34,8 +33,9 @@
 - Robots.txt with the location of the sitemap. <https://support.google.com/webmasters/answer/183668?hl=en>
 - Footer.
 - Blog front page.
-- Article summaries for the front page?
-- Publish.
+
+  - Article summaries for the front page?
+  - Only show the main post on the front page?
 
 - Smaller text on small screens.
 - Add edit dates.
