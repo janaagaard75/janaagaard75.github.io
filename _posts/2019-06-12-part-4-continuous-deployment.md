@@ -6,6 +6,8 @@ published: true
 
 Fourth part in the series about Azure Functions in TypeScript. In this part the continuous integration pipeline is extended into a _continuous deployment_ pipeline, where code pushed to GitHub is it automatically deployed to Azure. Until now the code has only been running locally, and this is somewhat ironic since we are halfway into a series about cloud computing. We will remedy this now.
 
+The [code after this fourth part](https://github.com/janaagaard75/azure-functions-typescript/tree/part4).
+
 While we could log in to the Azure Portal, create the necessary resources, and upload the code manually, we will deploy the hard way, by scripting everything so that get _infrastructure as code_ where everything is checked into our source tree.
 
 [Azure's Asset Resource Management templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/) are tricky at first, but once you have used a development setup with automated deployment, I guarantee that you will not want to go back to manual deployments. If you want to know more about all the benefits, the great Martin Fowler has a [series about continuous integration](https://martinfowler.com/articles/continuousIntegration.html) where he explains all the benefits.
