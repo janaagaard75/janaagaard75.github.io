@@ -54,7 +54,9 @@ sitemap: false
       }
 
       function updateDisplayedCategory() {
-        document.getElementById("userCategory").innerText = getUserCategory()
+        document.getElementById(
+          "userCategory"
+        ).innerText = `'${getUserCategory()}'`
       }
 
       updateDisplayedCategory()
