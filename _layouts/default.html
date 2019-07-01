@@ -35,6 +35,7 @@
             />
             Jan Aagaard's Blog
           </a>
+          <div class="navbar-nav" id="userCategory"></div>
         </div>
       </nav>
     </header>
@@ -98,6 +99,10 @@
 
         const userCategory = getUserCategory()
         console.info(`User category: ${userCategory}.`)
+
+        if (userCategory !== "Anonymous") {
+          document.getElementById("userCategory").innerText = userCategory
+        }
 
         window.dataLayer = window.dataLayer || []
         function gtag() {
