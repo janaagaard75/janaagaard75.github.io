@@ -47,9 +47,9 @@ sitemap: false
       function setUserCategory(userCategory) {
         if (userCategory === "Anonymous") {
           Cookies.remove("UserCategory")
-          return
+        } else {
+          Cookies.set("UserCategory", userCategory, { expires: 10 * 365 })
         }
-        Cookies.set("UserCategory", userCategory, { expires: 10 * 365 })
 
         window.location.reload(true)
       }
