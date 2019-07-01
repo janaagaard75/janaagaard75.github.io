@@ -14,16 +14,26 @@ sitemap: false
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
   </head>
   <body>
-    <h1>User Category</h1>
-    <p>
-      This browser's user category is <span id="userCategory">unknown</span>.
-    </p>
-    <p>
-      <button onclick="setUserCategory('Anonymous')">Set to Anonymous</button>
-      <button onclick="setUserCategory('Administrator')">
-        Set to Administrator
-      </button>
-    </p>
+    <div class="container">
+      <h1>User Category</h1>
+      <p>
+        This browser's user category is <span id="userCategory">unknown</span>.
+      </p>
+      <p>
+        <button
+          class="btn btn-secondary"
+          onclick="setUserCategory('Anonymous')"
+        >
+          Set to Anonymous
+        </button>
+        <button
+          class="btn btn-secondary"
+          onclick="setUserCategory('Administrator')"
+        >
+          Set to Administrator
+        </button>
+      </p>
+    </div>
     <script>
       function getUserCategory() {
         const userCategory = Cookies.get("UserCategory")
