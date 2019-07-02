@@ -1,0 +1,8 @@
+- No more than three parameters per method/function. If you have more, then create a DTO grouping some of them, or create overloaded methods. This is especially important if the parameters have the same type, e.g. strings.
+- The amount of comments: Too many or too few are both a bad sign.
+- Naming things. It's better to have long, descriptive names.
+- Are the commits self-contained?
+- Rename old stuff when introducing new stuff.
+- Has the branch been rebased?
+- Has the code style been respected?
+- Are things being added in a sensible order, or is everything added the end of the files?
