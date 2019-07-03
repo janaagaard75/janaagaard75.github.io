@@ -25,13 +25,15 @@ Our tests are currently being executed before we deploy to Azure, but since we n
 
 Because of the slower execution time and because a failing end-to-end tests won't stop deployment, I recommend that you write most of your tests as local tests, and only have a few end-to-end tests verifying the deployed code. The short command `test` runs the local tests.
 
-## Getting the URL for the Endpoint
+## Getting the Root URL of Our Endpoints
 
-`TestHelper.getApiRoolUrl()` gets the root API url through the resource group. This could have been simplified by computing the URL using the current branch name, but the current solution also works if `uniqueString` had been used for the name of the function app resource.
+`TestHelper.getApiRootUrl()` gets the root API url through the resource group. This could have been simplified by computing the URL using the current branch name, but the current solution also works if `uniqueString` had been used for the name of the function app resource.
 
-1. Compute the name of the resource group based on the name of the current branch.
-2. Get a list of all the resources in that group.
-3. Find the one that contains the function apps.
+1. Get the name of current branch with the shell command `git symbolic-ref --short HEAD`.
+2. Use the branch name to compute the name of the resource group.
+3. Get a list of all the resources in that group with the shell command `az resource --list ...`.
+4. The function app resource is the one with a name that matches `aft-*-functions`.
+5. Return the full URL by adding `.azurewebsites.net/api`.
 
 ```typescript
 private static getApiRootUrl(): string {
