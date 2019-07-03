@@ -16,19 +16,18 @@ In the [previous step](/blog/2019-06-12-part-4-continuous-deployment) we enabled
 
 Our tests are currently being executed before we deploy to Azure, but since we now want to verify the deployed code, we will add a second type of test that will run after deployment. We will call the second type of tests _end-to-end tests_, and for the lack of better name, we will call the other tests _local tests_.
 
-|                | Local Tests                     | End-to-end Test                  |
-| -------------- | ------------------------------- | -------------------------------- |
-| Speed          | Fast                            | Slow                             |
-| Deployment     | Run without deploying           | Must deploy before running       |
-| Trustfulness\* | Runs in a simulated environment | Runs on the actual deployed code |
+| Local Tests                       | End-to-end Test                   |
+| --------------------------------- | --------------------------------- |
+| Fast.                             | Slow.                             |
+| Run without deploying.            | Must deploy before running.       |
+| Runs in an insolated environment. | Runs on the actual deployed code. |
+{: .table .table-sm .mt-4 }
 
-\*) Can we trust that the code works if the test is passing?
-
-Because of the slower execution time and because a failing end-to-end tests won't stop, I recommend that you write most of your tests as local tests, and only have a few end-to-end tests verifying the deployed code. Because of this if chose the keep the short `test` as the file extension and run command, instead of renaming it to something like `test-local`.
+Because of the slower execution time and because a failing end-to-end tests won't stop deployment, I recommend that you write most of your tests as local tests, and only have a few end-to-end tests verifying the deployed code. The short command `test` runs the local tests.
 
 ## Getting the URL for the Endpoint
 
-`TestHelper.getApiRoolUrl()` gets the root API url through the resource group. It could have been simplified by computing the URL using the current branch name, but the current solution would also work had this not been possible.
+`TestHelper.getApiRoolUrl()` gets the root API url through the resource group. This could have been simplified by computing the URL using the current branch name, but the current solution also works if `uniqueString` had been used for the name of the function app resource.
 
 1. Compute the name of the resource group based on the name of the current branch.
 2. Get a list of all the resources in that group.
