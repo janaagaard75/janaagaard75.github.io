@@ -12,8 +12,8 @@
   },
   "scripts": {
     "clean": "rm -rf _site",
-    "install-python": "bundle install",
+    "install-ruby-gems": "bundle install",
     "start": "yarn run clean && bundle exec jekyll serve --future --unpublished",
-    "update-python": "bundle update"
+    "update-ruby-gems": "bundle update"
   }
 }
