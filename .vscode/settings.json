@@ -1,12 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
-  "spellright.ignoreFiles": [
-    "**/.gitignore",
-    "**/.spellignore",
-    "*.lock"
-  ],
-  "spellright.language": [
-    "en"
-  ]
+  "prettier.disableLanguages": ["markdown"],
+  "spellright.ignoreFiles": ["**/.gitignore", "**/.spellignore", "*.lock"],
+  "spellright.language": ["en"]
 }
