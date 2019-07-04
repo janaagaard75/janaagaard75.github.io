@@ -97,7 +97,7 @@ jobs:
           command: yarn run test
 ```
 
-The final [`config.yml`](https://github.com/janaagaard75/azure-functions-typescript/blob/part3/.circleci/config.yml) has a few more steps, adding a cache of the `node_modules` folder to speed up the build time and presenting the test results in CircleCI.
+The [final `config.yml`](https://github.com/janaagaard75/azure-functions-typescript/blob/part3/.circleci/config.yml) has a few more steps, adding a cache of the `node_modules` folder to speed up the build time and presenting the test results in CircleCI.
 
 1. Check out the code from GitHub.
 2. **Restore cached `node_modules`.**
