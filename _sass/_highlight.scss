@@ -4,8 +4,8 @@
 // Inline code.
 code.highlighter-rouge {
   @extend .px-1;
-  @extend .py-1;
-  background-color: $code-background;
+  font-size: 1.2rem;
+  line-height: $line-height-base;
 }
 
 // Code blocks.
