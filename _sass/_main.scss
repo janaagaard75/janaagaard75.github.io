@@ -8,6 +8,10 @@ body {
   flex-direction: column;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 .full-width img {
   width: 100%;
 }
