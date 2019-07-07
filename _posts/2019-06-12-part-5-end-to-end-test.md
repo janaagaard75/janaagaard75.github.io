@@ -27,7 +27,7 @@ Because of the slower execution time and because a failing end-to-end tests won'
 
 ## Getting the Root URL of Our Endpoints
 
-`TestHelper.getApiRootUrl()` gets the root API url through the resource group. This could have been simplified by computing the URL using the current branch name, but the current solution also works if `uniqueString` had been used for the name of the function app resource.
+`TestHelper.getApiRootUrl()` gets the root API url through the resource group. This could have been simplified a lot by simply computing the URL using the current branch name (`https://aft-${branchName}-functions/api`), but the current solution also works if `uniqueString` had been used for the name of the function app resource, and I thought that this snippet might be useful to someone, so I left it in.
 
 1. Get the name of current branch with the shell command `git symbolic-ref --short HEAD`.
 2. Use the branch name to compute the name of the resource group.
