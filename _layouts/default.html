@@ -8,13 +8,11 @@
     <link
       rel="preload"
       as="style"
-      onload="this.rel='stylesheet'"
       href="/css/main.css?{{ site.time | date: '%s%N' }}"
     />
     <link
       rel="preload"
       as="style"
-      onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700|Open+Sans"
     />
     <script
@@ -25,6 +23,14 @@
       defer
       src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"
     ></script>
+    <link
+      rel="stylesheet"
+      href="/css/main.css?{{ site.time | date: '%s%N' }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700|Open+Sans"
+    />
   </head>
   <body>
     <header>
