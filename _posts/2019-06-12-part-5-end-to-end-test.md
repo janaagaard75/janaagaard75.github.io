@@ -16,11 +16,11 @@ In the [previous step](/blog/2019-06-12-part-4-continuous-deployment) we enabled
 
 Our tests are currently being executed before we deploy to Azure, but since we now want to verify the deployed code, we will add a second type of test that will run after deployment. We will call the second type of tests _end-to-end tests_, and for the lack of better name, we will call the other tests _local tests_.
 
-| Local Tests                       | End-to-end Test                   |
-| --------------------------------- | --------------------------------- |
-| Fast.                             | Slow.                             |
-| Run without deploying.            | Must deploy before running.       |
-| Runs in an insolated environment. | Runs on the actual deployed code. |
+| Local Tests                      | End-to-end Test                   |
+| -------------------------------- | --------------------------------- |
+| Fast.                            | Slow.                             |
+| Run without deploying.           | Must deploy before running.       |
+| Runs in an isolated environment. | Runs on the actual deployed code. |
 {: .table .table-sm .mt-4 }
 
 Because of the slower execution time and because a failing end-to-end tests won't stop deployment, I recommend that you write most of your tests as local tests, and only have a few end-to-end tests verifying the deployed code. The short command `test` runs the local tests.
