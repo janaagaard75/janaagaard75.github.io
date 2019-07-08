@@ -6,7 +6,7 @@ published: true
 
 This is the 6th part of the series about writing an serverless Azure Function in TypeScript. Since we now have and end-to-end test up and running we will refactor the code, cleaning it up a bit.
 
-"Make it work, make it right, make it fast."
+*"Make it work, make it right, make it fast."*<br>
 -- Kent Beck
 
 We have the first part, a working endpoint. Now we make it right.
