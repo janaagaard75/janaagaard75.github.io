@@ -11,31 +11,102 @@ This is the 6th part of the series about writing an serverless Azure Function in
 
 We have the first part, a working endpoint. Now we make it right.
 
-## Strict mode
+## Turn On Strict Mode
 
-The first thing we do is turn on TypeScript's strict mode, enabling a range of compile-time checks. You should always strive to enable this when using TypeScript, especially when starting from scratch.
+[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/aea4f43dedbfc8eb3aaa7041031400702fedcfa8)
 
-`noImplicitAny` is one of those checks, requiring that we specify the types of our parameters.
+The first thing we do is turn on TypeScript's strict mode, enabling a range of compile-time checks. You should always strive to enable this when using TypeScript, and when starting from scratch there really shouldn't be any excuse for not enabling this.
 
-We can satisfy the compiler specifying the types as any, but we can do better and install the type definitions for Azure Functions, available in the `@azure/functions` package. The package doesn't include a type for the HTTP response, so here we fallback to using any, `Promise<any>`.
+`noImplicitAny` is one of those checks, requiring that we specify the types of our parameters. For now we settle with specifying `any` everywhere the compiler requires.
 
-The package only contains type definitions, so it is only used when compiling the code, and therefore it should be installed as a development dependency. TSLint will however complain about importing a package from `devDependencies`, since it assumes that these packages are used when running the code. Installing the package as a normal dependency will satisfy TSLint, but once we start adding dependencies to Node.js packages in our code, we will need to install these on Azure too, and here we don't want the type definition package to be installed. So we loosen on TSLint's rule to get rid of the error.
+## Return the HTTP Response
 
-- TODO: Note about `tslint` and devDependencies.
-- TODO: `rimraf` to make it cross platform. "Writing posix command lines inside your scripts field will work regardless of the underlying operating system. This is because Berry will ship with a portable posix-like light shell that'll be used by default." <https://github.com/yarnpkg/yarn/issues/6953>. I haven't tested this on Windows, though, so if you find any issues, you're very welcome to add an issue or a pull request to the GitHub repo.
-- Prettier. VSCode with `autoformatonsave=true`. There are a range of pre-commit hooks if you don't use VSCode. <https://prettier.io/docs/en/precommit.html>
+[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/3e63b53c53312eddfbc9289b1e5364291be8d134)
 
-Return the HTTP response instead of defining it on the context object, because this is a more functional coding style.
+TODO: More natural since this is a function that responds to a HTTP request. Don't know why Microsoft defaults to using a side effect. THis might be because the side effect also works when adding messages to a queue.
 
-Strict mode FTW! This turns on a bunch of compile check features, one of them being that types can't implicitly be any. So we add the @azure/functions Node module. Microsoft hasn't published the types as a @types module. This is not HttpResponse so the best we can do is to set the type of the function to `Promise<any>`.
+## Use Strong Types
 
-Deterministic behavior. `rimraf` is simply a cross platform version of `rm -rf`. Why `--frozen-lockfile`?
+[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/a2f1929e5ef6bd817795e24349fbc55d909bcae7)
 
-Prettier. "Nobody likes what Prettier does to their own code, but everybody loves what Pretties does to everybody else's code.".
+We satisfied the compiler by setting the types to `any`, but we can do better and install type definitions for Azure Functions, available in the `@azure/functions` package. The package doesn't include a type for the HTTP response, so here we fall back to using any, `Promise<any>`.
 
-Lint. Turning off the rules that Prettier takes care of. Running TSLint's recommended setup, but I still feel like tweaking a bit.
+Using strong types in out tests requires that we mock the arguments we pass in. The best package I could find was [@fluffy-spoon/substitute](https://github.com/ffMathy/FluffySpoon.JavaScript.Testing.Faking).
 
-index.ts is renamed to greet.ts. This is done to avoid having lots of index.ts files in the code base.
+## Rename to greet
+
+[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/2860989a2a1e03dd044b6ec2ef51cc8e10e25f92)
+
+Avoid having a lot of methods named `index`.
+
+## Rename to greet.ts
+
+[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/a436c378e0bd868afc4638398a78edcb24bbef41)
+
+Rename the file too.
+
+## Deterministic Behavior
+
+[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/c616d99978a074ebbb12da90eeaae31410daebe4)
+
+Clear the destination folder before building to make sure that delete and renamed source files are also deleted in the `dist` folder.
+
+TOOD: `rimraf` is simply a cross platform version of `rm -rf`.
+TODO: Why `--frozen-lockfile`?
+
+## Autoformat the Code
+
+[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/540a238b5168b6fdcbc2a01afa4d88120571ace8)
+
+Use Prettier to automatically format the code. I was already using the VS Code extension so adding this didn't require any changes to the source code.
+
+TODO: Prettier. "Nobody likes what Prettier does to their own code, but everybody loves what Pretties does to everybody else's code.".
+TODO: Note about VSCode extension and `autoformatonsave=true`.
+TODO: There are a range of pre-commit hooks if you don't use VSCode. <https://prettier.io/docs/en/precommit.html>
+
+## Lint the Code
+
+[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/a19affccbb054bb0118f1d3ce60bd43559d54bb4)
+
+Use TSLint to verify that the code follow best practices.
+
+TODO: Note about switching to ESLint.
+
+## Don't Abbreviate 'request'
+
+[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/d33021c96801d2d381e5f626c9050f6764e1c51b)
+
+I generally try to avoid using abbreviations because I think the code becomes more readable without them.
+
+## Remove Unnecessary Log
+
+[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/94e14e28fb51335dbb0d0ff32118030cda2efe32)
+
+Azure logs all incoming requests so there is no need to log a custom message too.
+
+## Remove Unnecessary Comment
+
+[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/8604bba58b54417fb015d5ae69af27b64e997b1b)
+
+Remove the commit since it isn't really necessary. This information should arguably be part of the documentation included with the type definitions.
+
+## Extract Method
+
+[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/8fe121139f469b8afd277b81eda219d7c4c687b7)
+
+Simplify the code nesting by extracting to a function. We can now avoid the `else`.
+
+## Invert `if`
+
+[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/ea65bdaf3d4d526af5c30da5face56f9eace4eef)
+
+Revert the `if` to reduce nesting. This also have the nice effect of putting the special case - no name defined - into the if clause, and letting the happy flow flow be the least indented one.
+
+## Use String Interpolation
+
+[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/1fe05262f015f67494150d6b565fd70e7de07b95)
+
+Replace `+` with string interpolations making the code more readable. This also have the effect of making it more obvious that we need to terminate our sentence with a full stop.
 
 {% include previous-next.html
   previousHref="/blog/2019-06-12-part-5-end-to-end-test"
