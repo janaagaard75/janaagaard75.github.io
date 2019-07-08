@@ -25,7 +25,7 @@ Our tests are currently being executed before we deploy to Azure, but since we n
 
 Because of the slower execution time and because a failing end-to-end tests won't stop deployment, I recommend that you write most of your tests as local tests, and only have a few end-to-end tests verifying the deployed code. The short command `test` runs the local tests.
 
-## Getting the Root URL of Our Endpoints
+## Getting the Root URL of the Endpoints
 
 `TestHelper.getApiRootUrl()` gets the root API url through the resource group. This could have been simplified a lot by simply computing the URL using the current branch name (`https://aft-${branchName}-functions/api`), but the current solution also works if `uniqueString` had been used for the name of the function app resource, and I thought that this snippet might be useful to someone, so I left it in.
 
