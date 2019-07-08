@@ -54,7 +54,7 @@ Clear the destination folder before building to make sure that delete and rename
 TOOD: `rimraf` is simply a cross platform version of `rm -rf`.
 TODO: Why `--frozen-lockfile`?
 
-## Autoformat the Code
+## Auto-format the Code
 
 [Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/540a238b5168b6fdcbc2a01afa4d88120571ace8)
 
