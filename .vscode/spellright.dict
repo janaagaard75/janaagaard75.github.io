@@ -3,6 +3,7 @@ copyfiles
 cpnhgn
 github
 gitignore
+greet.ts
 gt
 img
 jekyll
@@ -13,8 +14,11 @@ lockfile
 lt
 McGlone
 mt-4
+nextHref
 noninfringement
+previousHref
 serverless
 table-sm
 virk.dk
+Webpack
 yml

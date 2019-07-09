@@ -45,7 +45,7 @@ Avoid having a lot of methods named `index`.
 
 Rename the file too.
 
-## Deterministic Behavior
+## Deterministic Behaviour
 
 [Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/c616d99978a074ebbb12da90eeaae31410daebe4)
 
