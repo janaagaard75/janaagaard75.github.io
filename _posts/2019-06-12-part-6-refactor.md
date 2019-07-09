@@ -17,21 +17,23 @@ We have the first part, a working endpoint. Now we make it right.
 
 The first thing we do is turn on TypeScript's strict mode, enabling a range of compile-time checks. You should always strive to enable this when using TypeScript, and when starting from scratch there really shouldn't be any excuse for not enabling this.
 
-`noImplicitAny` is one of those checks, requiring that we specify the types of our parameters. For now we settle with specifying `any` everywhere the compiler requires.
+`noImplicitAny` is one of those checks, requiring that we specify the types of our parameters. For now we settle for simply adding `any` everywhere.
 
 ## Return the HTTP Response
 
 [Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/3e63b53c53312eddfbc9289b1e5364291be8d134)
 
-TODO: More natural since this is a function that responds to a HTTP request. Don't know why Microsoft defaults to using a side effect. THis might be because the side effect also works when adding messages to a queue.
+Return the HTTP response from the function instead of setting `context.res`, to have a more functional approach instead of a side effect. I don't know why the demo function app defaults to using a side effect, and this changes seems like such an obvious improvement to the code, that I wonder, if there is some drawback to using the functional approach that I haven't yet realized.
+
+This change also simplified out test.
 
 ## Use Strong Types
 
 [Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/a2f1929e5ef6bd817795e24349fbc55d909bcae7)
 
-We satisfied the compiler by setting the types to `any`, but we can do better and install type definitions for Azure Functions, available in the `@azure/functions` package. The package doesn't include a type for the HTTP response, so here we fall back to using any, `Promise<any>`.
+We satisfied the compiler by setting the types to `any`, but we can do better and install type definitions for Azure Functions, available in the `@azure/functions` package. The package doesn't include a type for the HTTP response, so here we still use any, `Promise<any>`.
 
-Using strong types in out tests requires that we mock the arguments we pass in. The best package I could find was [@fluffy-spoon/substitute](https://github.com/ffMathy/FluffySpoon.JavaScript.Testing.Faking).
+Using strong types in out tests requires that we mock the arguments we pass in. The best package I could find was [@fluffy-spoon/substitute](https://github.com/ffMathy/FluffySpoon.JavaScript.Testing.Faking). That package doesn't support `strictNullChecks`, so now we unfortunately have to cast a few objects to `any` in our test. As the author of the package suggests, we could turn off strictNullChecks for our tests, but that approach probably requires that the test files are located in a separate folder.
 
 ## Rename to greet
 
@@ -43,15 +45,16 @@ Avoid having a lot of methods named `index`.
 
 [Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/a436c378e0bd868afc4638398a78edcb24bbef41)
 
-Rename the file too.
+Rename the file too, to avoid having a lot of `index.ts` files.
 
 ## Deterministic Behaviour
 
 [Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/c616d99978a074ebbb12da90eeaae31410daebe4)
 
-Clear the destination folder before building to make sure that delete and renamed source files are also deleted in the `dist` folder.
+Delete the destination folder before building to make sure that delete and renamed source files are also deleted in the `dist` folder.
 
-TOOD: `rimraf` is simply a cross platform version of `rm -rf`.
+`rimraf` is simply a cross platform version of `rm -rf`, the Unix command for deleting a folder including all subfolders.
+
 TODO: Why `--frozen-lockfile`?
 
 ## Auto-format the Code
