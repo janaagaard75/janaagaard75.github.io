@@ -3,9 +3,16 @@
 
 // Inline code.
 code.highlighter-rouge {
-  @extend .px-1;
   font-size: 1.05rem;
   line-height: $line-height-base;
+
+  &:not(:first-child) {
+    @extend .pl-1;
+  }
+
+  &:not(:last-child) {
+    @extend .pr-1;
+  }
 }
 
 // Code blocks.
