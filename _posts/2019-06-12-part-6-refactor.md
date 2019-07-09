@@ -37,15 +37,10 @@ Using strong types in out tests requires that we mock the arguments we pass in. 
 
 ## Rename to greet
 
-[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/2860989a2a1e03dd044b6ec2ef51cc8e10e25f92)
+[Commit: Rename to greet](https://github.com/janaagaard75/azure-functions-typescript/commit/2860989a2a1e03dd044b6ec2ef51cc8e10e25f92)<br>
+[Commit: Rename to greet.ts](https://github.com/janaagaard75/azure-functions-typescript/commit/a436c378e0bd868afc4638398a78edcb24bbef41)
 
-Avoid having a lot of methods named `index`.
-
-## Rename to greet.ts
-
-[Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/a436c378e0bd868afc4638398a78edcb24bbef41)
-
-Rename the file too, to avoid having a lot of `index.ts` files.
+Avoid having a lot of methods named `index` and avoid having a lots of `index.ts` files.
 
 ## Deterministic Behaviour
 
