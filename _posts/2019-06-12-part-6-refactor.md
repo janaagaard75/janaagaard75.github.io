@@ -44,7 +44,7 @@ Using strong types in out tests requires that we mock the arguments we pass in. 
 
 Avoid having a lot of methods named `index` and avoid having a lots of `index.ts` files.
 
-## Deterministic Behaviour
+## Deterministic Behavior
 
 [Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/c616d99978a074ebbb12da90eeaae31410daebe4)
 
