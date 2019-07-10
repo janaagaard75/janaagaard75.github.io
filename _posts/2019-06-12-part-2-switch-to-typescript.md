@@ -6,7 +6,7 @@ published: true
 
 In this second part of the series about writing an Azure Function in TypeScript, the JavaScript function is converted to TypeScript. This is mainly setting up the TypeScript compiler. We won't make any changes until [part 6: Refactoring](/blog/2019), after the tests have been created.
 
-If you prefer reading code, this is the [code base after part 2](https://github.com/janaagaard75/azure-functions-typescript/tree/part2).
+If you prefer reading code, this is the [code base after part 2](https://github.com/janaagaard75/azure-functions-typescript/tree/part-2-switch-to-typescript).
 
 ## Compiling the TypeScript
 

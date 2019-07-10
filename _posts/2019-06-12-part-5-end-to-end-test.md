@@ -6,6 +6,8 @@ published: true
 
 Fifth part of the series about Azure Function in TypeScript where we add an end-to-end test.
 
+[The code base after this step](https://github.com/janaagaard75/azure-functions-typescript/tree/part-5-end-to-end-test).
+
 In the [previous step](/blog/2019-06-12-part-4-continuous-deployment) we enabled automatic creation of branch environments. Now let’s write a test that verifies the actual endpoint on Azure works. We can break it down into these three steps:
 
 1. Compute the URL our `greet` function app in Azure environment associated with the current branch.

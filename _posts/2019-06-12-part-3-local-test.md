@@ -6,7 +6,7 @@ published: true
 
 This is the third part of a series about creating Azure Functions in TypeScript. In this part we add a test using the [Jest](https://jestjs.io/) test framework and then use the [CircleCI](https://circleci.com/) continuous integration framework to run the test automatically each time code is pushed to GitHub.
 
-The [code after this third part](https://github.com/janaagaard75/azure-functions-typescript/tree/part3).
+The [code after this third part](https://github.com/janaagaard75/azure-functions-typescript/tree/part-3-local-test).
 
 ## Writing the Test
 
@@ -97,7 +97,7 @@ jobs:
           command: yarn run test
 ```
 
-The [final `config.yml`](https://github.com/janaagaard75/azure-functions-typescript/blob/part3/.circleci/config.yml) has a few more steps, adding a cache of the `node_modules` folder to speed up the build time and presenting the test results in CircleCI.
+The [final `config.yml`](https://github.com/janaagaard75/azure-functions-typescript/blob/part-3-local-test/.circleci/config.yml) has a few more steps, adding a cache of the `node_modules` folder to speed up the build time and presenting the test results in CircleCI.
 
 1. Check out the code from GitHub.
 2. **Restore cached `node_modules`.**

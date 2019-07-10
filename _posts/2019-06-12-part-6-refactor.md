@@ -11,6 +11,8 @@ This is the 6th part of the series about writing an serverless Azure Function in
 
 We have the first part, a working endpoint. Now we make it right.
 
+[The code after is has been refactored](https://github.com/janaagaard75/azure-functions-typescript/tree/part-6-refactor).
+
 ## Turn On Strict Mode
 
 [Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/aea4f43dedbfc8eb3aaa7041031400702fedcfa8)
