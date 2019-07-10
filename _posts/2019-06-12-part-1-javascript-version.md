@@ -76,7 +76,7 @@ Open a browser window, go to <http://localhost:4000/api/greet>, add a name as a 
 
 ## Show Me The Code
 
-The [full code base after part 1](https://github.com/janaagaard75/azure-functions-typescript/tree/part1) has a few more files added to it. They consist of the three things below. If you want more details, then take a look at the [commit history](https://github.com/janaagaard75/azure-functions-typescript/commits/part1).
+The [full code base after part 1](https://github.com/janaagaard75/azure-functions-typescript/tree/part-1-javascript-version) has a few more files added to it. They consist of the three things below. If you want more details, then take a look at the [commit history](https://github.com/janaagaard75/azure-functions-typescript/commits/part-1-javascript-version).
 
 - Standard files, like a readme, a license and a gitignore file.
 - The endpoint is made available anonymously. This is just to make the setup a bit simpler.
