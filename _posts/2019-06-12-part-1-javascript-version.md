@@ -95,6 +95,8 @@ It's possible to debug and hit breakpoints in Visual Studio Code. Set a breakpoi
 %}
 
 {% include previous-next.html
+  previousHref="/blog/2019-06-15-azure-functions-in-typescript"
+  previousText="Introduction"
   nextHref="/blog/2019-06-12-part-2-switch-to-typescript"
   nextText="Part 2: Switch to TypeScript"
 %}
