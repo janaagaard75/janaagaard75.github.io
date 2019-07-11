@@ -25,9 +25,9 @@ The first thing we do is turn on TypeScript's strict mode, enabling a range of c
 
 [Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/3e63b53c53312eddfbc9289b1e5364291be8d134)
 
-Return the HTTP response from the function instead of setting `context.res`, to have a more functional approach instead of a side effect. I don't know why the demo function app defaults to using a side effect, and this changes seems like such an obvious improvement to the code, that I wonder, if there is some drawback to using the functional approach that I haven't yet realized.
+Return the HTTP response from the function instead of setting `context.res` to have a functional style instead of a side effect. This change simplifies out test code a bit.
 
-This change also simplified out test.
+I don't know why the demo function app defaults to using a side effect, and this changes seems like such an obvious improvement to the code, that I wonder, if there is some drawback to using the functional approach that I haven't yet realized.
 
 ## Use Strong Types
 
