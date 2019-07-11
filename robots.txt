@@ -1,2 +1,3 @@
 User-agent: *
+Disallow: /filter/
 Sitemap: https://janaagaard.com/sitemap.xml
