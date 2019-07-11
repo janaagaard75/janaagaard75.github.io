@@ -1,18 +1,15 @@
 // Colors theme inspired by VSCode's default Dark+ theme. Rouge doesn't distiguish items as precisely as VSCode does, so it's not possible to make a perfect color theme match.
 // Color codes taken from dark_vs.json, dark_defaults.json and dark_plus.json found at https://github.com/Microsoft/vscode/tree/master/extensions/theme-defaults/themes.
 
+// Code block.
+div.highlighter-route {
+  line-height: 1.6;
+}
+
 // Inline code.
 code.highlighter-rouge {
   font-size: 1.05rem;
   line-height: $line-height-base;
-
-  &:not(:first-child) {
-    @extend .pl-1;
-  }
-
-  &:not(:last-child) {
-    @extend .pr-1;
-  }
 }
 
 // Code blocks.
