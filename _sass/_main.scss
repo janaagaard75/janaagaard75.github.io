@@ -12,16 +12,6 @@ html {
   overflow-y: scroll;
 }
 
-.full-width img {
-  width: 100%;
-}
-
-.figure-caption {
-  font-size: 90%;
-  font-style: italic;
-  text-align: center;
-}
-
 h1,
 h2,
 h3 {
@@ -57,6 +47,16 @@ footer {
     flex: 0 0 $content-max-width;
     max-width: $content-max-width;
   }
+}
+
+.figure-caption {
+  font-size: 90%;
+  font-style: italic;
+  text-align: center;
+}
+
+.full-width img {
+  width: 100%;
 }
 
 .icon {
