@@ -1,6 +1,11 @@
 ---
 layout: post
 title: "Part 6: Refactor"
+tags:
+  [
+    Prettier,
+    TypeScript,
+  ]
 published: true
 ---
 
