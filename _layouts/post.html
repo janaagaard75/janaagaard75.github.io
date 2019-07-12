@@ -17,11 +17,11 @@ layout: base
   </div>
   <div class="col">
     {% if page.tags %}
-      <p class="tags">
+      <ul class="tags">
         {% for tag in page.tags %}
-          <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="tag">{{ tag }}</a>
+          <li><a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="tag">{{ tag }}</a></li>
         {% endfor %}
-      </p>
+      </ul>
     {% endif %}
   </div>
 </div>
