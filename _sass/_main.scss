@@ -41,7 +41,6 @@ footer {
 
 .col-md-content {
   @include make-col-ready();
-  @extend .pb-5;
 
   @include media-breakpoint-up(md) {
     flex: 0 0 $content-max-width;
