@@ -19,7 +19,7 @@ layout: base
     {% if page.tags %}
       <ul class="tags">
         {% for tag in page.tags %}
-          <li><a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="tag">{{ tag }}</a></li>
+          <li><a href="tags.html#{{ tag | slugify }}" class="tag">{{ tag }}</a></li>
         {% endfor %}
       </ul>
     {% endif %}
