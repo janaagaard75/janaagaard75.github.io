@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Azure Functions in TypeScript"
+description: "How to write an Azure Function in Typescript with continuous deployment using Circle CI and tests written with Jest."
 tags:
   [
     ARM templates,
