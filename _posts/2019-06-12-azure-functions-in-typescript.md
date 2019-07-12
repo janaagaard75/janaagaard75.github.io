@@ -27,7 +27,7 @@ The source code related to the series is [available on GitHub](https://github.co
   caption="This is pretty much the only thing mentioned about TypeScript for version 2 of Azure Functions. <a href='https://docs.microsoft.com/en-us/azure/azure-functions/functions-versions#languages'>Source</a>"
 %}
 
-## Seven Parts
+## Six Parts
 
 Creating the Azure Function in TypeScript has been split into seven parts. If you already know about Azure Functions in JavaScript you might want to skip ahead to part 2. The tests are very simple, so part 3, 4 and 5 are mostly about configuring CircleCI and creating an ARM template. The 6th part, refactoring,was the most exciting one to write.
 
