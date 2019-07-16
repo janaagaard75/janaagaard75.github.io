@@ -24,8 +24,6 @@
 
 ## TODO
 
-- Write part 5.
-- Write part 6.
 - Write the code for part 7.
 - Write part 7.
 - Set dates to the correct one. Remember to update the links.
