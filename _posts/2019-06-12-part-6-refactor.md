@@ -55,27 +55,28 @@ Avoid having a lot of methods named `index` and avoid having a lots of `index.ts
 
 Delete the destination folder before building to make sure that delete and renamed source files are also deleted in the `dist` folder.
 
+The packages are installed with the `--frozen-lockfile` modifier, so that installation fails, if `yarn.lock` has to be updated. This is how we want our continuous integration to behave, since we want to make sure that the packages installed are the ones specified by `yarn.lock`.
+
 `rimraf` is simply a cross platform version of `rm -rf`, the Unix command for deleting a folder including all subfolders.
 
-TODO: Why `--frozen-lockfile`?
-
-## Auto-format the Code
+## Format the Code
 
 [Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/540a238b5168b6fdcbc2a01afa4d88120571ace8)
 
-Use Prettier to automatically format the code. I was already using the VS Code extension so adding this didn't require any changes to the source code.
+"Nobody likes what Prettier does to their own code, but everybody loves what Pretties does to everybody else's code.".<br>
+- Source unknown -- drop me a line if you recognize this line
 
-TODO: Prettier. "Nobody likes what Prettier does to their own code, but everybody loves what Pretties does to everybody else's code.".
-TODO: Note about VSCode extension and `autoformatonsave=true`.
-TODO: There are a range of pre-commit hooks if you don't use VSCode. <https://prettier.io/docs/en/precommit.html>
+[Prettier](https://prettier.io/) is a source code formatter that seems to be getting a lot of traction. I don't agree with all their choices ([operators at the beginning of lines, please](https://github.com/prettier/prettier/issues/3806)) but consistently and well formatted is just easier to read.
+
+I use a [Prettier extension for VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and set `"editor.formatOnSave": true`, but you can also [use a pre-commit hooks to handle the formatting](https://prettier.io/docs/en/precommit.html).
 
 ## Lint the Code
 
 [Commit](https://github.com/janaagaard75/azure-functions-typescript/commit/a19affccbb054bb0118f1d3ce60bd43559d54bb4)
 
-Use TSLint to verify that the code follow best practices.
+Use TSLint to verify that the code follow best practices. Since Prettier handles all of the cosmetic rules, these are turned off by extending the `"tslint-config-prettier"` ruleset.
 
-TODO: Note about switching to ESLint.
+The world seems to be switching to ESLint even for TypeScript, but I haven't investigated that yet.
 
 ## Don't Abbreviate 'request'
 
