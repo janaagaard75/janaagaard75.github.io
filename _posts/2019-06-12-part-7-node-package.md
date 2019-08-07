@@ -22,15 +22,15 @@ Azure does not automatically install Node modules*, so we have to include the fi
 
 ## Time Traveling in the Tests
 
-Since the number of days until Christmas Eve, the 24th of December, depends on the current date, our endpoint is not deterministic. This makes it a little challenging to write a test.
+Since the number of days until Christmas Eve, depends on the current date, our new endpoint is not deterministic, in that tomorrow it will return another value than today. This makes it a little challenging to write a test.
 
-The solution chosen here is to use time traveling: Instead of running the tests is the context of the current date we will set the date explicitly when running them. We could inject the current time into the methods that we need to test, but fortunately we can also overwrite what `Date.now()` returns. That way, all we have to do, it to remember to use `Date.now()` when we want the current time.
+The solution chosen here is to use time traveling: Instead of running the tests is the context of the current date we will set the date explicitly when running them. We could rewrite out code to make it possible to inject the current time into the methods that we need to test, but fortunately we can also overwrite what `Date.now()` returns. That way, all we have to do, it to remember to use `Date.now()` when we want the current time.
 
-The snippet below use Jest to make `Date.now()` return the 11:22 on the 20th of January 2019.
+The snippet below uses Jest to make `Date.now()` be based on the 20th of January 2019 at 10:22, making it return `1547979720000` regardless of the current date and time.
 
 ```typescript
 jest
-  .spyOn(Date,  "now")
+  .spyOn(Date, "now")
   .mockImplementation(
     () => new Date("2019-01-20T10:22:00").getTime()
   );
