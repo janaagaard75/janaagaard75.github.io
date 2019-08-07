@@ -117,4 +117,6 @@ Replace `+` with string interpolations making the code more readable. This also 
 {% include previous-next.html
   previousHref="/blog/2019-06-12-part-5-end-to-end-test"
   previousText="Part 5: End-to-end Test"
+  nextHref="/blog/2019-06-12-part-7-node-module"
+  nextText="Part 7: Node Module"
 %}
