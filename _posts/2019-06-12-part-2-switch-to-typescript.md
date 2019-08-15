@@ -88,7 +88,7 @@ The command for copying the json files `cp src/*.json dist && cp src/greet/*.jso
 "build": "tsc && copyfiles --up 1 \"src/**/*.json\" dist",
 ```
 
-Right now the build command is very simple, but as the project grows it might become beneficial to introduce a build tool like Webpack. We explore using Webpack in [part 7](2019-06-12-part-7-node-package).
+Right now the build command is very simple, but as the project grows it might become beneficial to introduce a build tool like Webpack. We explore using Webpack in [part 7](2019-06-12-part-7-node-module).
 
 {% include previous-next.html
   previousHref="/blog/2019-06-12-part-1-javascript-version"
