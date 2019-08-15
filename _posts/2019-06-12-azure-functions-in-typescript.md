@@ -43,7 +43,7 @@ Creating the Azure Function in TypeScript has been split into seven parts. If yo
 
 - [Part 6: Refactor](/blog/2019-06-12-part-6-refactor). Now that we have test coverage we can refactor the code with ease of mind.
 
-- [Part 7: Node Module](/blog/2019-06-12-part-7-node-package). Demonstrate how to use a Node Module.
+- [Part 7: Node Module](/blog/2019-06-12-part-7-node-module). Demonstrate how to use a Node Module.
 
 {% include previous-next.html
   nextHref="/blog/2019-06-12-part-1-javascript-version"
