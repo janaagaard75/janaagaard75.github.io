@@ -12,6 +12,7 @@
   },
   "scripts": {
     "clean": "rm -rf _site",
+    "install-ruby-bundler": "gem install bundler",
     "install-ruby-gems": "bundle install",
     "start": "yarn run clean && bundle exec jekyll serve --future --unpublished",
     "update-ruby-gems": "bundle update"
