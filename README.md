@@ -7,7 +7,27 @@
 - [Custom domain on GitHub Pages](https://help.github.com/en/articles/using-a-custom-domain-with-github-pages)
 - [Install Azure CLI with apt](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-apt?view=azure-cli-latest)
 
-## JanAagaard.com
+## TODO
+
+- Move commits from part 7 to part 6.
+- Update part 6 and 7 to reflect this.
+- Set dates on the posts to the correct ones. Remember to update the links.
+- Test using Source Serif Pro and Source Serif Sans fonts.
+- Blog front page.
+
+  - Article summaries for the front page?
+  - Only show the main post on the front page?
+
+- Smaller text on small screens.
+- Add edit dates.
+- Add a table of contents.
+- Link to CV.
+- Align the numbered list and the bullets. <https://jsbin.com/tuxiwuh/edit?html,output>
+- Try to write the end-to-end test using Cypress. <https://www.cypress.io/blog/2017/11/07/add-gui-to-your-e2e-api-tests/#>
+- Semantic html. <https://dev.to/kenbellows/stop-using-so-many-divs-an-intro-to-semantic-html-3i9i>
+- Inspiration: <https://www.hodinkee.com/magazine/jony-ive-apple>.
+
+## The JanAagaard.com Company
 
 - Rename CPNHGN to JanAagaard.com on Virk.dk.
   - Set up jan@janaagaard.com as a Google email address.
@@ -21,28 +41,3 @@
 - Redirect cpnhgn.dk, cpnhgn.com, and janaagaard.dk to janaagaard.com.
 - Move main page to Google Pages.
 - Include link to CV.
-
-## TODO
-
-- Write part 5.
-- Write part 6.
-- Write the code for part 7.
-- Write part 7.
-- Set dates to the correct one. Remember to update the links.
-- Test using Source Serif Pro and Source Serif Sans fonts.
-- Robots.txt with the location of the sitemap. <https://support.google.com/webmasters/answer/183668?hl=en>
-- Footer.
-- Blog front page.
-
-  - Article summaries for the front page?
-  - Only show the main post on the front page?
-
-- Smaller text on small screens.
-- Add edit dates.
-- Tags.
-- Add a table of contents.
-- Link to CV.
-- Align the numbered list and the bullets. <https://jsbin.com/tuxiwuh/edit?html,output>
-- Try to write the end-to-end test using Cypress. <https://www.cypress.io/blog/2017/11/07/add-gui-to-your-e2e-api-tests/#>
-- Semantic html. <https://dev.to/kenbellows/stop-using-so-many-divs-an-intro-to-semantic-html-3i9i>
-- Inspiration: <https://www.hodinkee.com/magazine/jony-ive-apple>.
