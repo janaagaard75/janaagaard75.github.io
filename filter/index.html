@@ -15,10 +15,7 @@ sitemap: false
   </head>
   <body>
     <div class="container">
-      <h1>User Category</h1>
-      <p>
-        This browser's user category is <span id="userCategory">unknown</span>.
-      </p>
+      <h1>User Category: <span id="userCategory">unknown</span></h1>
       <p>
         <button onclick="setUserCategory('Anonymous')">
           Set to Anonymous
@@ -51,7 +48,7 @@ sitemap: false
       function updateDisplayedCategory() {
         document.getElementById(
           "userCategory"
-        ).innerText = `'${getUserCategory()}'`
+        ).innerText = getUserCategory()
       }
 
       updateDisplayedCategory()
