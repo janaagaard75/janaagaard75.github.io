@@ -39,6 +39,7 @@ footer {
   background-color: $gray-700;
 }
 
+// TODO JAA: This does not work as intended.
 .col-md-content {
   @include make-col-ready();
 
