@@ -17,7 +17,7 @@ layout: base
   </div>
   <div class="col">
     {% if page.tags %}
-      <ul class="tags">
+      <ul class="tags d-none d-lg-block">
         {% for tag in page.tags %}
           <li><a href="tags.html#{{ tag | slugify }}" class="tag">{{ tag }}</a></li>
         {% endfor %}

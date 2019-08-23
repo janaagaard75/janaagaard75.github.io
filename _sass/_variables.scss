@@ -9,10 +9,10 @@ $font-family-sans-serif: "Open Sans", -apple-system, "BlinkMacSystemFont",
   "Segoe UI", Roboto, "Helvetica Neue", "Arial", "Noto Sans", sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-// Only a single breakpoint. Anything below an iPad in portrait mode is full width.
 $grid-breakpoints: (
   xs: 0,
-  md: 768px
+  md: 768px,
+  lg: 992px
 );
 
 $container-max-widths: (
