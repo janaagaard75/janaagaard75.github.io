@@ -108,13 +108,13 @@ jobs:
 The [final `config.yml`](https://github.com/janaagaard75/azure-functions-typescript/blob/part-3-local-test/.circleci/config.yml) has a few more steps, adding a cache of the `node_modules` folder to speed up the build time and presenting the test results in CircleCI.
 
 1. Check out the code from GitHub.
-2. **Restore cached `node_modules`.**
+2. _Restore cached `node_modules`._
 3. Install the Node.js packages.
-4. **Cache `node_modules`.**
+4. _Cache `node_modules`._
 5. Build the code.
 6. Lint the code.
 7. Run the tests.
-8. **Store test results in CircleCI.**
+8. _Store test results in CircleCI._
 
 CircleCI requires that test results are stored as JUnit XML files, and Jest uses json by default. The command for saving the test results ended up being quite long.
 
