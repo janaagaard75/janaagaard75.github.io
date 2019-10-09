@@ -13,7 +13,7 @@
 - Update part 6 and 7 to reflect this.
 - Set dates on the posts to the correct ones. Remember to update the links.
 - Test using Source Serif Pro and Source Serif Sans fonts.
-- Blog front page.
+- Add a front page to the blog.
 
   - Article summaries for the front page?
   - Only show the main post on the front page?
@@ -26,6 +26,7 @@
 - Try to write the end-to-end test using Cypress. <https://www.cypress.io/blog/2017/11/07/add-gui-to-your-e2e-api-tests/#>
 - Semantic html. <https://dev.to/kenbellows/stop-using-so-many-divs-an-intro-to-semantic-html-3i9i>
 - Inspiration: <https://www.hodinkee.com/magazine/jony-ive-apple>.
+- Dark mode: <https://tombrow.com/dark-mode-website-css>.
 
 ## The JanAagaard.com Company
 
