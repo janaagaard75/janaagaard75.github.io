@@ -32,4 +32,14 @@
   .navbar-light .navbar-brand {
     color: rgba($text-color, 0.9);
   }
+
+  .table {
+    color: $text-color;
+
+    td,
+    th,
+    thead th {
+      border-color: $gray-600;
+    }
+  }
 }
