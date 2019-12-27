@@ -1,7 +1,12 @@
 {
+  "cSpell.words": [
+    "Aagaard's",
+    "CPNHGN",
+    "Glone's",
+    "Virk",
+    "janaagaard"
+  ],
   "editor.formatOnSave": false,
   "editor.tabSize": 2,
-  "prettier.disableLanguages": ["markdown"],
-  "spellright.ignoreFiles": ["**/.gitignore", "**/.spellignore", "*.lock"],
-  "spellright.language": ["en"]
+  "prettier.disableLanguages": ["markdown"]
 }
