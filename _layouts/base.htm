@@ -34,62 +34,7 @@
     <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="/blog/">
-            <img
-              src="/images/jan-aagaard.png"
-              alt="Jan Aagaard"
-              class="mr-2"
-              style="border-radius: 50%; width: 34px;"
-            />
-            Jan Aagaard's Blog
-          </a>
-          <div class="navbar-nav">
-            <a href="/filter"><span id="userCategory"></span></a>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main class="container-fluid flex-grow-1">
-      {{ content }}
-    </main>
-    <footer class="text-light">
-      <div class="container">
-        <ul class="mt-0">
-          <li>
-            <a class="text-light" href="mailto:jan@aagaard.net"
-              ><img
-                src="/images/icons/envelope.svg"
-                class="icon"
-              />jan@aagaard.net</a
-            >
-          </li>
-          <li>
-            <a class="text-light" href="https://twitter.com/janaagaard"
-              ><img
-                src="/images/icons/twit-ter.svg"
-                class="icon"
-              />janaagaard</a
-            >
-          </li>
-          <li>
-            <a class="text-light" href="https://github.com/janaagaard75"
-              ><img
-                src="/images/icons/github.svg"
-                class="icon"
-              />janaagaard75</a
-            >
-          </li>
-          <li>
-            <a class="text-light" href="/blog/atom.xml"
-              ><img src="/images/icons/r-ss.svg" class="icon" />ATOM feed</a
-            >
-          </li>
-        </ul>
-      </div>
-    </footer>
+    {{ content }}
     <script>
       document.addEventListener("DOMContentLoaded", function(event) {
         function getUserCategory() {
