@@ -4,9 +4,15 @@ title: "Categorizing Code Comments"
 published: false
 ---
 
-# Writing Good Code Comments
+# The What, How and Why of Code Comments
 
-I believe that writing code comments is crucial to writing good code. In the 90's[Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the idea of document every single little piece of your code, and that certainly proved to be too much. Uncle Bob's "comments lie" from his excellent book Clean Code has led to a lot of developers believing in writing no code comments at all. I think this
+In the 90's[Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the idea of document every little piece of your code. In most cases that's way too many comments, and I guess that's why the current trend seems to be to not write any comments at all, sometimes citing Uncle Bob ["a comment is a failure to express yourself in code"](https://twitter.com/unclebobmartin/status/870311898545258497).
+
+I've more than once
+
+Uncle Bob's "comments lie" line from his excellent book Clean Code from 2009 has led to some developers believing in writing no code comments at all. The right amount is of course somewhere in between these two extremes.
+
+ I believe that writing code comments is crucial to writing good code, but
 
 But do you know if a comment is a good one, that you should keep, or bad one, that should be deleted?
 
