@@ -3,18 +3,16 @@
   <head>
     <title>{{ page.title }}</title>
     {% seo title=false %}
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/images/jan-aagaard.png" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="/images/jan-aagaard.png">
     <link
       rel="preload"
       as="style"
-      href="/css/main.css?{{ site.time | date: '%s%N' }}"
-    />
+      href="/css/main.css?{{ site.time | date: '%s%N' }}">
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700|Open+Sans&display=fallback"
-    />
+      href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700|Open+Sans&display=fallback">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <script
       defer
@@ -26,13 +24,11 @@
     ></script>
     <link
       rel="stylesheet"
-      href="/css/main.css?{{ site.time | date: '%s%N' }}"
-    />
+      href="/css/main.css?{{ site.time | date: '%s%N' }}">
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700|Open+Sans&display=fallback"
-    />
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+      href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700|Open+Sans&display=fallback">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   </head>
   <body>
     {{ content }}
