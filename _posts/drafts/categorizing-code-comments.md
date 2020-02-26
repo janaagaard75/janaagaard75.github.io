@@ -6,9 +6,11 @@ published: false
 
 # The What, How and Why of Code Comments
 
-In the 90's[Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the idea of document every little piece of your code. In most cases that's way too many comments, and I guess that's why the current trend seems to be to not write any comments at all, sometimes citing Uncle Bob ["a comment is a failure to express yourself in code"](https://twitter.com/unclebobmartin/status/870311898545258497).
+> Summary: Code comments that explain **why** a piece of code is written as it is, are almost always worth keeping. Comments that explain **how** a piece of code works, might be made redundant be rewriting the code. Comments that explain **what** some code does can almost always be removed with a simple refactor of the code.
 
-I've more than once
+In the 90's[Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the idea of documenting every little piece of your code. In most cases that's way too many comments, and I guess that's why the current trend seems to be to not write any comments at all, sometimes citing Uncle Bob ["a comment is a failure to express yourself in code"](https://twitter.com/unclebobmartin/status/870311898545258497). But that's quite different from not writing any comments at all.
+
+This li
 
 Uncle Bob's "comments lie" line from his excellent book Clean Code from 2009 has led to some developers believing in writing no code comments at all. The right amount is of course somewhere in between these two extremes.
 
