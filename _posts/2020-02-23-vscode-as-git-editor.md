@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Configure Visual Studio Code as Your git Editor”
+title: "Configure Visual Studio Code as Your git Editor"
 published: true
 ---
 
