@@ -5,6 +5,10 @@
 
   a {
     color: $cyan;
+
+    &:hover {
+      color: $white;
+    }
   }
 
   body {
