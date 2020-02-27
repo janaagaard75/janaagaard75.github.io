@@ -35,6 +35,11 @@
 
   .navbar-light .navbar-brand {
     color: rgba($text-color, 0.9);
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+      color: $white;
+    }
   }
 
   .table {
