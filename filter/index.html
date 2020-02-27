@@ -39,7 +39,7 @@ sitemap: false
         if (userCategory === "Anonymous") {
           Cookies.remove("UserCategory")
         } else {
-          Cookies.set("UserCategory", userCategory, { expires: 10 * 365 })
+          Cookies.set("UserCategory", userCategory, { expires: 1000 })
         }
 
         window.location.reload(true)
