@@ -10,6 +10,7 @@
     "crossorigin",
     "gtag",
     "janaagaard",
+    "kramdown",
     "preconnect"
   ],
   "editor.formatOnSave": false,
