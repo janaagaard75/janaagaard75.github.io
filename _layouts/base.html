@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="/images/jan-aagaard.png">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <script
-      defer
+      async
       src="https://www.googletagmanager.com/gtag/js?id=UA-142975940-1"
     ></script>
     <link
@@ -23,7 +23,7 @@
     <div class="user-category">
       <a href="/filter"><span id="userCategory"></span></a>
     </div>
-    <script>
+    <script async>
       document.addEventListener("DOMContentLoaded", function(event) {
         function getUserCategory() {
           const userCategory = window.localStorage.getItem("UserCategory")
