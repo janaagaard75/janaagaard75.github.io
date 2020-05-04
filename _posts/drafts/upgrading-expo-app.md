@@ -1,14 +1,22 @@
-# Upgrading Expo
+---
+layout: post
+title: "Upgrade an Expo App"
+published: true
+---
 
-This is how I update my Expo app. I create a commit after each step, so that I can easily undo or debug, if necessary.
+# Upgrading an Expo App
 
-I generally test running the app after each stop to make sure it still work. Updating sometimes require minor changes to the code.
+This is how I upgrade my [Expo](https://expo.io/) apps. I create a commit after each step, so that I can easily undo or debug, if necessary.
+
+I generally test running the app after each stop to make sure it still work. Updated packages sometimes require minor changes to the code.
 
 ## 1. Update Expo CLI
 
 Use Expo CLI to upgrade the app, so first make sure Update Expo CLI is the latest version.
 
-1) Update `package.json`, 2) install the the update `expo-cli` and 3) make sure that all dependencies are the latest and greatest.
+I like have my tools installed locally instead of globally, because I sometimes switch between two computers, and this keeps them in sync. I would also recommend doing this if you're more than one developer on the app.
+
+Update `package.json`, install the the update `expo-cli` and make sure that all dependencies are the latest and greatest.
 
 ```sh
 ncu -u expo-cli
@@ -35,17 +43,11 @@ As always, install after making changes to `package.json`.
 yarn install
 ```
 
-## 4. Final Upgrade
+## 4. Sync Versions from yarn.lock
 
-Run one last final upgrade to make sure that the dependencies of the dependencies have been installed.
+I like being able to see the exact version of the packages that I have installed, so I synchronize my `package.lock` with the versions in `yarn.lock` using [`syncyarnlock`](https://github.com/vasilevich/sync-yarnlock-into-packagejson).
 
-```
-yarn upgrade
-```
-
-## 5. Sync Versions from yarn.lock
-
-I like being able to see the exact version of the packages that I have installed, so I synchronize my `package.lock` with the versions in `yarn.lock` using [`syncyarnlock`](TODO).
+Run a final `yarn install && yarn upgrade` to make sure the versions numbers in `yarn.lock` match the ones in `package.json` and that all dependencies of dependencies are up-to-date.
 
 ```
 yarn sync-from-yarn-lock
