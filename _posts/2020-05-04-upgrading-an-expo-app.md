@@ -13,15 +13,15 @@ published: true
 
 This is how I upgrade my [Expo](https://expo.io/) apps. My apps use [Expo's Managed workflow](https://docs.expo.io/introduction/managed-vs-bare/?redirected#workflow-comparison).
 
-I create a commit after each step, so that I can easily undo or debug, if necessary, and I generally test running the app after each stop to make sure it still work. Updated packages sometimes require minor changes to the code.
+I create a commit after each step, so that I can easily undo or debug, if necessary, and I generally test running the app after each stop to make sure it still work. Upgraded packages sometimes require minor changes to the code.
 
-## 1. Update Expo CLI
+## 1. Upgrade Expo CLI
 
-Use Expo CLI to upgrade the app, so first make sure Update Expo CLI is the latest version.
+The Expo CLI will do the most of the work upgrading the app, so I start out by making sure I have the latest version of the tool.
 
-I like have my tools installed locally instead of globally, because I sometimes switch between two computers, and this keeps them in sync. I would also recommend doing this if you're more than one developer on the app.
+I like having my tools installed locally instead of globally because I switch between two computers, and this keeps the tools in sync. I would also strongly recommend installing tools locally if you're more than one developer on the app. This also simplifies setting up new developer PCs.
 
-Update `package.json`, install the the update `expo-cli` and make sure that all dependencies are the latest and greatest.
+Upgrade `package.json`, install the upgraded `expo-cli` and make sure that all dependencies are the latest and greatest.
 
 ```sh
 ncu -u expo-cli
@@ -29,32 +29,55 @@ yarn install
 yarn upgrade
 ```
 
-## 2. Upgrade the App
+## 2. Upgrade Expo and Related Packages
 
-The will update version numbers in `package.json` respecting that Expo needs specific versions of some of the libraries.
+The will upgrade version numbers in `package.json` for all the packages that Expo use, respecting Expo's specific version requirements.
 
 ```sh
 yarn expo upgrade
-yarn install && yarn upgrade
+yarn install
 ```
 
-## 3. Align @types Packages
+## 3. Sync Versions from yarn.lock
 
-Align the `@types/` packages with the ones installed, e.g. if `react-native` is on version `0.61.4` I set `@types/react-native` to version `^0.61.0`.
+I like being able to see the exact version of the packages that I have installed, and `yarn upgrade` almost certainly bumped the version number for some of the packages, so I synchronize my `package.lock` with the versions in `yarn.lock` using [`syncyarnlock`](https://github.com/vasilevich/sync-yarnlock-into-packagejson).
 
-As always, install after making changes to `package.json`.
+```
+yarn sync-from-yarn-lock
+yarn install
+```
+
+## 4. Upgrade Non-Expo Packages
+
+I use the [`npm-check-updates](https://github.com/raineorshine/npm-check-updates) to see if there are other packages that needs to be upgraded. `ncu` will also show updates to packages that Expo depend on, so do not update anything that `yarn expo upgrade` took care of.
+
+```sh
+yarn ncu
+```
+
+If it turns out that Prettier and Dayjs needs to be upgraded I run these commands:
+
+```sh
+yarn ncu -u prettier dayjs
+yarn install
+```
+
+## 5. Align @types Packages
+
+Align the `@types/` packages with the ones installed, e.g. if `react-native` is on version `0.61.4` I set `@types/react-native` to version `^0.61.0`. The caret will make sure to grab the latest `0.61.*` version.
+
+Always run `yarn install` after making changes to version numbers `package.json` to make sure that `yarn.lock` is matches `package.json`.
 
 ```sh
 yarn install
 ```
 
-## 4. Sync Versions from yarn.lock
+## 6. Final Yarn Upgrade
 
-I like being able to see the exact version of the packages that I have installed, so I synchronize my `package.lock` with the versions in `yarn.lock` using [`syncyarnlock`](https://github.com/vasilevich/sync-yarnlock-into-packagejson).
+This shouldn't really be necessary, but always run a final `yarn install`, `yarn upgrade` and `sync-from-yarn-lock` to make sure absolute everything is update to date and the versions numbers in `package.json` and `yarn.lock` match each other.
 
-Run a final `yarn install && yarn upgrade` to make sure the versions numbers in `yarn.lock` match the ones in `package.json` and that all dependencies of dependencies are up-to-date.
-
-```
+```sh
+yarn install && yarn upgrade
 yarn sync-from-yarn-lock
 yarn install && yarn upgrade
 ```
