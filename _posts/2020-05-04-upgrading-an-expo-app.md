@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Upgrade an Expo App"
+title: "Upgrading an Expo App"
 published: true
 ---
 
