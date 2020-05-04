@@ -4,11 +4,9 @@ title: "Upgrade an Expo App"
 published: true
 ---
 
-# Upgrading an Expo App
+This is how I upgrade my [Expo](https://expo.io/) apps.
 
-This is how I upgrade my [Expo](https://expo.io/) apps. I create a commit after each step, so that I can easily undo or debug, if necessary.
-
-I generally test running the app after each stop to make sure it still work. Updated packages sometimes require minor changes to the code.
+I create a commit after each step, so that I can easily undo or debug, if necessary, and I generally test running the app after each stop to make sure it still work. Updated packages sometimes require minor changes to the code.
 
 ## 1. Update Expo CLI
 
