@@ -6,13 +6,13 @@ published: false
 
 # The What, How and Why of Code Comments
 
-> Summary: Code comments that explain **what** some code does can almost always be removed with a simple refactor of the code. If it explains **how** a piece of code works, it might be better to rewrite the code. If the comment explains **why** a piece of code is written as it is, keep it.
+> TL;DR: A comment that explain **what** some code does can almost always be removed with a simple refactor of the code. If it explains **how** a the code works, it might be better to rewrite the code. If the comment explains **why** a piece of code is written as it is, keep it.
 
-In the 90's[Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the idea of documenting every little piece of your code. In most cases that's way too many comments, and I guess that's why the current trend seems to be to not write any comments at all, sometimes citing Uncle Bob ["a comment is a failure to express yourself in code"](https://twitter.com/unclebobmartin/status/870311898545258497). But avoiding code comments is very different from not writing any comments at all, as he has also clarified humself. TODO: link to tweet. I belive that good comments are a crucial part of good code.
+In the 90's, [Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the idea of documenting every little piece of your code. In most cases that's way too many comments, and I guess that's why the current trend seems to be to not write any comments at all, sometimes citing Uncle Bob ["a comment is a failure to express yourself in code"](https://twitter.com/unclebobmartin/status/870311898545258497). But avoiding code comments is very different from not writing any comments at all, as he has also clarified himself. TODO: link to tweet. I believe that good comments are a crucial part of good code.
 
 So. Some comment are good and some are bad, but how do you tell the apart? Well, categorizing then into what-, how- or why-comments can help.
 
-## Where To Put The Lines Below?
+## TODO: Where To Put The Lines Below?
 
 Comments are put there to make the code easier to read. If you have hard time grasping a piece of code, consider leaving a comment for the next developer.
 
@@ -20,7 +20,7 @@ Write full sentences with proper capitalization and punctuation.
 
 Keep in mind that these are guidelines and not rules. There will always be situations where you shouldn't follow these guidelines.
 
-Self documeting code.
+Self documenting code.
 
 ## Three Types of Comments
 
@@ -32,9 +32,9 @@ Comments can be categorized into tree types why-comments, how-comments and what-
 
 ## What-Comments
 
-Code comments that explain what the code does can almist always be made redudant with a simple refacoting of the code. You should strive to write self-documenting code instead of using what-comments.
+Code comments that explain what the code does can almost always be made redundant with a simple refactoring of the code. You should strive to write self-documenting code instead of using what-comments.
 
-Example: Header-type commments.
+Example: Header-type comments.
 
 Rename a method.
 Introduce a variable.
