@@ -21,6 +21,8 @@ The Expo CLI will do the most of the work upgrading the app, so I start out by m
 
 I like having my tools installed locally instead of globally because I switch between two computers, and this keeps the tools in sync. I would also strongly recommend installing tools locally if you're more than one developer on the app. This also simplifies setting up new developer PCs.
 
+`ncu` is the command that comes with [`npm-check-updates`](https://github.com/raineorshine/npm-check-updates). It can be used to check and update the version numbers of the npm packages `package.json`.
+
 Upgrade `package.json`, install the upgraded `expo-cli` and make sure that all dependencies are the latest and greatest.
 
 ```sh
