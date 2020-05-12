@@ -13,7 +13,8 @@
     "gtag",
     "janaagaard",
     "kramdown",
-    "preconnect"
+    "preconnect",
+    "syncyarnlock"
   ],
   "editor.formatOnSave": false,
   "editor.tabSize": 2,
