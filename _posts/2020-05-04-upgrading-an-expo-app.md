@@ -78,6 +78,8 @@ yarn install
 
 This shouldn't really be necessary, but always run a final `yarn install`, `yarn upgrade` and `sync-from-yarn-lock` to make sure absolute everything is update to date and the versions numbers in `package.json` and `yarn.lock` match each other. If `sync-from-yarn-lock` makes changes to `package.json`, run `yarn install` and `yarn upgrade` again.
 
+`yarn install && yarn upgrade` is simply runs `yarn install` first and then `yarn upgrade`.
+
 ```sh
 yarn upgrade
 yarn sync-from-yarn-lock
