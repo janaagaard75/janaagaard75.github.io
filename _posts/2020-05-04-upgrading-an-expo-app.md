@@ -21,6 +21,8 @@ The Expo CLI will do the most of the work upgrading the app, so I start out by m
 
 I like having my tools installed locally instead of globally because I switch between two computers, and this keeps the tools in sync. I would also strongly recommend installing tools locally if you're more than one developer on the app. This also simplifies setting up new developer PCs.
 
+`ncu` is the command that comes with [`npm-check-updates`](https://github.com/raineorshine/npm-check-updates). It can be used to check and update the version numbers of the npm packages `package.json`.
+
 Upgrade `package.json`, install the upgraded `expo-cli` and make sure that all dependencies are the latest and greatest.
 
 ```sh
@@ -75,6 +77,8 @@ yarn install
 ## 6. Final Yarn Upgrade
 
 This shouldn't really be necessary, but always run a final `yarn install`, `yarn upgrade` and `sync-from-yarn-lock` to make sure absolute everything is update to date and the versions numbers in `package.json` and `yarn.lock` match each other. If `sync-from-yarn-lock` makes changes to `package.json`, run `yarn install` and `yarn upgrade` again.
+
+`yarn install && yarn upgrade` is simply runs `yarn install` first and then `yarn upgrade`.
 
 ```sh
 yarn upgrade

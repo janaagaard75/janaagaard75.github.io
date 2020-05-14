@@ -20,7 +20,8 @@
     "junit",
     "kramdown",
     "mkdir",
-    "preconnect"
+    "preconnect",
+    "syncyarnlock"
   ],
   "editor.formatOnSave": false,
   "editor.tabSize": 2,
