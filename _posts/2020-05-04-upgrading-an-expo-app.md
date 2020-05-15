@@ -44,12 +44,24 @@ yarn upgrade
 
 I like being able to see the exact version of the packages that I have installed. This will synchronize the versions from `yarn.lock` to `package.json`. Reinstall afterwords to write the updated version numbers back to `yarn.lock`.
 
-```
+```sh
 npx syncyarnlock --keepPrefix --keepGit --keepLink --save
 yarn install
 ```
 
-`syncyarnlock` should not change the version of `react-native` away from Expo's specific one, but there seems to be a bug in it. Revert that line in `package.json` if is was modified.
+`syncyarnlock` should not change the version of `react-native` away from Expo's specific one, but there seems to be a bug in it. Revert that line in `package.json` if is was modified. It should look like this:
+
+```json
+{
+  // ...
+  "dependencies": {
+    // ...
+    "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
+    // ...
+  }
+  // ...
+}
+```
 
 ## 5. Align @types Packages
 
