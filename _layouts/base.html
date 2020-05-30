@@ -3,22 +3,24 @@
   <head>
     <title>{{ page.title }}</title>
     {% seo title=false %}
-    <meta name="viewport" content="width=device-width">
-    <link rel="icon" type="image/png" href="/images/jan-aagaard.png">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/images/jan-aagaard.png" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-142975940-1"
     ></script>
     <link
       rel="stylesheet"
-      href="/css/main.css?{{ site.time | date: '%s%N' }}">
+      href="/css/main.css?{{ site.time | date: '%s%N' }}"
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700|Open+Sans&display=fallback"
       media="print"
-      onload="this.media='all'">
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+      onload="this.media='all'"
+    />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
   </head>
   <body>
     {{ content }}
@@ -26,7 +28,7 @@
       <a href="/filter"><span id="userCategory"></span></a>
     </div>
     <script async>
-      document.addEventListener("DOMContentLoaded", function(event) {
+      document.addEventListener("DOMContentLoaded", function (event) {
         function getUserCategory() {
           const userCategory = window.localStorage.getItem("UserCategory")
           if (userCategory == null) {
@@ -53,7 +55,7 @@
 
         gtag("js", new Date())
         gtag("config", "UA-142975940-1", {
-          dimension1: userCategory
+          dimension1: userCategory,
         })
       })
     </script>
