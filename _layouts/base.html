@@ -15,7 +15,9 @@
       href="/css/main.css?{{ site.time | date: '%s%N' }}">
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700|Open+Sans&display=fallback">
+      href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700|Open+Sans&display=fallback"
+      media="print"
+      onload="this.media='all'">
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   </head>
   <body>
