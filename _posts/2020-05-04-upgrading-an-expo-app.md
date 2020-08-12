@@ -50,7 +50,17 @@ Upgrade the rest of the npm packages.
 yarn upgrade
 ```
 
-## 4. Sync Versions from yarn.lock
+## 4. Major Upgrades
+
+`yarn upgrade` doesn't upgrade packages to new major versions. Verify if there is anything not up to date, and if so, consider upgrading. Upgrading major versions might require a lot of changes to the source code.
+
+```sh
+# Look out of major updates to unknown packages, that is red
+# lines where the package is in the list found in step 1.
+yarn outdated
+```
+
+## 5. Sync Versions from yarn.lock
 
 I like being able to see the exact version of the packages that I have installed. `syntcyarnlock` can synchronize the versions from `yarn.lock` to `package.json`. Reinstall afterwords to write the updated version numbers back to `yarn.lock`, keeping the the file in sync with `package.json`.
 
@@ -74,7 +84,7 @@ yarn install
 }
 ```
 
-## 5. Align @types Packages
+## 6. Align @types Packages
 
 Definitely Typed packages don't always follow the versioning of the main packages, so there are a few @types packages where this simply isn't possible. When not, I grab the lastet @types package available.
 
@@ -88,13 +98,4 @@ yarn install
 npx syncyarnlock --keepPrefix --keepGit --keepLink --save
 # Revert the change to the "react-native" line in package.json before installing.
 yarn install && yarn upgrade
-```
-
-## 6. Major Upgrades
-
-`yarn upgrade` doesn't upgrade packages to new major versions. Verify if there is anything not up to date, and if so, consider upgrading. Upgrading major versions might require a lot of changes to the code.
-
-```sh
-# Look for the read lines where the packages are in the list found in step 1.
-yarn outdated
 ```
