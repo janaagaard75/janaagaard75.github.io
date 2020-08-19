@@ -30,7 +30,7 @@
   </head>
   <body>
     {{ content }}
-    <div class="user-category">
+    <div id="userCategoryWrapper" class="user-category">
       <a href="/filter"><span id="userCategory"></span></a>
     </div>
     <script async>
@@ -52,6 +52,9 @@
 
         if (userCategory !== "Anonymous") {
           document.getElementById("userCategory").innerText = userCategory
+        } else {
+          // Remove the element to avoid leaving an empty link on the page. It would be better to add the element programmatically instead.
+          document.getElementById("userCategoryWrapper").remove();
         }
 
         window.dataLayer = window.dataLayer || []
