@@ -1,3 +1,6 @@
+// Make the blue slightly darker to make the links pass the accessibility tests.
+$blue: hsl(211, 100%, 46%);
+
 $font-family-base: "Merriweather", "Georgia", "Bitstream Charter", "Charis SIL",
   "Utopia", "URW Bookman L", serif;
 $font-weight-base: 300;

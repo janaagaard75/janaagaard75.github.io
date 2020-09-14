@@ -23,13 +23,23 @@ The Expo CLI will do the most of the work upgrading the app, so start out by mak
 yarn upgrade expo-cli
 ```
 
-## 2. Upgrade Expo and Related NPM Packages
+## 2. Upgrade Expo and Known Packages
 
-Expo CLI will upgrade the version numbers in `package.json` for all the packages that Expo use, respecting Expo's specific version requirements. Install the upgraded versions and run a yarn upgrade to make sure all the dependencies of our dependencies have been upgraded. I don't think Yarn has a command for doing `yarn install && yarn upgrade` in a single step.
+Expo CLI can upgrade Expo and all packages that it knows about, respecting Expo's specific version requirements. `expo upgrade` updates the version numbers in `package.json` and installs them afterwards to keep the `yarn.lock` in sync.
 
 ```sh
 yarn expo upgrade
-yarn install
+```
+
+Make a note of the packages there weren't upgraded by Expo. Here's an example of the list of unknown packages.
+
+```
+The following packages were not updated. You should check the READMEs for those repositories
+to determine what version is compatible with your new set of packages:
+@react-navigation/native, @react-navigation/stack, prop-types, tslib, @babel/core,
+@types/expo__vector-icons, @typescript-eslint/eslint-plugin, @typescript-eslint/parser,
+eslint, eslint-config-prettier, eslint-plugin-prettier, eslint-plugin-react, expo-cli,
+prettier, sharp-cli
 ```
 
 ## 3. Upgrade the Rest of the Packages
@@ -40,16 +50,27 @@ Upgrade the rest of the npm packages.
 yarn upgrade
 ```
 
-## 4. Sync Versions from yarn.lock
+## 4. Major Upgrades
 
-I like being able to see the exact version of the packages that I have installed. This will synchronize the versions from `yarn.lock` to `package.json`. Reinstall afterwords to write the updated version numbers back to `yarn.lock`.
+`yarn upgrade` doesn't upgrade packages to new major versions. Verify if there is anything not up to date, and if so, consider upgrading. Upgrading major versions might require a lot of changes to the source code.
+
+```sh
+# Look out of major updates to unknown packages, that is red
+# lines where the package is in the list found in step 1.
+yarn outdated
+```
+
+## 5. Sync Versions from yarn.lock
+
+I like being able to see the exact version of the packages that I have installed. `syntcyarnlock` can synchronize the versions from `yarn.lock` to `package.json`. Reinstall afterwords to write the updated version numbers back to `yarn.lock`, keeping the the file in sync with `package.json`.
 
 ```sh
 npx syncyarnlock --keepPrefix --keepGit --keepLink --save
+# Revert the change to the "react-native" line in package.json before installing.
 yarn install
 ```
 
-`syncyarnlock` should not change the version of `react-native` away from Expo's specific one, but there seems to be a bug in it. Revert that line in `package.json` if is was modified. It should look like this:
+`syncyarnlock` should not change the version of `react-native` away from Expo's specific one, but there seems to be a bug. Revert that line in `package.json` if is was modified. It should look like this:
 
 ```json
 {
@@ -63,30 +84,18 @@ yarn install
 }
 ```
 
-## 5. Align @types Packages
+## 6. Align @types Packages
 
-Align the `@types/` packages with the ones installed. Example: If `react` is on version `16.9.0` and `@types/react` is on version `16.8.something`, I manually update `@types/react` to version `~16.9.0`. The tilde will make sure to grab the latest `19.9.*` version.
+Definitely Typed packages don't always follow the versioning of the main packages, so there are a few @types packages where this simply isn't possible. When not, I grab the lastet @types package available.
+
+Align the `@types/` packages with the ones installed. Example: If `react` is on version `16.9.0` and `@types/react` is on version `16.8.something`, I manually update `@types/react` to version `~16.9.0`. The tilde will make sure to grab the latest `16.9.*` version. Search for `react-native@` in `yarn.lock` to finde the installed version of React Native.
 
 This will require yet another around of installing, upgrading and sync'ing version numbers.
 
 ```sh
+# Update @types packages manually.
 yarn install
 npx syncyarnlock --keepPrefix --keepGit --keepLink --save
-yarn install && yarn upgrade
-```
-
-## 6. Major Upgrade
-
-`yarn upgrade` doesn't upgrade packages to new major versions. Verify if there is anything not up to date, and if so, consider upgrading. Upgrading major versions might require a lot of changes to the code.
-
-```sh
-yarn outdated
-```
-
-## 7. Final Install & Upgrade
-
-This shouldn't be necessary, but I always run a final install and upgrade to make sure `package.json` and `yarn.lock` are in sync.
-
-```sh
+# Revert the change to the "react-native" line in package.json before installing.
 yarn install && yarn upgrade
 ```
