@@ -10,7 +10,7 @@ tags:
 published: true
 ---
 
-[gatsby-contentful-source](https://www.gatsbyjs.com/plugins/gatsby-source-contentful/) support both Traced SVGs and WebP, but not both out of the box. It is, however, not that difficult to get both.
+[gatsby-contentful-source](https://www.gatsbyjs.com/plugins/gatsby-source-contentful/) supports Traced SVGs and WebP, by using either `GatsbyContentfulFluid_tracedSVG` or `GatsbyContentfulFluid_withWebp`, but you have to choose between one or the other. Fortunately is not that difficult to add a fragment query this allows having both.
 
 ## 1. Define a Fragment With Both Traced SVG and WebP
 
@@ -19,6 +19,7 @@ Create a file with shared query fragments, e.g. `fragments.ts`. Just make sure t
 ```typescript
 import { graphql } from "gatsby"
 
+// The name of this constant isn't important.
 export const tracedSvgAndWithWebp = graphql`
   fragment GatsbyContentfulFluid_tracedSvg_withWebp on ContentfulFluid {
     tracedSVG
@@ -34,7 +35,7 @@ export const tracedSvgAndWithWebp = graphql`
 
 ## 2. Use the New Fragment
 
-Simply replace your exiting fragments with new `GatsbyContentfulFluid_tracedSvg_withWebp`, e.g.
+Replace your exiting fragments with new `GatsbyContentfulFluid_tracedSvg_withWebp`, e.g.
 
 ```typescript
 export const imageQuery = graphql`
@@ -49,4 +50,4 @@ export const imageQuery = graphql`
 
 ## Build Your Own Fragment
 
-The fragments that gatsby-contentful-source comes with are all defined in the package's [`fragments.js` file](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-contentful/src/fragments.js). `GatsbyContentfulFluid_tracedSvg_withWebp` is a combination of  `GatsbyContentfulFluid_tracedSVG` and `GatsbyContentfulFluid_withWebp`.
+The fragments that gatsby-contentful-source comes with are all defined in their [`fragments.js` file](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-contentful/src/fragments.js). `GatsbyContentfulFluid_tracedSvg_withWebp` is a combination of  `GatsbyContentfulFluid_tracedSVG` and `GatsbyContentfulFluid_withWebp`.
