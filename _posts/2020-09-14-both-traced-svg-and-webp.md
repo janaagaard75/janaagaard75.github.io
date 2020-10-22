@@ -49,4 +49,4 @@ export const imageQuery = graphql`
 
 ## Bonus info: Creating Your Own Fragments
 
-The fragments that gatsby-contentful-source comes with are all defined in the package's [`fragments.js` file](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-contentful/src/fragments.js). `GatsbyContentfulFluid_tracedSvg_withWebp` is a combination of  `GatsbyContentfulFluid_tracedSVG` and `GatsbyContentfulFluid_withWebp`.
+The fragments that gatsby-contentful-source comes with are all defined in [the package's `fragments.js` file](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-contentful/src/fragments.js). `GatsbyContentfulFluid_tracedSvg_withWebp` is a combination of  `GatsbyContentfulFluid_tracedSVG` and `GatsbyContentfulFluid_withWebp`.
