@@ -12,8 +12,10 @@ git config --global core.editor "code --new-window --wait"
 
 ## Installing git on Windows
 
+The default editor can be configured in the installation wizard in Windows. Uncheck 'Only show new options' to ensure that this step is shown.
+
 {% include figure.html
   src="/images/set-default-git-editor-when-installing-on-windows.png"
   alt="Set default git editor when installing on Windows"
-  caption="The default git editor can be set when installing on Windows. Click on Test Custom Editor to enable the Next button."
+  caption="The default git editor can be set when installing on Windows. Test the custom editor to enable the Next button."
 %}
