@@ -9,3 +9,11 @@ I use VSCode as my text editor for git, and every time I install git I have to s
 ```shell
 git config --global core.editor "code --new-window --wait"
 ```
+
+## Installing git on Windows
+
+{% include figure.html
+  src="/images/set-default-git-editor-when-installing-on-windows.png"
+  alt="Set default git editor when installing on Windows"
+  caption="The default git editor can be set when installing on Windows. Click on Test Custom Editor to enable the Next button."
+%}
