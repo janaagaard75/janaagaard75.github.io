@@ -14,6 +14,7 @@
     "clean": "rm -rf _site",
     "install-ruby-bundler": "gem install bundler",
     "install-ruby-gems": "bundle install",
+    "optimize-images": "npx --package pngquant-bin pngquant --skip-if-larger --force \"./images/*.png\"",
     "start": "yarn run clean && bundle exec jekyll serve --future --unpublished",
     "update-ruby-gems": "bundle update"
   }
