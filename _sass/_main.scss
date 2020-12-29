@@ -40,14 +40,6 @@ footer {
   background-color: $gray-700;
 }
 
-// https://guides.codechewing.com/css/horizontal-scroll-pre-html-bootstrap
-pre code {
-  white-space: pre;
-  overflow-x: auto;
-  display: inline-block;
-  min-width: 100%;
-}
-
 // TODO JAA: This does not work as intended.
 .col-md-content {
   @include make-col-ready();
