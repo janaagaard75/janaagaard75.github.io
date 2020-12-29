@@ -42,7 +42,7 @@ footer {
 
 // Do not wrap code lines in Safari. This shouldn't have been necessary.
 pre code {
-  word-break: normal !important;
+  word-wrap: normal;
 }
 
 // TODO JAA: This does not work as intended.
