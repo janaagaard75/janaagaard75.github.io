@@ -40,6 +40,11 @@ footer {
   background-color: $gray-700;
 }
 
+// Do not wrap code lines in Safari. This shouldn't have been necessary.
+pre code {
+  word-break: normal !important;
+}
+
 // TODO JAA: This does not work as intended.
 .col-md-content {
   @include make-col-ready();
