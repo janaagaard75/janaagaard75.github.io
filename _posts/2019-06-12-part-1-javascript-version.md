@@ -72,7 +72,7 @@ The local Azure Functions host is started with the command `yarn func host start
 $ yarn start
 ```
 
-Open a browser window, go to <http://localhost:4000/api/greet>, add a name as a query parameter, and you will see it echoed back.
+Open a browser window, go to `http://localhost:4000/api/greet`, add a name as a query parameter, and you will see it echoed back.
 
 {% include figure.html
   src="/images/running-on-localhost.png"
@@ -92,7 +92,7 @@ The [Azure Functions extension for VSCode](https://marketplace.visualstudio.com/
 
 ## Debugging
 
-It's possible to debug and hit breakpoints in Visual Studio Code. Set a breakpoint and start the local host with VSCode's debugger panel. This will run `yarn start` and attach a debugger to Node.js. Remember to trigger the function by calling the <http://localhost:4000/api/greet> URL.
+It's possible to debug and hit breakpoints in Visual Studio Code. Set a breakpoint and start the local host with VSCode's debugger panel. This will run `yarn start` and attach a debugger to Node.js. Remember to trigger the function by calling the `http://localhost:4000/api/greet` URL.
 
 {% include figure.html
   src="/images/hitting-a-breakpoint.png"
