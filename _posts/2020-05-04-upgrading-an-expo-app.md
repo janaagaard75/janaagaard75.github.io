@@ -67,7 +67,7 @@ yarn install
 
 `syncyarnlock` should not change the version of `react-native` away from Expo's specific one, but there seems to be a bug. Revert that line in `package.json` if is was modified. It should look like this:
 
-```json
+```jsonc
 {
   // ...
   "dependencies": {
