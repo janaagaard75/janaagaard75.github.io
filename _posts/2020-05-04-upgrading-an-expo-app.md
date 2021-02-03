@@ -20,7 +20,7 @@ I create a commit after each step, so that I can easily undo or debug, if necess
 The Expo CLI will do the most of the work upgrading the app, so start out by making sure I have the latest version of that command line tool.
 
 ```sh
-yarn upgrade expo-cli
+yarn add --dev expo-cli@latest
 ```
 
 ## 2. Upgrade Expo and Known Packages
