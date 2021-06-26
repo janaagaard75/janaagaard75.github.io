@@ -4,7 +4,7 @@ title: "Categorizing Code Comments"
 published: false
 ---
 
-# The What, How and Why of Code Comments
+# What, How and Why Comments
 
 > TL;DR: A comment that explain **what** some code does can almost always be removed with a simple refactor of the code. If it explains **how** a the code works, it might be better to rewrite the code. If the comment explains **why** a piece of code is written as it is, keep it.
 
