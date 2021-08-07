@@ -98,3 +98,5 @@ If you just figured something out, and think that the next programmer looking at
 * CSS browser hacks. `/* Required by IE 9. */` or `/* Element gets a */`
 * Couldn't figure it out, but this works.
 * Badly named variables in APIs.
+
+https://www.kernel.org/doc/html/v4.10/process/coding-style.html#commenting
