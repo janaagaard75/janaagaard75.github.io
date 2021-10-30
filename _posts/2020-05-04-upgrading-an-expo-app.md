@@ -55,13 +55,12 @@ yarn upgrade
 yarn outdated
 ```
 
-## 5. Sync Versions from yarn.lock
+## 5. Sync Installed Versions to `package.json`
 
-I like being able to see the exact version of the packages that I have installed. `syntcyarnlock` can synchronize the versions from `yarn.lock` to `package.json`. Reinstall afterwords to write the updated version numbers back to `yarn.lock`, keeping the the file in sync with `package.json`.
+I like being able to see the exact version of the packages that I have installed by looking in `package.json`, so I use [`syncyarnlock`](https://github.com/vasilevich/sync-yarnlock-into-packagejson) to synchronize the versions from `yarn.lock` to `package.json`. Run a `yarn install` after modifying `package.json` to sync the modifications back to `yarn.lock`.
 
 ```sh
-npx syncyarnlock --keepPrefix --keepGit --keepLink --save
-# Revert the change to the "react-native" line in package.json before installing.
+npx syncyarnlock --keepPrefix --save
 yarn install
 ```
 
