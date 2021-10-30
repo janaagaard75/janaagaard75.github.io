@@ -1,6 +1,6 @@
 {
-  "name": "jan-aagaards-blog",
-  "version": "1.0.0",
+  "name": "jan-aagaard-s-blog",
+  "version": "0.0.0",
   "description": "Jan Aagaard's Blog",
   "main": "index.html",
   "repository": "https://github.com/janaagaard75/janaagaard75.github.io.git",
@@ -16,6 +16,6 @@
     "install-ruby-gems": "bundle install",
     "optimize-images": "npx --package pngquant-bin pngquant --skip-if-larger --force \"./images/*.png\"",
     "start": "yarn run clean && bundle exec jekyll serve --future --unpublished",
-    "update-ruby-gems": "bundle update"
+    "update-ruby-gems": "rm -rf vender && rm Gemfile.lock && bundle install"
   }
 }
