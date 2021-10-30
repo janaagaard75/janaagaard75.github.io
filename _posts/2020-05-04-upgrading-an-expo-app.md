@@ -63,33 +63,3 @@ I like being able to see the exact version of the packages that I have installed
 npx syncyarnlock --keepPrefix --save
 yarn install
 ```
-
-`syncyarnlock` should not change the version of `react-native` away from Expo's specific one, but there seems to be a bug. Revert that line in `package.json` if is was modified. It should look like this:
-
-```jsonc
-{
-  // ...
-  "dependencies": {
-    // ...
-    "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
-    // ...
-  }
-  // ...
-}
-```
-
-## 6. Align @types Packages
-
-Definitely Typed packages don't always follow the versioning of the main packages, so there are a few @types packages where this simply isn't possible. When not, I grab the lastet @types package available.
-
-Align the `@types/` packages with the ones installed. Example: If `react` is on version `16.9.0` and `@types/react` is on version `16.8.something`, I manually update `@types/react` to version `~16.9.0`. The tilde will make sure to grab the latest `16.9.*` version. Search for `react-native@` in `yarn.lock` to finde the installed version of React Native.
-
-This will require yet another around of installing, upgrading and sync'ing version numbers.
-
-```sh
-# Update @types packages manually.
-yarn install
-npx syncyarnlock --keepPrefix --keepGit --keepLink --save
-# Revert the change to the "react-native" line in package.json before installing.
-yarn install && yarn upgrade
-```
