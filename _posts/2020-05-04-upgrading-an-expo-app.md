@@ -11,7 +11,7 @@ tags:
 published: true
 ---
 
-This is how I upgrade my [Expo](https://expo.io/) apps ([React Native using Expo and Typescript](https://github.com/janaagaard75/expo-and-typescript), [Desert Walk Solitaire](https://github.com/janaagaard75/desert-walk) and [Skoleglæde.nu Bank](https://github.com/janaagaard75/skoleglaede-nu-bank)). My apps use [Expo's Managed workflow](https://docs.expo.io/introduction/managed-vs-bare/?redirected#workflow-comparison) and use [Yarn v1](https://classic.yarnpkg.com/lang/en/) to manage npm packages.
+This is how I upgrade my [Expo](https://expo.io/) apps like [React Native using Expo and Typescript](https://github.com/janaagaard75/expo-and-typescript). My apps use [Expo's Managed workflow](https://docs.expo.io/introduction/managed-vs-bare/?redirected#workflow-comparison) and use [Yarn v1](https://classic.yarnpkg.com/lang/en/) to manage npm packages.
 
 I create a commit after each step, so that I can easily undo or debug, if necessary, and I generally test running the app after each stop to make sure it still work. Upgraded packages sometimes require minor changes to the code.
 
