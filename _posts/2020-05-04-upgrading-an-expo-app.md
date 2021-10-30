@@ -33,7 +33,7 @@ yarn expo upgrade
 
 Make a note of the packages there weren't upgraded by Expo. Here's an example of the list of unknown packages.
 
-```
+```text
 The following packages were not updated. You should check the READMEs for those repositories to determine what version is compatible with your new set of packages: @react-navigation/native, @react-navigation/stack, prop-types, tslib, @babel/core, @types/expo__vector-icons, @typescript-eslint/eslint-plugin, @typescript-eslint/parser, eslint, eslint-config-prettier, eslint-plugin-prettier, eslint-plugin-react, expo-cli, prettier, sharp-cli
 ```
 
