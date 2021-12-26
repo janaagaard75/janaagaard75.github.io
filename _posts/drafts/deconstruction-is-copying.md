@@ -1,0 +1,1 @@
+Using the destructor created local copies of a variable. This is generally recommended against. I think the the destructor should be discouraged using the same argument. 
