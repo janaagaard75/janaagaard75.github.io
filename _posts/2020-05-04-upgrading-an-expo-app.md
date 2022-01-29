@@ -50,8 +50,7 @@ yarn upgrade
 `yarn upgrade` doesn't upgrade packages to new major versions. Verify if there is anything not up to date, and if so, consider upgrading. Upgrading major versions might require a lot of changes to the source code.
 
 ```sh
-# Look out of major updates to unknown packages, that is red
-# lines where the package is in the list found in step 1.
+# Look for major updates to unknown packages. These are the red lines, where the package was listed as unknown in step 1.
 yarn outdated
 ```
 
