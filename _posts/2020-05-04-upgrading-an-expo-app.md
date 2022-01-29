@@ -45,9 +45,11 @@ Upgrade the rest of the npm packages.
 yarn upgrade
 ```
 
-## 4. Major Upgrades
+## 4. Major Updates to Unknown Packages
 
-`yarn upgrade` doesn't upgrade packages to new major versions. Verify if there is anything not up to date, and if so, consider upgrading. Upgrading major versions might require a lot of changes to the source code.
+`yarn upgrade` doesn't upgrade packages to new major versions. Verify if there is anything not up to date, and if so, consider upgrading. For my Expo projects this is typically the ESLint related packages. I update the version manually in `package.json` and then run `yarn install`.
+
+Some of the know packages might show up as deprecated, but do not updated those. Expo has been tested with specific versions of these packages, and they are naturally a little behind the latest releases.
 
 ```sh
 # Look for major updates to unknown packages. These are the red lines, where the package was listed as unknown in step 1.
