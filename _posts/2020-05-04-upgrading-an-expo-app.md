@@ -59,6 +59,5 @@ yarn outdated
 I like being able to see the exact version of the packages that I have installed by looking in `package.json`, so I use [`syncyarnlock`](https://github.com/vasilevich/sync-yarnlock-into-packagejson) to synchronize the versions from `yarn.lock` to `package.json`. Run a `yarn install` after modifying `package.json` to sync the modifications back to `yarn.lock`.
 
 ```sh
-npx syncyarnlock --keepPrefix --save
-yarn install
+npx syncyarnlock --keepPrefix --save && yarn install
 ```
