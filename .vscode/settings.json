@@ -28,11 +28,11 @@
     "Pygments",
     "Skoleglæde",
     "Sott",
+    "syncpackagejson",
     "syncyarnlock",
     "Virk",
     "Webp"
   ],
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": false, 
   "editor.tabSize": 2,
-  "prettier.disableLanguages": ["markdown"]
 }
