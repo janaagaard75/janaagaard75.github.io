@@ -100,3 +100,5 @@ If you just figured something out, and think that the next programmer looking at
 * Badly named variables in APIs.
 
 https://www.kernel.org/doc/html/v4.10/process/coding-style.html#commenting
+
+https://news.ycombinator.com/item?id=31526493
