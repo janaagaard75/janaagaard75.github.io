@@ -10,17 +10,7 @@ In the 90's, [Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the id
 
 So. Some comment are good and some are bad, but how do you tell the apart? Well, categorizing then into what-, how- or why-comments can help.
 
-Do not use these guidelines as rules, because there are far too many exceptions.
-
-## TODO: Where To Put The Lines Below?
-
-Comments are put there to make the code easier to read. If you have hard time grasping a piece of code, consider leaving a comment for the next developer.
-
-Write full sentences with proper capitalization and punctuation.
-
-Keep in mind that these are guidelines and not rules. There will always be situations where you shouldn't follow these guidelines.
-
-Self documenting code.
+Do not use these guidelines as rules.
 
 ## Three Types of Comments
 
@@ -30,16 +20,14 @@ Comments can be categorized into tree types why-comments, how-comments and what-
 1. **How-comments** explain how the code works.
 1. **Why-comments** explain why the code was written as it is.
 
-## What-Comments
+## What-Comments: Remove Them
 
-Code comments that explain what the code does can almost always be made redundant with a simple refactoring of the code. You should strive to write self-documenting code instead of using what-comments.
+Code comments that explain **what** the code does can almost always be made redundant with a simple refactoring of the code. You should strive to write self-documenting code instead of using what-comments.
 
-Example: Header-type comments.
-
-Rename a method.
-Introduce a variable.
+Example:
 
 ```typescript
+// BAD
 // Escape key.
 if (event.keyCode === 43) {
   closeDialog();
@@ -47,6 +35,7 @@ if (event.keyCode === 43) {
 ```
 
 ```typescript
+// GOOD
 enum KeyCode {
   Escape: 43
 }
@@ -56,7 +45,7 @@ if (event.keyCode === KeyCode.Escape) {
 }
 ```
 
-```javascript
+```typescript
 // Validate
 function validate(password) {
   const isValid = password.length >= 8
@@ -64,14 +53,14 @@ function validate(password) {
 }
 ```
 
-```javascript
+```typescript
 function isLongEnough(password) {
   const longEnough = password.length >= MINIMUM_PASSWORD_LENGTH
   return longEnough
 }
 ```
 
-```javascript
+```typescript
 /** The ID of the client. */
 clientId
 ```
@@ -101,4 +90,12 @@ If you just figured something out, and think that the next programmer looking at
 
 https://www.kernel.org/doc/html/v4.10/process/coding-style.html#commenting
 
-https://news.ycombinator.com/item?id=31526493
+## TODO: Where To Put The Lines Below?
+
+Comments are put there to make the code easier to read. If you have hard time grasping a piece of code, consider leaving a comment for the next developer.
+
+Write full sentences with proper capitalization and punctuation.
+
+Keep in mind that these are guidelines and not rules. There will always be situations where you shouldn't follow these guidelines.
+
+Self documenting code.

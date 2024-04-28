@@ -78,3 +78,11 @@ Follow the existing whitespace rules that the code is using. This shouldn't real
 If you want to change something, you should change it throughout the solution.
 
 *Our current solution has  weak linting setup, so you will often see more than one way of doing things. We really should fix this.*
+
+## Avoid Abbreviations
+
+"build-storybook": "build-storybook -s ./public"
+"build-storybook": "build-storybook --static-dir ./public"
+
+
+"DeprecationWarning: --static-dir CLI flag is deprecated, see <https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#deprecated---static-dir-cli-flag>"
