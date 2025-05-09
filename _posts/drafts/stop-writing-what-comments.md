@@ -32,13 +32,16 @@ Code comments that explain **what** the code does can almost always be made redu
 Defining a constant can avoid the need for a what-comment:
 
 ```typescript
-// Check for the escape key.
+// Avoid this because 
+
+// The key code for the Escape key is 43.
 if (event.keyCode === 43) {
   closeDialog();
 }
 ```
 
 ```typescript
+// GOOD
 const escapeKeyCode = 43;
 
 if (event.keyCode === escapeKeyCode) {
@@ -70,7 +73,7 @@ This comment doesn't add any value, and should just be removed:
 /// The ID of the client.
 /// </summary>
 int ClientId { get; set; }
-```
+``` 
 
 Exception: Structural comments, for example in your Webpack configuration file.
 
@@ -99,7 +102,7 @@ If you just figured something out, and think that the next programmer looking at
 * Couldn't figure it out, but this works.
 * Badly named variables in APIs.
 
-https://www.kernel.org/doc/html/v4.10/process/coding-style.html#commenting
+<https://www.kernel.org/doc/html/v4.10/process/coding-style.html#commenting>
 
 ## TODO: Where To Put The Lines Below?
 
