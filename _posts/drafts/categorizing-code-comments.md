@@ -27,8 +27,9 @@ Code comments that explain **what** the code does can almost always be made redu
 Example:
 
 ```typescript
-// BAD
-// Escape key.
+// Avoid this because 
+
+// The key code for the Escape key is 43.
 if (event.keyCode === 43) {
   closeDialog();
 }
@@ -36,11 +37,9 @@ if (event.keyCode === 43) {
 
 ```typescript
 // GOOD
-enum KeyCode {
-  Escape: 43
-}
+const escapeKeyCode = 43;
 
-if (event.keyCode === KeyCode.Escape) {
+if (event.keyCode === escapeKeyCode) {
   closeDialog();
 }
 ```
@@ -63,7 +62,7 @@ function isLongEnough(password) {
 ```typescript
 /** The ID of the client. */
 clientId
-```
+``` 
 
 Exception: Structural comments, for example in your Webpack configuration file.
 
@@ -88,7 +87,7 @@ If you just figured something out, and think that the next programmer looking at
 * Couldn't figure it out, but this works.
 * Badly named variables in APIs.
 
-https://www.kernel.org/doc/html/v4.10/process/coding-style.html#commenting
+<https://www.kernel.org/doc/html/v4.10/process/coding-style.html#commenting>
 
 ## TODO: Where To Put The Lines Below?
 
