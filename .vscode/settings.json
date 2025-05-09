@@ -33,6 +33,10 @@
     "Virk",
     "Webp"
   ],
-  "editor.formatOnSave": false, 
-  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2
 }
