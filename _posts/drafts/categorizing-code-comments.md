@@ -6,15 +6,17 @@ published: false
 
 > TL;DR: A code comment that explain **what** some code does, can almost always be replaced by a simple refactor of the code. If a comment explains **how** the code works, make the comment redundant by rewriting the code. If a comment explains **why** a piece of code is written as it is, keep it.
 
-In the 90's, [Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the idea of documenting every little piece of your code. In most cases that's way too many comments, and I guess that's why the current trend seems to be to not write any comments at all, sometimes citing Uncle Bob ["a comment is a failure to express yourself in code"](https://twitter.com/unclebobmartin/status/870311898545258497). But avoiding code comments is very different from not writing any comments at all, [as he has also clarified himself](https://twitter.com/unclebobmartin/status/1317048589286330375). I believe that good comments are a crucial part of good code.
+In the 90's, [Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the idea of documenting every little piece of your code. In most cases that's way too many comments, and I guess that's why the current trend seems to be to not write any comments at all, sometimes citing Uncle Bob ["a comment is a failure to express yourself in code"](https://twitter.com/unclebobmartin/status/870311898545258497). But avoiding code comments is very different from not writing any comments at all, [as he has also clarified himself](https://twitter.com/unclebobmartin/status/1317048589286330375). With the arrival of agents generating code, it seems that we once again starting seeing a lot of unnecessary code comments.
+
+I believe that good comments are a crucial part of good code.
 
 So. Some comment are good and some are bad, but how do you tell the apart? Well, categorizing then into what-, how- or why-comments can help.
 
-Do not use these guidelines as rules.
+Remember that these are guidelines, not rigid rules.
 
 ## Three Types of Comments
 
-Comments can be categorized into tree types why-comments, how-comments and what-comments.
+Comments can generally be categorized into three types: why-comments, how-comments and what-comments.
 
 1. **What-comments** explain what the code does.
 1. **How-comments** explain how the code works.
@@ -24,26 +26,24 @@ Comments can be categorized into tree types why-comments, how-comments and what-
 
 Code comments that explain **what** the code does can almost always be made redundant with a simple refactoring of the code. You should strive to write self-documenting code instead of using what-comments.
 
-Example:
+Defining a constant can avoid the need for a what-comment:
 
 ```typescript
-// BAD
-// Escape key.
+// Check for the escape key.
 if (event.keyCode === 43) {
   closeDialog();
 }
 ```
 
 ```typescript
-// GOOD
-enum KeyCode {
-  Escape: 43
-}
+const escapeKeyCode = 43;
 
-if (event.keyCode === KeyCode.Escape) {
+if (event.keyCode === escapeKeyCode) {
   closeDialog();
 }
 ```
+
+Avoiding a generic function name can also help:
 
 ```typescript
 // Validate
@@ -59,6 +59,8 @@ function isLongEnough(password) {
   return longEnough
 }
 ```
+
+This comment doesn't add any value, and should just be removed:
 
 ```typescript
 /** The ID of the client. */
