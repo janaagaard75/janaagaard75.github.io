@@ -2,12 +2,10 @@
 layout: post
 title: "Upgrading an Expo App"
 tags:
-  [
-    Expo,
-    upgrading Expo,
-    upgrading Node packages,
-    Yarn
-  ]
+  - Expo
+  - upgrading Expo
+  - upgrading Node packages
+  - Yarn
 published: true
 ---
 

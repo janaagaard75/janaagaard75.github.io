@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Configure Visual Studio Code as Your git Editor"
+tags:
+  - git
+  - VSCode
 published: true
 ---
 

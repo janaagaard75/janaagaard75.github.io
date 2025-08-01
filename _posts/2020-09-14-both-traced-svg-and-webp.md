@@ -2,11 +2,9 @@
 layout: post
 title: "Using both Traced SVGs and WebP with gatsby-contentful-source"
 tags:
-  [
-    Contentful,
-    Gatsby,
-    GraphQL
-  ]
+  - Contentful
+  - Gatsby
+  - GraphQL
 published: true
 ---
 
