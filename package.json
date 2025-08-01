@@ -17,5 +17,6 @@
     "optimize-images": "npx --package pngquant-bin pngquant --skip-if-larger --force \"./images/*.png\"",
     "start": "yarn run clean && bundle exec jekyll serve --future --unpublished",
     "update-ruby-gems": "rm -rf vender && rm Gemfile.lock && bundle install"
-  }
+  },
+  "packageManager": "yarn@1.22.22"
 }
