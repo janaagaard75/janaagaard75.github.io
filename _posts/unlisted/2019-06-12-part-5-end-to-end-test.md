@@ -6,7 +6,8 @@ tags:
   - CircleCI
   - continuous deployment
   - infrastructure as code
-published: false
+published: true
+unlisted: true
 ---
 
 Fifth part of the series about Azure Function in TypeScript where we add an end-to-end test.
