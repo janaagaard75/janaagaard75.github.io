@@ -71,8 +71,9 @@ pre code {
 
 .icon {
   @extend .mr-2;
-  filter: invert(100%);
-  height: 20px;
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: -3px;
 }
 
 .tags {
