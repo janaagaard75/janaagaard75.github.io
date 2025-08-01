@@ -8,7 +8,7 @@ tags:
     continuous deployment,
     infrastructure as code,
   ]
-published: true
+published: false
 ---
 
 Fifth part of the series about Azure Function in TypeScript where we add an end-to-end test.
