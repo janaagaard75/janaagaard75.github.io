@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Keeping package.json in sync"
+summary: "Synchronize the installed versions of Node.js dependencies into package.json."
 tags:
   - npm
 published: true

@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Blog posts on expo.dev"
+title: "All blog posts on expo.dev"
+summary: "A list of all the blog posts on expo.dev, extracted from the sitemap."
 tags:
   - Expo
 published: true
