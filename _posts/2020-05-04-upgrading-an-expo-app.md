@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Upgrading an Expo App"
-summary: "How to upgrade an Expo app that uses Expo's Managed workflow."
+summary: "How to upgrade an Expo app that uses Expo's Managed workflow an Yarn v1."
 tags:
   - Expo
   - upgrading Expo
