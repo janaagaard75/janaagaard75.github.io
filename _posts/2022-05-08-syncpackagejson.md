@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Keeping package.json in sync"
+summary: "Synchronize the installed versions of Node.js dependencies into package.json when using npm so that it easy to look up the exact version."
 tags:
   - npm
 published: true

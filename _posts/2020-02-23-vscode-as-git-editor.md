@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Configure Visual Studio Code as Your git Editor"
+summary: "One-liner for setting VSCode as your git editor."
 tags:
   - git
   - VSCode

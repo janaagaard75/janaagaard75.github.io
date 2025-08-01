@@ -6,7 +6,8 @@ tags:
   - Azure
   - serverless
   - TypeScript
-published: false
+published: true
+unlisted: true
 ---
 
 In this second part of the series about writing an Azure Function in TypeScript, the JavaScript function is converted to TypeScript. This is mainly setting up the TypeScript compiler. We won't make any changes until [part 6: Refactoring](/blog/2019-06-12-part-6-refactor), after the tests have been created.

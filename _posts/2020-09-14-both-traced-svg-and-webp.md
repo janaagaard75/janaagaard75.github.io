@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Using both Traced SVGs and WebP with gatsby-contentful-source"
+summary: "How to use both Traced SVGs and WebP with gatsby-contentful-source instead of having to choose one or the other."
 tags:
   - Contentful
   - Gatsby

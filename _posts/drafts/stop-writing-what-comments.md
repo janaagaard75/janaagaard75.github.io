@@ -1,28 +1,31 @@
 ---
 layout: post
-title: "What, How and Why Code Comments"
+title: "Stop writing what comments"
+summary: "A code comment that explain what some code does, can almost always be replaced by a simple refactor of the code. If a comment explains how the code works or especially why it was written as it is, keep it."
 published: false
 ---
 
-> TL;DR: A code comment that explain **what** some code does, can almost always be replaced by a simple refactor of the code. If a comment explains **how** the code works, make the comment redundant by rewriting the code. If a comment explains **why** a piece of code is written as it is, keep it.
+> TL;DR: A code comment that explain **what** some code does, can almost always be replaced by a simple refactor of the code. If a comment explains **how** the code works or especially **why** it was written as it is, keep it.
 
-In the 90's, [Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the idea of documenting every little piece of your code. In most cases that's way too many comments, and I guess that's why the current trend seems to be to not write any comments at all, sometimes citing Uncle Bob ["a comment is a failure to express yourself in code"](https://twitter.com/unclebobmartin/status/870311898545258497). But avoiding code comments is very different from not writing any comments at all, [as he has also clarified himself](https://twitter.com/unclebobmartin/status/1317048589286330375). With the arrival of agents generating code, it seems that we once again starting seeing a lot of unnecessary code comments.
+In the 90's, [Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the idea of documenting every little piece of code. In most cases that's way too many comments, so the pendulum swung the other way, and in the 2010's it became common to not write any comments at all. With the arrival of agents generating code, it seems that we once again starting seeing a lot of unnecessary code comments.
 
 I believe that good comments are a crucial part of good code.
 
+> Not writing any comments is sometimes justified by citing Uncle Bob ["A comment is a failure to express yourself in code"](https://twitter.com/unclebobmartin/status/870311898545258497). But this taking his quote out of context, since it misses the second part **"If you fail, then write a comment; but try not to fail."**. [He also clarified this even further](https://twitter.com/unclebobmartin/status/1317048589286330375).
+
 So. Some comment are good and some are bad, but how do you tell the apart? Well, categorizing then into what-, how- or why-comments can help.
 
-Remember that these are guidelines, not rigid rules.
+Remember that these are guidelines &mdash; not rules.
 
-## Three Types of Comments
+## Three types of comments
 
-Comments can generally be categorized into three types: why-comments, how-comments and what-comments.
+Comments can usually be categorized into three types: why-comments, how-comments and what-comments.
 
 1. **What-comments** explain what the code does.
 1. **How-comments** explain how the code works.
 1. **Why-comments** explain why the code was written as it is.
 
-## What-Comments: Remove Them
+## What-comments: Remove them
 
 Code comments that explain **what** the code does can almost always be made redundant with a simple refactoring of the code. You should strive to write self-documenting code instead of using what-comments.
 
@@ -62,25 +65,26 @@ function isLongEnough(password) {
 
 This comment doesn't add any value, and should just be removed:
 
-```typescript
-/** The ID of the client. */
-clientId
+```csharp
+/// <summary>
+/// The ID of the client.
+/// </summary>
+int ClientId { get; set; }
 ```
 
 Exception: Structural comments, for example in your Webpack configuration file.
 
+
 I think that some developers write placeholder comments in the code to help them the code while writing. Great! Just remember to remove the comments before making the pull request.
 
-## How-Comments
+## How- and why-comments: Keep them
 
 Some comments explain how the code works. Regular Expressions always always require such a comments.
 
 ```javascript
-// Require an ampersand and a dot.
-const emailAddressValidator = /[^@]+@.+\.[^\.]+/;
+// Matches http(s)://domain.com/path?query=value or www.domain.com/path?query=value.
+const urlExtractor = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
 ```
-
-## Why-Comments
 
 Why comments explain why the code is written in a specific way. This kind of comments are generally quite essential to understanding the code, and they should be encouraged.
 

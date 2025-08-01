@@ -4,10 +4,20 @@ title: Posts
 ---
 
 <h1>{{ page.title }}</h1>
-<ul class="posts">
+<ul class="unstyled">
   {% for post in site.posts %}
-  <li>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-  </li>
+    {% if post.unlisted != true %}
+      <li>
+        <h3 class="post-header">
+          <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </h3>
+        <p class="post-summary">
+          <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span> -
+          {% if post.summary %}
+            {{ post.summary }}
+          {% endif %}
+        </p>
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>
