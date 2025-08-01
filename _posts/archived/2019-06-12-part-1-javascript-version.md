@@ -2,12 +2,10 @@
 layout: post
 title: "Part 1: JavaScript Version"
 tags:
-  [
-    Azure Functions,
-    Azure,
-    serverless,
-  ]
-published: true
+  - Azure Functions
+  - Azure
+  - serverless
+published: false
 ---
 
 We start out creating a basic HTTP endpoint written as an Azure Function in JavaScript. If you already know about Azure Functions, then skip ahead to [part 2](/blog/2019-06-12-part-2-switch-to-typescript) where the code is transformed into TypeScript.

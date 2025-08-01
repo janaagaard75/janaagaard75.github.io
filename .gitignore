@@ -1,5 +1,18 @@
 /_site/
-/node_modules/.yarn-integrity
 /vendor/
 .sass-cache
 .jekyll-metadata
+
+/node_modules/
+!/node_modules/bootstrap/
+
+# Yarn, without Zero-installs.
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+.DS_Store

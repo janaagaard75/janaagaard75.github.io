@@ -2,14 +2,12 @@
 layout: post
 title: "Part 3: Local Test"
 tags:
-  [
-    Azure Functions,
-    CircleCI,
-    Jest,
-    continuous integration,
-    TypeScript,
-  ]
-published: true
+  - Azure Functions
+  - CircleCI
+  - Jest
+  - continuous integration
+  - TypeScript
+published: false
 ---
 
 This is the third part of a series about creating Azure Functions in TypeScript. In this part we add a test using the [Jest](https://jestjs.io/) test framework and then use the [CircleCI](https://circleci.com/) continuous integration framework to run the test automatically each time code is pushed to GitHub.

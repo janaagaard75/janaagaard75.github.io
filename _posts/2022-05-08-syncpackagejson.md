@@ -2,9 +2,7 @@
 layout: post
 title: "Keeping package.json in sync"
 tags:
-  [
-    npm,
-  ]
+  - npm
 published: true
 ---
 

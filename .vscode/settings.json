@@ -23,6 +23,7 @@
     "kramdown",
     "mkdir",
     "multiline",
+    "pngquant",
     "preconnect",
     "preproc",
     "Pygments",

@@ -2,15 +2,13 @@
 layout: post
 title: "Part 4: Continuous Deployment"
 tags:
-  [
-    ARM templates,
-    Azure Functions,
-    Azure,
-    CircleCI,
-    continuous deployment,
-    infrastructure as code,
-  ]
-published: true
+  - ARM templates
+  - Azure Functions
+  - Azure
+  - CircleCI
+  - continuous deployment
+  - infrastructure as code
+published: false
 ---
 
 Fourth part in the series about Azure Functions in TypeScript. In this part the continuous integration pipeline is extended into a _continuous deployment_ pipeline, where code pushed to GitHub is it automatically deployed to Azure. Until now the code has only been running locally, and this is somewhat ironic since we are halfway into a series about cloud computing. We will remedy this now.

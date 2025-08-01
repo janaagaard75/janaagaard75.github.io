@@ -7,15 +7,17 @@
   "author": "Jan Aagaard <jan@aagaard.net>",
   "license": "MIT",
   "private": true,
-  "dependencies": {
-    "bootstrap": "4.5.3"
-  },
   "scripts": {
     "clean": "rm -rf _site",
     "install-ruby-bundler": "gem install bundler",
     "install-ruby-gems": "bundle install",
     "optimize-images": "npx --package pngquant-bin pngquant --skip-if-larger --force \"./images/*.png\"",
     "start": "yarn run clean && bundle exec jekyll serve --future --unpublished",
+    "update-dependencies": "yarn upgrade-interactive && rm yarn.lock && yarn install",
     "update-ruby-gems": "rm -rf vender && rm Gemfile.lock && bundle install"
-  }
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.2"
+  },
+  "packageManager": "yarn@4.9.2"
 }

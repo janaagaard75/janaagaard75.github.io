@@ -2,13 +2,11 @@
 layout: post
 title: "Part 5: End-to-end Test"
 tags:
-  [
-    Azure Functions,
-    CircleCI,
-    continuous deployment,
-    infrastructure as code,
-  ]
-published: true
+  - Azure Functions
+  - CircleCI
+  - continuous deployment
+  - infrastructure as code
+published: false
 ---
 
 Fifth part of the series about Azure Function in TypeScript where we add an end-to-end test.
