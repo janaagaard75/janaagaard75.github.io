@@ -2,12 +2,10 @@
 layout: post
 title: "Part 5: End-to-end Test"
 tags:
-  [
-    Azure Functions,
-    CircleCI,
-    continuous deployment,
-    infrastructure as code,
-  ]
+  - Azure Functions
+  - CircleCI
+  - continuous deployment
+  - infrastructure as code
 published: false
 ---
 

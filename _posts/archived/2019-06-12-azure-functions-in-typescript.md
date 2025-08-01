@@ -3,17 +3,15 @@ layout: post
 title: "Azure Functions in TypeScript"
 description: "How to write an Azure Function in Typescript with continuous deployment using Circle CI and tests written with Jest."
 tags:
-  [
-    ARM templates,
-    Azure Functions,
-    Azure,
-    CircleCI,
-    continuous integration,
-    continuous deployment,
-    infrastructure as code,
-    serverless,
-    TypeScript,
-  ]
+  - ARM templates
+  - Azure Functions
+  - Azure
+  - CircleCI
+  - continuous integration
+  - continuous deployment
+  - infrastructure as code
+  - serverless
+  - TypeScript
 published: false
 ---
 

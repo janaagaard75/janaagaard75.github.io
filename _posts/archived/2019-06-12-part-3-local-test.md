@@ -2,13 +2,11 @@
 layout: post
 title: "Part 3: Local Test"
 tags:
-  [
-    Azure Functions,
-    CircleCI,
-    Jest,
-    continuous integration,
-    TypeScript,
-  ]
+  - Azure Functions
+  - CircleCI
+  - Jest
+  - continuous integration
+  - TypeScript
 published: false
 ---
 

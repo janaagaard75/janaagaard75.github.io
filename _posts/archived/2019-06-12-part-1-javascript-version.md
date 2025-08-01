@@ -2,11 +2,9 @@
 layout: post
 title: "Part 1: JavaScript Version"
 tags:
-  [
-    Azure Functions,
-    Azure,
-    serverless,
-  ]
+  - Azure Functions
+  - Azure
+  - serverless
 published: false
 ---
 

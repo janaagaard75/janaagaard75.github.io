@@ -2,12 +2,10 @@
 layout: post
 title: "Part 2: Switch to TypeScript"
 tags:
-  [
-    Azure Functions,
-    Azure,
-    serverless,
-    TypeScript,
-  ]
+  - Azure Functions
+  - Azure
+  - serverless
+  - TypeScript
 published: false
 ---
 

@@ -2,14 +2,12 @@
 layout: post
 title: "Part 4: Continuous Deployment"
 tags:
-  [
-    ARM templates,
-    Azure Functions,
-    Azure,
-    CircleCI,
-    continuous deployment,
-    infrastructure as code,
-  ]
+  - ARM templates
+  - Azure Functions
+  - Azure
+  - CircleCI
+  - continuous deployment
+  - infrastructure as code
 published: false
 ---
 
