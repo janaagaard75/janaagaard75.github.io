@@ -75,6 +75,10 @@ pre code {
   height: 20px;
 }
 
+.posts {
+  @extend .list-unstyled;
+}
+
 .tags {
   font-size: 80%;
   list-style-type: none;

@@ -8,8 +8,15 @@ title: Posts
   {% for post in site.posts %}
     {% if post.unlisted != true %}
       <li>
-        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span> - 
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        <h3 class="post-header">
+          <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </h3>
+        <p class="post-summary">
+          <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span> -
+          {% if post.summary %}
+            {{ post.summary }}
+          {% endif %}
+        </p>
       </li>
     {% endif %}
   {% endfor %}
