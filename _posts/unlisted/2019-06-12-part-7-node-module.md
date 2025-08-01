@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Part 7: Node Module"
+tags:
+  - Node.js
 published: true
 unlisted: true
 ---
