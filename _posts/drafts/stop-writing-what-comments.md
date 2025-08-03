@@ -19,7 +19,7 @@ Remember that these are guidelines &mdash; not rules.
 
 ## Three types of comments
 
-Comments can usually be categorized into three types: why-comments, how-comments and what-comments.
+Comments can usually be categorized into three types:
 
 1. **What-comments** explain what the code does.
 1. **How-comments** explain how the code works.
@@ -84,6 +84,11 @@ Some comments explain how the code works. Regular Expressions always always requ
 ```javascript
 // Matches http(s)://domain.com/path?query=value or www.domain.com/path?query=value.
 const urlExtractor = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
+```
+
+```text
+    # Run every 6 minutes.
+    - cron: "*/6 * * * *"
 ```
 
 Why comments explain why the code is written in a specific way. This kind of comments are generally quite essential to understanding the code, and they should be encouraged.
