@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
@@ -26,7 +25,13 @@
     <loc>https://expo.dev/ai/strategy</loc>
   </url>
   <url>
+    <loc>https://expo.dev/awards</loc>
+  </url>
+  <url>
     <loc>https://expo.dev/brand</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/browser-cache</loc>
   </url>
   <url>
     <loc>https://expo.dev/careers</loc>
@@ -123,6 +128,12 @@
     <loc>https://expo.dev/sso-signup</loc>
   </url>
   <url>
+    <loc>https://expo.dev/support</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/support-options</loc>
+  </url>
+  <url>
     <loc>https://expo.dev/support-terms</loc>
   </url>
   <url>
@@ -135,6 +146,54 @@
     <loc>https://expo.dev/trust</loc>
   </url>
   <url>
+    <loc>https://expo.dev/solutions/startups</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/solutions/financial-services</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/solutions/ecom</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/solutions/solo-devs</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/solutions/enterprise</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/solutions/workflows</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/solutions/QSR</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/solutions/crypto</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/eas/startups</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/eas/financial-services</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/eas/ecom</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/eas/solo-devs</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/eas/enterprise</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/eas/workflows</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/eas/QSR</loc>
+  </url>
+  <url>
+    <loc>https://expo.dev/eas/crypto</loc>
+  </url>
+  <url>
     <loc>https://expo.dev/blog</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -145,15 +204,16 @@
     <loc>https://expo.dev/mailing-list/signup</loc>
   </url>
   <url>
-    <loc>https://expo.dev/support</loc>
-  </url>
-  <url>
     <loc>https://expo.dev/changelog/2023-08-01-eas-free-plan-limits</loc>
     <lastmod>2023-08-01T11:00:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://expo.dev/changelog/2023-08-10-custom-builds</loc>
     <lastmod>2023-08-10T11:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://expo.dev/changelog/sdk-54</loc>
+    <lastmod>2025-09-10T17:15:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://expo.dev/changelog/2024-10-24-sdk-52-beta</loc>
@@ -280,6 +340,10 @@
     <lastmod>2025-05-07T22:00:00.000Z</lastmod>
   </url>
   <url>
+    <loc>https://expo.dev/changelog/xcode-26-0-beta-support-for-eas-build-and-workflows</loc>
+    <lastmod>2025-08-27T13:45:00.000Z</lastmod>
+  </url>
+  <url>
     <loc>https://expo.dev/changelog/mid-july-website-updates</loc>
     <lastmod>2025-07-23T23:00:51.362Z</lastmod>
   </url>
@@ -292,6 +356,10 @@
     <lastmod>2024-04-05T11:00:00.000Z</lastmod>
   </url>
   <url>
+    <loc>https://expo.dev/changelog/github-comment-job-type-for-workflows</loc>
+    <lastmod>2025-09-12T13:30:00.000Z</lastmod>
+  </url>
+  <url>
     <loc>https://expo.dev/changelog/2024-08-14-react-native-0.75</loc>
     <lastmod>2024-08-14T11:00:00.000Z</lastmod>
   </url>
@@ -300,8 +368,16 @@
     <lastmod>2024-05-07T11:00:00.000Z</lastmod>
   </url>
   <url>
+    <loc>https://expo.dev/changelog/testflight-job-type-for-workflows</loc>
+    <lastmod>2025-09-18T03:00:00.000Z</lastmod>
+  </url>
+  <url>
     <loc>https://expo.dev/changelog/2024-01-18-eas-build-xcode-15.2-image</loc>
     <lastmod>2024-01-18T10:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://expo.dev/changelog/sdk-54-beta</loc>
+    <lastmod>2025-08-19T18:30:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://expo.dev/changelog/2023-12-19-eas-build-xcode-15.1-image</loc>
@@ -388,6 +464,10 @@
     <lastmod>2023-08-10T11:00:00.000Z</lastmod>
   </url>
   <url>
+    <loc>https://expo.dev/blog/what-synced-in-app-sqlite-brings-to-expo-apps</loc>
+    <lastmod>2025-08-28T14:30:33.728Z</lastmod>
+  </url>
+  <url>
     <loc>https://expo.dev/blog/how-we-promote-social-sharing-on-marathon-with-expo</loc>
     <lastmod>2024-12-17T15:00:00.000Z</lastmod>
   </url>
@@ -410,6 +490,10 @@
   <url>
     <loc>https://expo.dev/blog/why-i-gave-expo-a-second-chance</loc>
     <lastmod>2024-09-17T12:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://expo.dev/blog/eas-update-best-practices</loc>
+    <lastmod>2025-08-07T14:00:56.645Z</lastmod>
   </url>
   <url>
     <loc>https://expo.dev/blog/introducing-expo-maps-a-modern-maps-api-for-expo-developers</loc>
@@ -457,7 +541,7 @@
   </url>
   <url>
     <loc>https://expo.dev/blog/how-rosebud-decided-to-go-native-with-expo</loc>
-    <lastmod>2024-08-26T17:30:40.465Z</lastmod>
+    <lastmod>2025-08-06T14:00:00.000Z</lastmod>
   </url>
   <url>
     <loc>https://expo.dev/blog/introducing-expo-atlas</loc>
@@ -486,6 +570,10 @@
   <url>
     <loc>https://expo.dev/blog/unistyles-3-0-beyond-react-native-stylesheet</loc>
     <lastmod>2025-07-08T13:15:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://expo.dev/blog/storybook-and-expo</loc>
+    <lastmod>2025-09-25T17:45:23.643Z</lastmod>
   </url>
   <url>
     <loc>https://expo.dev/blog/ship-fast-learn-faster-introducing-vexo-funnels-for-expo-apps</loc>
@@ -541,7 +629,7 @@
   </url>
   <url>
     <loc>https://expo.dev/blog/expo-workflows-automate-your-release-process</loc>
-    <lastmod>2024-11-20T15:00:00.000Z</lastmod>
+    <lastmod>2025-08-26T13:45:36.677Z</lastmod>
   </url>
   <url>
     <loc>https://expo.dev/blog/march-madness-expo-app</loc>
@@ -554,6 +642,10 @@
   <url>
     <loc>https://expo.dev/blog/from-idea-to-google-play-store-in-100-days</loc>
     <lastmod>2024-09-05T18:45:23.621Z</lastmod>
+  </url>
+  <url>
+    <loc>https://expo.dev/blog/liquid-glass-app-with-expo-ui-and-swiftui</loc>
+    <lastmod>2025-09-12T18:00:20.923Z</lastmod>
   </url>
   <url>
     <loc>https://expo.dev/blog/dom-component-use-case</loc>
@@ -624,8 +716,16 @@
     <lastmod>2025-02-27T15:00:00.000Z</lastmod>
   </url>
   <url>
+    <loc>https://expo.dev/blog/expo-sdk-upgrade-guide</loc>
+    <lastmod>2025-09-10T15:30:26.916Z</lastmod>
+  </url>
+  <url>
     <loc>https://expo.dev/blog/bolt-expo-integration-announcement</loc>
     <lastmod>2025-02-12T15:45:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://expo.dev/blog/introducing-expo-launch</loc>
+    <lastmod>2025-08-20T12:45:22.654Z</lastmod>
   </url>
   <url>
     <loc>https://expo.dev/blog/how-to-synchronize-reactive-local-first-apps-with-tinybase</loc>
@@ -642,6 +742,10 @@
   <url>
     <loc>https://expo.dev/blog/how-to-build-apps-fast</loc>
     <lastmod>2025-07-03T21:30:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://expo.dev/blog/how-mollie-uses-expo-to-power-its-multi-platform-payments-app</loc>
+    <lastmod>2025-08-13T16:15:48.125Z</lastmod>
   </url>
   <url>
     <loc>https://expo.dev/blog/build-cache-providers-in-expo</loc>
@@ -678,6 +782,10 @@
   <url>
     <loc>https://expo.dev/blog/launching-eas-updates-with-orbit</loc>
     <lastmod>2024-03-06T22:15:07.464Z</lastmod>
+  </url>
+  <url>
+    <loc>https://expo.dev/blog/expo-app-folder-structure-best-practices</loc>
+    <lastmod>2025-09-23T13:15:59.722Z</lastmod>
   </url>
   <url>
     <loc>https://expo.dev/blog/expo-announces-eas-hosting-service</loc>
@@ -728,6 +836,10 @@
     <lastmod>2025-07-29T16:15:57.412Z</lastmod>
   </url>
   <url>
+    <loc>https://expo.dev/blog/expo-file-system</loc>
+    <lastmod>2025-09-16T13:45:06.146Z</lastmod>
+  </url>
+  <url>
     <loc>https://expo.dev/blog/expo-go-vs-development-builds</loc>
     <lastmod>2024-09-12T12:30:00.000Z</lastmod>
   </url>
@@ -766,6 +878,18 @@
   <url>
     <loc>https://expo.dev/blog/create-and-run-fast-end-to-end-tests-using-moropo-and-expo</loc>
     <lastmod>2024-08-29T17:30:11.342Z</lastmod>
+  </url>
+  <url>
+    <loc>https://expo.dev/blog/building-dyfna-with-expo</loc>
+    <lastmod>2025-08-05T13:45:06.686Z</lastmod>
+  </url>
+  <url>
+    <loc>https://expo.dev/blog/expo-router-v6</loc>
+    <lastmod>2025-09-11T15:15:49.616Z</lastmod>
+  </url>
+  <url>
+    <loc>https://expo.dev/blog/expo-app-integrity</loc>
+    <lastmod>2025-09-15T13:15:20.045Z</lastmod>
   </url>
   <url>
     <loc>https://expo.dev/blog/mobile-app-payment-processing-best-practices</loc>
