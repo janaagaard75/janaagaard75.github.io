@@ -31,9 +31,14 @@
     "Sott",
     "syncpackagejson",
     "syncyarnlock",
+    "urlset",
     "Virk",
     "Webp"
   ],
   "editor.formatOnSave": false,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "[xml]": {
+    "editor.defaultFormatter": "csharpier.csharpier-vscode",
+    "editor.formatOnSave": true
+  }
 }
