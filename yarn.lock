@@ -5,7 +5,7 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"bootstrap@npm:4.6.2":
+"bootstrap@npm:^4.6.2":
   version: 4.6.2
   resolution: "bootstrap@npm:4.6.2"
   peerDependencies:
@@ -19,6 +19,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "jan-aagaard-s-blog@workspace:."
   dependencies:
-    bootstrap: "npm:4.6.2"
+    bootstrap: "npm:^4.6.2"
   languageName: unknown
   linkType: soft

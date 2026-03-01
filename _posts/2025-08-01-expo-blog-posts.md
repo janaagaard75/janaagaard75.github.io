@@ -7,7 +7,94 @@ tags:
 published: true
 ---
 
-The [blog posts on expo.dev](https://expo.dev/blog) are a real gold mine for tips and tricks on Expo and React Native development. But I got annoyed at having to click on the Load More button every time I navigate back to the page, so I extracted the full list of posts from the sitemap file.
+The [blog posts on expo.dev](https://expo.dev/blog) are a real gold mine for tips and tricks on Expo and React Native development. But I got annoyed at having to click on the Load More button every time I navigate back to the page, so I extracted the full list of posts from the sitemap file. I still haven't figured out how to automate updating this list, so for now it's always a bit out of date.
+
+2026-02-27 - [Ship smaller OTA updates: bundle diffing comes to EAS Update in SDK 55](/blog/ship-smaller-ota-updates-bundle-diffing-comes-to-ota-updates-in-sdk-55)
+
+2026-02-26 - [How to upgrade to SDK 55](/blog/upgrading-to-sdk-55)
+
+2026-02-24 - [5 OTA Update best practices every mobile team should know](/blog/5-ota-update-best-practices-every-mobile-team-should-know)
+
+2026-02-20 - [Automating OTA Updates: How Onespot deploys to 200+ apps without touching](/blog/automating-ota-updates-how-onespot-deploys-to-200-apps-without-touching-a-laptop)
+
+2026-02-18 - [The production playbook for OTA updates](/blog/the-production-playbook-for-ota-updates)
+
+2026-02-12 - [Automate mobile CI/CD with EAS Workflows and custom builds](/blog/automate-mobile-ci-cd-with-eas-workflows-and-custom-builds)
+
+2026-02-11 - [Building an AI-first Photos app with Expo and Coreviz SDK](/blog/building-an-ai-first-photos-app-with-expo-and-coreviz-sdk)
+
+2026-02-06 - [What our web team learned using Claude Code for a month](/blog/what-our-web-team-learned-using-claude-code-for-a-month)
+
+2026-02-06 - [How to modernize mobile retail apps with Expo](/blog/how-to-modernize-mobile-retail-apps-with-expo)
+
+2026-02-03 - [Building high-quality UIs with Expo and NativeWind](/blog/building-high-quality-uis-with-expo-and-nativewind)
+
+2026-01-30 - [5 tips to increase mobile app downloads and retention in 2026](/blog/how-to-increase-mobile-app-downloads-and-retention)
+
+2026-01-29 - [How Sanas built a real-time video translation app in 3 months using Expo](/blog/how-sanas-built-an-instant-language-translation-app-with-expo)
+
+2026-01-28 - [The solo dev playbook: ship faster with Expo, EAS Build, and OTA Updates](/blog/building-a-cross-platform-app-without-touching-xcode-or-android-studio)
+
+2026-01-21 - [Channel surfing for Expo Updates: How to switch update channels at runtime](/blog/channel-surfing-for-expo-updates-how-to-switch-update-channels-at-runtime)
+
+2026-01-20 - [Strapi: low-code CMS for Expo and React Native](/blog/strapi-cms-for-react-native)
+
+2026-01-15 - [Making AI feel human in a mobile app with Expo, Reanimated, and Skia](/blog/making-ai-feel-human-in-a-mobile-app-with-expo-reanimated-and-skia)
+
+2026-01-13 - [How the Minecraft Speedrunning Community stays fast with Expo](/blog/how-the-minecraft-speedrunning-community-stays-fast-with-expo)
+
+2026-01-08 - [Cutout camera effects in React Native with Expo Camera and MaskedView](/blog/cutout-camera-effects-in-react-native-with-expo-camera-and-maskedview)
+
+2026-01-06 - [The offline first, multilingual audio tour app built with Expo](/blog/the-offline-first-multilingual-audio-tour-app-built-with-expo)
+
+2025-12-18 - [How I built a dev server entirely in the browser](/blog/how-to-build-a-dev-server-in-the-browser)
+
+2025-12-17 - [AI-powered code reviews for your Expo projects](/blog/ai-powered-code-reviews-for-your-expo-projects)
+
+2025-12-16 - [How to turn every pull request into an instantly installable preview](/blog/feature-previews-from-pull-requests)
+
+2025-12-15 - [Expo now supports Maestro Cloud testing in your CI workflow](/blog/expo-now-supports-maestro-cloud-testing-in-your-ci-workflow)
+2025-12-11 - [/blog/from-web-to-native-with-react]()
+
+2025-12-10 - [How to implement iOS widgets in Expo apps](/blog/how-to-implement-ios-widgets-in-expo-apps)
+
+2025-12-09 - [How Expo streamlined Hipcamp’s native and over-the-air update processes](/blog/how-expo-streamlined-hipcamps-native-and-over-the-air-update-processes)
+
+2025-12-04 - [How MTA uses Expo to keep New York City moving](/blog/how-mta-uses-expo-to-keep-new-york-city-moving)
+
+2025-12-02 - [How Lingvano scales sign language education to 4 million learners with](/blog/scaling-sign-language-education-to-4-million-learners-with-expo)
+
+2025-11-25 - [How to create Apple Maps style liquid glass sheets in Expo (the real way)](/blog/how-to-create-apple-maps-style-liquid-glass-sheets)
+
+2025-11-20 - [Optimize user experience and drive engagement with Vexo &amp; Expo](/blog/optimize-user-experience-and-drive-engagement-with-vexo-and-expo)
+
+2025-11-19 - [Going Universal: From a brownfield React Native and Next.js stack to one](/blog/from-a-brownfield-react-native-and-next-js-stack-to-one-expo-app)
+
+2025-11-13 - [How to integrate EAS Workflows with GitHub Actions for faster mobile CI](/blog/how-to-integrate-eas-workflows-with-github-actions)
+
+2025-11-11 - [How Phantom ships a secure, high-performance crypto wallet with Expo](/blog/how-phantom-ships-a-secure-high-performance-crypto-wallet-with-expo)
+
+2025-11-04 - [EAS Hosting is a faster, simpler way to deploy your app and API together](/blog/eas-hosting-is-a-faster-simpler-way-to-deploy-your-app-and-api-together)
+
+2025-10-30 - [Building a MIDI-over-Bluetooth app using Expo Modules](/blog/building-a-midi-over-bluetooth-app-using-expo-modules)
+
+2025-10-28 - [Faster, more reliable video uploads with Expo Modules](/blog/faster-more-reliable-video-uploads-with-expo-modules)
+
+2025-10-23 - [Expo is more than a dev framework, it's a business strategy](/blog/the-business-value-of-expo)
+
+2025-10-21 - [Become an AI-native developer with the Expo MCP server](/blog/become-an-ai-native-developer-with-the-expo-mcp-server)
+
+2025-10-20 - [The React Foundation: A new chapter for React and React Native](/blog/the-react-foundation)
+
+2025-10-16 - [How to add native code to your app with Expo Modules](/blog/how-to-add-native-code-to-your-app-with-expo-modules)
+
+2025-10-14 - [No rewrite required: How to bring Expo into mature native apps](/blog/how-to-bring-expo-into-mature-native-apps)
+
+2025-10-06 - [The 2025 Expo App Awards: A celebration of the best Expo apps](/blog/2025-expo-app-awards)
+
+2025-10-02 - [The future of AI apps is on the device: How to run AI models with React](/blog/how-to-run-ai-models-with-react-native-executorch)
+
+2025-09-30 - [From Swift tattoo to React Native migration lead: a business-first](/blog/swift-to-react-native)
 
 2025-09-25 - [Building beautiful components faster with Storybook 9 and Expo](https://expo.dev/blog/storybook-and-expo)
 
