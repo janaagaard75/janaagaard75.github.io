@@ -7,7 +7,7 @@ tags:
 published: true
 ---
 
-The [blog posts on expo.dev](https://expo.dev/blog) are a real gold mine for tips and tricks on Expo and React Native development. But I got annoyed at having to click on the Load More button every time I navigate back to the page, so I extracted the full list of posts from the sitemap file.
+The [blog posts on expo.dev](https://expo.dev/blog) are a real gold mine for tips and tricks on Expo and React Native development. But I got annoyed at having to click on the Load More button every time I navigate back to the page, so I extracted the full list of posts from the sitemap file. I still haven't figured out how to automate updating this list, so for now it's always a bit out of date.
 
 2026-02-27 - [Ship smaller OTA updates: bundle diffing comes to EAS Update in SDK 55](/blog/ship-smaller-ota-updates-bundle-diffing-comes-to-ota-updates-in-sdk-55)
 
