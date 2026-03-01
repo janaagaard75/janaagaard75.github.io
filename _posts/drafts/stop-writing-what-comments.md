@@ -5,21 +5,28 @@ summary: "A code comment that explain what some code does, can almost always be 
 published: false
 ---
 
-> TL;DR: A code comment that explain **what** some code does, can almost always be replaced by a simple refactor of the code. If a comment explains **how** the code works or especially **why** it was written as it is, keep it.
+> TL;DR: A code comment that explain **what** some code does can almost always be made obsolete by writing self-documenting code. If a comment explains **how** the code works or especially **why** it was written as it is, keep it.
+
+In the 90's, [Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the idea of documenting every little piece of your code. In most cases that's way too many comments, and I guess that's why the current trend seems to be to not write any comments at all, sometimes citing Uncle Bob ["a comment is a failure to express yourself in code"](https://twitter.com/unclebobmartin/status/870311898545258497). But avoiding code comments is very different from not writing any comments at all, [as he has also clarified himself](https://twitter.com/unclebobmartin/status/1317048589286330375). With the arrival of agents generating code, it seems that we once again starting seeing a lot of unnecessary code comments.
 
 In the 90's, [Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the idea of documenting every little piece of code. In most cases that's way too many comments, so the pendulum swung the other way, and in the 2010's it became common to not write any comments at all. With the arrival of agents generating code, it seems that we once again starting seeing a lot of unnecessary code comments.
+
+> TL;DR: A code comment that explain **what** some code does can almost always be made obsolete by writing self-documenting code. If a comment explains **how** the code works, make the comment redundant by rewriting the code. If a comment explains **why** a piece of code is written as it is, keep it.
+
+In the 90's, [Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the idea of documenting every little piece of your code. In most cases that's way too many comments, and I guess that's why the current trend seems to be to not write any comments at all, sometimes citing Uncle Bob ["a comment is a failure to express yourself in code"](https://twitter.com/unclebobmartin/status/870311898545258497). But avoiding code comments is very different from not writing any comments at all, [as he has also clarified himself](https://twitter.com/unclebobmartin/status/1317048589286330375). With the arrival of agents generating code, it seems that we once again starting seeing a lot of unnecessary code comments.
 
 I believe that good comments are a crucial part of good code.
 
 > Not writing any comments is sometimes justified by citing Uncle Bob ["A comment is a failure to express yourself in code"](https://twitter.com/unclebobmartin/status/870311898545258497). But this taking his quote out of context, since it misses the second part **"If you fail, then write a comment; but try not to fail."**. [He also clarified this even further](https://twitter.com/unclebobmartin/status/1317048589286330375).
+In the 90's, [Javadoc](https://en.wikipedia.org/wiki/Javadoc) popularized the idea of documenting every little piece of your code. In most cases that's way too many comments, and I guess that's why the current trend seems to be to not write any comments at all, sometimes citing Uncle Bob ["a comment is a failure to express yourself in code"](https://twitter.com/unclebobmartin/status/870311898545258497). But avoiding code comments is very different from not writing any comments at all, [as he has also clarified himself](https://twitter.com/unclebobmartin/status/1317048589286330375). I believe that good comments are a crucial part of good code.
 
 So. Some comment are good and some are bad, but how do you tell the apart? Well, categorizing then into what-, how- or why-comments can help.
 
-Remember that these are guidelines &mdash; not rules.
+Remember that these are guidelines, not rigid rules.
 
 ## Three types of comments
 
-Comments can usually be categorized into three types:
+Comments can generally usually be categorized into thhree types::
 
 1. **What-comments** explain what the code does.
 1. **How-comments** explain how the code works.
@@ -65,12 +72,16 @@ function isLongEnough(password) {
 
 This comment doesn't add any value, and should just be removed:
 
+This comment doesn't add any value, and should just be removed:
+
+This comment doesn't add any value, and should just be removed:
+
 ```csharp
 /// <summary>
 /// The ID of the client.
 /// </summary>
 int ClientId { get; set; }
-```
+``` 
 
 Exception: Structural comments, for example in your Webpack configuration file.
 
@@ -99,7 +110,7 @@ If you just figured something out, and think that the next programmer looking at
 * Couldn't figure it out, but this works.
 * Badly named variables in APIs.
 
-https://www.kernel.org/doc/html/v4.10/process/coding-style.html#commenting
+<https://www.kernel.org/doc/html/v4.10/process/coding-style.html#commenting>
 
 ## TODO: Where To Put The Lines Below?
 
