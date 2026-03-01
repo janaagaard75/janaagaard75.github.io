@@ -172,10 +172,7 @@ The [blog posts on expo.dev](https://expo.dev/blog) are a real gold mine for tip
 
 2025-05-14 - [Real-time audio processing with Expo and native code](https://expo.dev/blog/real-time-audio-processing-with-expo-and-native-code)
 
-
-
 2025-05-08 - [Build cache providers in Expo](https://expo.dev/blog/build-cache-providers-in-expo)
-
 
 2025-05-05 - [Expo Router v5](https://expo.dev/blog/expo-router-v5)
 
